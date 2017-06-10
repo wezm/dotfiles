@@ -1,8 +1,10 @@
 [general]
 ctags = "~/.ctags"
 gitattributes = "~/.gitattributes"
+gvimrc = "~/.gvimrc"
 rbenv = "~/.rbenv"
 ruby-build = "~/.rbenv/plugins/ruby-build"
+vimrc = "~/vimrc"
 
 [linux]
 toprc = "~/.toprc"
