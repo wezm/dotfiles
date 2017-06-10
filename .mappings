@@ -1,0 +1,13 @@
+[general]
+ctags = "~/.ctags"
+
+[linux]
+
+
+[freebsd]
+
+
+[darwin]
+
+
+# vim: ft=toml
