@@ -2,7 +2,7 @@
 ctags = "~/.ctags"
 
 [linux]
-
+toprc = "~/.toprc"
 
 [freebsd]
 
