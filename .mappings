@@ -1,9 +1,12 @@
 [general]
 ctags = "~/.ctags"
 gitattributes = "~/.gitattributes"
+rbenv = "~/.rbenv"
+ruby-build = "~/.rbenv/plugins/ruby-build"
 
 [linux]
 toprc = "~/.toprc"
+
 
 [freebsd]
 
