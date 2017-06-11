@@ -7,3 +7,6 @@
 [submodule "ruby-build"]
 	path = ruby-build
 	url = https://github.com/rbenv/ruby-build.git
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = git@github.com:wezm/oh-my-zsh.git
