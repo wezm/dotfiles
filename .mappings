@@ -6,14 +6,17 @@ gvimrc = "~/.gvimrc"
 rbenv = "~/.rbenv"
 ruby-build = "~/.rbenv/plugins/ruby-build"
 "sift.conf" = "~/.sift.conf"
-"private/ssh" = "~/.ssh"
 "ssh-config" = "~/.ssh/config"
-vimrc = "~/vimrc"
+vimrc = "~/.vimrc"
 "config/nvim" = "~/.vim"
 "tmux.conf" = "~/.tmux.conf"
 oh-my-zsh = "~/.oh-my-zsh"
 zshrc = "~/.zshrc"
 zshenv = "~/.zshenv"
+
+# Link in parts from private submodule
+"private/ssh" = "~/.ssh"
+"private/gitconfig" = "~/.config/git/config_private"
 "private/zshenv" = "~/.zshenv_private"
 
 

@@ -1,0 +1,61 @@
+[user]
+	email = wes@wezm.net
+	name = Wesley Moore
+[color]
+	ui = auto
+	branch = auto
+	status = auto
+	diff = auto
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow
+	; frag = magenta bold
+	; old = red bold
+	; new = green bold
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[core]
+	pager = less -+$LESS -FRX
+	whitespace = trailing-space,space-before-tab
+	quotepath = false
+	autocrlf = input
+[mergetool]
+	keepBackup = false
+[mergetool "vimdiff"]
+	path = /usr/bin/nvim
+[push]
+	default = tracking
+	recurseSubmodules = check
+[diff]
+	color-words =
+	compactionHeuristic = true
+[gui]
+	fontdiff = -family Consolas -size 11 -weight normal -slant roman -underline 0 -overstrike 0
+[tig]
+	line-graphics = "utf-8"
+	mouse = true
+	refresh-mode = auto
+[tig "bind"]
+	status = + !git commit --amend
+	status = C !git commit --verbose
+	status = X <git commit --verbose
+[help]
+	autoCorrect = 20
+[rerere]
+	enabled = true
+[diff "exif"]
+	textconv = exiftool
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+
+# include supported in git >= v1.7.10
+[include]
+	path = config_private

@@ -1,0 +1,8 @@
+.DS_Store
+*.tmproj
+*.sw[op]
+.cap_tasks~
+.rake_tasks~
+*.un~
+Session.vim
+/tags
