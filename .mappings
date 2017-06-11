@@ -8,6 +8,7 @@ ruby-build = "~/.rbenv/plugins/ruby-build"
 "private/ssh" = "~/.ssh"
 "ssh-config" = "~/.ssh/config"
 vimrc = "~/vimrc"
+"tmux.conf" = "~/.tmux.conf"
 
 [linux]
 toprc = "~/.toprc"
