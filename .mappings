@@ -4,6 +4,7 @@ gitattributes = "~/.gitattributes"
 gvimrc = "~/.gvimrc"
 rbenv = "~/.rbenv"
 ruby-build = "~/.rbenv/plugins/ruby-build"
+"sift.conf" = "~/.sift.conf"
 vimrc = "~/vimrc"
 
 [linux]
