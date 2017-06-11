@@ -1,0 +1,5 @@
+
+! Map Caps Lock to Control
+! clear Lock
+! keycode 0x7e = Control_L
+! add Control = Control_L
