@@ -1,4 +1,5 @@
 [general]
+config = "~/.config"
 ctags = "~/.ctags"
 gitattributes = "~/.gitattributes"
 gvimrc = "~/.gvimrc"
@@ -8,11 +9,13 @@ ruby-build = "~/.rbenv/plugins/ruby-build"
 "private/ssh" = "~/.ssh"
 "ssh-config" = "~/.ssh/config"
 vimrc = "~/vimrc"
+"config/nvim" = "~/.vim"
 "tmux.conf" = "~/.tmux.conf"
 oh-my-zsh = "~/.oh-my-zsh"
 zshrc = "~/.zshrc"
 zshenv = "~/.zshenv"
 "private/zshenv" = "~/.zshenv_private"
+
 
 [linux]
 toprc = "~/.toprc"
