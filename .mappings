@@ -27,7 +27,7 @@ toprc = "~/.toprc"
 [freebsd]
 
 
-[darwin]
+[macos]
 
 
 # vim: ft=toml
