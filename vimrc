@@ -280,6 +280,10 @@ let g:highlightedyank_highlight_duration = 250
 let g:investigate_command_for_ruby = '^i!/usr/bin/zeal ruby:^s'
 let g:investigate_command_for_rust = '^i!/usr/bin/zeal rust:^s'
 
+" markdown-composer
+" Don't automatically open browser when loading a Markdown file
+let g:markdown_composer_autostart = 0
+
 if has("autocmd")
   au  BufNewFile,BufRead *.mustache set syntax=mustache
 
