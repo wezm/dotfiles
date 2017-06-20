@@ -95,8 +95,9 @@ if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 endif
 
-set number		" Line numbers
-set wildmenu		" Filename completion menu
+set number         " Line numbers
+set relativenumber " Relative line numbers
+set wildmenu       " Filename completion menu
 set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.o,.git,tmp,node_modules,*.pyc
 
 " Windows
