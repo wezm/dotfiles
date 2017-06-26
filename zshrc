@@ -91,3 +91,5 @@ export PATH="$HOME/.cargo/bin:$PATH"
 #   # envoy -t ssh-agent -a id_rsa id_rsa_old
 #   source <(envoy -p)
 # fi
+
+[ -f ~/.dotfiles/z/z.sh ] && source ~/.dotfiles/z/z.sh
