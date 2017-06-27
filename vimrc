@@ -296,21 +296,6 @@ if has("autocmd")
   " reload vimrc when written
   autocmd! bufwritepost .vimrc source %
 
-  " Get SuperTab to use omnifunc when available
-  " autocmd FileType *
-  "   \ if &omnifunc != '' |
-  "   \   call SuperTabChain(&omnifunc, "<c-p>") |
-  "   \ endif
-endif
-
-if has("autocmd") && exists("+omnifunc")
-  autocmd Filetype *
-        \if &omnifunc == "" |
-        \setlocal omnifunc=syntaxcomplete#Complete |
-        \endif
-endif
-
-if has("autocmd")
   " Enable spell checking in git commits
   autocmd Filetype gitcommit setlocal spell
 endif
@@ -380,8 +365,25 @@ command! Erb2slim :%!erb2slim % -
 command! Vimrc :e ~/.vimrc
 
 " SuperTab
-" Try omnicompletion if available, fall back to keywork completion
-"let g:SuperTabDefaultCompletionType = 'context'
+" Use completion context to determin the completion mechanism to use. For
+" example when on a . complete methods, when on a / complete paths
+let g:SuperTabDefaultCompletionType = 'context'
+if has("autocmd") && exists("+omnifunc")
+  " Fall back on syntaxcomplete if omnifunc is not defined
+  " https://github.com/vim-scripts/SyntaxComplete
+  autocmd Filetype *
+      \ if &omnifunc == '' |
+      \   setlocal omnifunc=syntaxcomplete#Complete |
+      \ endif
+
+  " Get SuperTab to use omnifunc when available, fall back on keyword
+  " completion
+  autocmd FileType *
+      \ if &omnifunc != '' |
+      \   call SuperTabChain(&omnifunc, "<c-p>") |
+      \ endif
+endif
+
 
 " fzf {
     set rtp+=/usr/local/opt/fzf
