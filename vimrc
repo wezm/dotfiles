@@ -26,7 +26,7 @@ Plug 'edkolev/promptline.vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'ervandew/supertab'
 Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
-Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'barlik/Vim-Jinja2-Syntax'
 Plug 'godlygeek/tabular'
 Plug 'itspriddle/vim-marked'
 Plug 'janko-m/vim-test'
