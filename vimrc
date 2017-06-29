@@ -305,9 +305,10 @@ endif
 " }
 
 " NerdTree {
-    map <C-E> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
+    " map <C-E> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
     map <Leader>e :NERDTreeFind<CR>
-    map <Leader>e :NERDTreeFind<CR>
+    map <Leader>t :NERDTreeToggle<CR>
+    map <Leader>m :NERDTreeMirror<CR>
     " nmap <leader>nt :NERDTreeFind<CR>
 
     let NERDSpaceDelims=1
