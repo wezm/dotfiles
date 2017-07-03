@@ -61,7 +61,7 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-utils/vim-troll-stopper'
-Plug 'Yggdroot/indentLine', { 'on': 'IndentLinesEnable' }
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 filetype plugin indent on      " Proper indentation and filetype plugins
@@ -466,6 +466,7 @@ endif
 " }
 
 " indentLine
+let g:indentLine_enabled = 0
 let g:indentLine_char = '│'
 let g:indentLine_color_term = 239
 let g:indentLine_color_gui = '#616161'
