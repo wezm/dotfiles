@@ -16,6 +16,7 @@ call plug#begin()
 Plug 'AndrewRadev/deleft.vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
+Plug 'barlik/Vim-Jinja2-Syntax'
 Plug 'benekastah/neomake'
 Plug 'bkad/CamelCaseMotion'
 Plug 'cakebaker/scss-syntax.vim'
@@ -26,9 +27,8 @@ Plug 'edkolev/promptline.vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'ervandew/supertab'
 Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
-Plug 'barlik/Vim-Jinja2-Syntax'
 Plug 'godlygeek/tabular'
-Plug 'itspriddle/vim-marked'
+Plug 'itspriddle/vim-marked', { 'on': 'MarkedOpen' }
 Plug 'janko-m/vim-test'
 Plug 'jreybert/vimagit', { 'branch': 'next' }
 Plug 'junegunn/fzf'
@@ -40,6 +40,7 @@ Plug 'keith/investigate.vim'
 Plug 'lambdatoast/elm.vim'
 Plug 'LeonB/vim-nginx'
 Plug 'machakann/vim-highlightedyank'
+Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'mileszs/ack.vim'
 Plug 'mxw/vim-jsx'
 Plug 'nono/vim-handlebars'
@@ -60,6 +61,7 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-utils/vim-troll-stopper'
+Plug 'Yggdroot/indentLine', { 'on': 'IndentLinesEnable' }
 call plug#end()
 
 filetype plugin indent on      " Proper indentation and filetype plugins
@@ -67,6 +69,7 @@ filetype plugin indent on      " Proper indentation and filetype plugins
 set backspace=indent,eol,start " Allow backspacing over everything in insert mode
 set autoindent                 " Always set auto-indenting on
 set complete-=i                " Don't complete in included files
+set completeopt=menuone,preview
 set smarttab
 set viminfo='20,\"500          " read/write a .viminfo file -- limit regs to 500 lines
 set history=50                 " keep 50 lines of command history
@@ -298,6 +301,12 @@ if has("autocmd")
 
   " Enable spell checking in git commits
   autocmd Filetype gitcommit setlocal spell
+
+  " Set foldmethod to indentation for CoffeeScript files
+  autocmd BufNewFile,BufReadPost *.coffee setlocal foldmethod=indent
+
+  au FileType slim IndentLinesEnable
+  au FileType coffee IndentLinesEnable
 endif
 
 " Ctags {
@@ -393,8 +402,14 @@ endif
       let $FZF_DEFAULT_OPTS .= ' --inline-info'
     endif
 
+    command! -bang -nargs=? -complete=dir Files
+      \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+    command! -bang -nargs=? -complete=dir GitFiles
+      \ call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview(), <bang>0)
+
     " nnoremap <silent> <Leader><Leader> :Files<CR>
     nnoremap <C-p>F :Files<CR>
+    nnoremap <Leader><Leader> :GitFiles<CR>
     nnoremap <C-p>f :GitFiles<CR>
     nnoremap <C-p>c :GitFiles?<CR>
     nnoremap <C-p>b :Buffers<CR>
@@ -449,3 +464,8 @@ endif
   " Start interactive EasyAlign for a motion/text object (e.g. gaip)
   nmap ga <Plug>(EasyAlign)
 " }
+
+" indentLine
+let g:indentLine_char = '│'
+let g:indentLine_color_term = 239
+let g:indentLine_color_gui = '#616161'
