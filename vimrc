@@ -99,7 +99,7 @@ if maparg('<C-L>', 'n') ==# ''
 endif
 
 set number         " Line numbers
-set relativenumber " Relative line numbers
+" set relativenumber " Relative line numbers
 set wildmenu       " Filename completion menu
 set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.o,.git,tmp,node_modules,*.pyc
 
@@ -402,10 +402,10 @@ endif
       let $FZF_DEFAULT_OPTS .= ' --inline-info'
     endif
 
-    command! -bang -nargs=? -complete=dir Files
-      \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-    command! -bang -nargs=? -complete=dir GitFiles
-      \ call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview(), <bang>0)
+    " command! -bang -nargs=? -complete=dir Files
+    "   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+    " command! -bang -nargs=? -complete=dir GitFiles
+    "   \ call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview(), <bang>0)
 
     " nnoremap <silent> <Leader><Leader> :Files<CR>
     nnoremap <C-p>F :Files<CR>
