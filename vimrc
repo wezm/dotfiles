@@ -239,8 +239,8 @@ map <Leader>q <Plug>Csurround "'
 map <Leader>Q <Plug>Csurround '"
 
 " Yank to system clipboard
-nnoremap <leader>y "*y
-vnoremap <leader>y "*y
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
 
 " Disable the fscking F1 key, make it esc instead (thanks dgoodlad)
 inoremap <F1> <ESC>
