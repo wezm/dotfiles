@@ -5,3 +5,7 @@ ControlPersist 60
 ForwardAgent yes
 
 Include private_config
+
+Host aur.archlinux.org
+  IdentityFile ~/.ssh/aur
+  User aur

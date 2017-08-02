@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=xbanish
+GenericName=X Banish cursor hider
+Comment=Some description about your script
+Exec=/usr/bin/xbanish
+Terminal=false
+Type=Application
+X-GNOME-Autostart-enabled=true

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=PyGrid
+GenericName=Window sizer
+Comment=Window zone resizer
+Exec=/home/wmoore/Documents/pygrid/pygrid.py
+Terminal=false
+Type=Application
+X-GNOME-Autostart-enabled=true

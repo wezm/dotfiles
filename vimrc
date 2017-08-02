@@ -28,6 +28,7 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'ervandew/supertab'
 Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
 Plug 'godlygeek/tabular'
+Plug 'hashivim/vim-terraform'
 Plug 'itspriddle/vim-marked', { 'on': 'MarkedOpen' }
 Plug 'janko-m/vim-test'
 Plug 'jreybert/vimagit', { 'branch': 'next' }
@@ -41,7 +42,6 @@ Plug 'lambdatoast/elm.vim'
 Plug 'LeonB/vim-nginx'
 Plug 'machakann/vim-highlightedyank'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
-Plug 'mileszs/ack.vim'
 Plug 'mxw/vim-jsx'
 Plug 'nono/vim-handlebars'
 Plug 'osyo-manga/vim-over'
@@ -51,7 +51,6 @@ Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'sirtaj/vim-openscad'
-Plug 'sjl/gundo.vim'
 Plug 'slim-template/vim-slim'
 Plug 'smerrill/vcl-vim-plugin'
 Plug 'tpope/vim-abolish'
@@ -60,6 +59,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'uptech/vim-open-alternate'
 Plug 'vim-utils/vim-troll-stopper'
 Plug 'Yggdroot/indentLine'
 call plug#end()
@@ -130,6 +130,19 @@ if filereadable(expand("~/.vimrc_background"))
   source ~/.vimrc_background
 endif
 
+"Credit joshdick
+"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
+"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
+"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
+if (empty($TMUX))
+  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+
 set colorcolumn=100
 
 set sessionoptions-=options
@@ -149,6 +162,12 @@ endif
 
 " Allow editing past the end of link in visual block mode
 set virtualedit=block
+
+" Confirm when attempting to abondon unsaved changes
+set confirm
+
+" Allow switching buffers when there are unsaved changes
+set hidden
 
 "Typo corrections
 iab acn        can
@@ -181,6 +200,7 @@ iab flase      false
 iab fro        for
 iab fucntion   function
 iab homepgae   homepage
+iab locatoin   location
 iab logifle    logfile
 iab lokk       look
 iab lokking    looking
@@ -199,8 +219,8 @@ iab retrun     return
 iab retunr     return
 iab seperate   separate
 iab shoudl     should
-iab should_recieve should_receive
 iab should_receieve should_receive
+iab should_recieve should_receive
 iab soem       some
 iab taht       that
 iab teh        the
@@ -372,7 +392,7 @@ command! ConvertDoubleQuotes :%s/"\([^"'#]*\)"/'\1'/g | noh
 " convert current file from ERB to Slim
 command! Erb2slim :%!erb2slim % -
 " edit vimrc
-command! Vimrc :e ~/.vimrc
+command! Vimrc :tabe ~/.vimrc
 
 " SuperTab
 " Use completion context to determin the completion mechanism to use. For
@@ -470,3 +490,19 @@ let g:indentLine_enabled = 0
 let g:indentLine_char = '│'
 let g:indentLine_color_term = 239
 let g:indentLine_color_gui = '#616161'
+
+" Alternate files
+" Needs alt: https://github.com/uptech/alt
+" Run a given vim command on the results of alt from a given path.
+" See usage below.
+function! AltCommand(path, vim_command)
+	let l:alternate = system("find . -path ./_site -prune -or -path ./target -prune -or -path ./.DS_Store -prune -or -path ./build -prune -or -path ./Carthage -prune -or -path tags -prune -or -path ./tmp -prune -or -path ./log -prune -or -path ./.git -prune -or -type f -print | alt -f - " . a:path)
+	if empty(l:alternate)
+		echo "No alternate file for " . a:path . " exists!"
+	else
+		exec a:vim_command . " " . l:alternate
+	endif
+endfunction
+
+" Find the alternate file for the current path and open it
+nnoremap <leader>. :w<cr>:call AltCommand(expand('%'), ':e')<cr>
