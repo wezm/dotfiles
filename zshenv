@@ -21,9 +21,9 @@ if [[ -d "$HOME/.rbenv/bin" ]]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
 fi
 
-`which yarn 2>&1 > /dev/null`
+$(which yarn 2>&1 > /dev/null)
 if [[ $? -eq 0 ]]; then
-  export PATH="$PATH:`yarn global bin`"
+  export PATH="$PATH:$(yarn global bin --offline)"
 fi
 
 if [[ -d "$HOME/.local/bin" ]]; then
