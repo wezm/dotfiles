@@ -1,5 +1,9 @@
 system=`uname -s`
 
+if [[ "$system" = "OpenBSD" ]]; then
+  export LC_CTYPE=en_AU.UTF-8
+fi
+
 # FIXME: Might duplicate
 if [[ -d /usr/local/bin ]]; then
   export PATH="/usr/local/bin:$PATH"
