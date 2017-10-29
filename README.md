@@ -4,11 +4,10 @@ My repo for configuration files, managed by [dot].
 
 ## Installation
 
-1. Install `git`
+1. Install `git` and `rust`
+3. Clone files: `git clone --recursive git@github.com:wezm/dotfiles.git`
 2. Install `dot`, either by building from source or downloading a binary.
    (`cargo install --git https://github.com/ubnt-intrepid/dot.git`)
-3. Clone files: `dot clone wezm`
-4. Checkout submodules: `git submodule update --init`
 5. Link files: `dot link`
 6. Run `base16_default-dark` once to set `~/.vimrc_background` to sync `vim`
    with the shell theme.
