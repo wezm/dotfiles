@@ -4,7 +4,7 @@ My repo for configuration files, managed by [dot].
 
 ## Installation
 
-1. Install `git` and `rust`
+1. Install `git` and `rust`. If on a non-GNU system (E.g. BSD), install `gmake`.
 3. Clone files: `git clone --recursive git@github.com:wezm/dotfiles.git`
 2. Install `dot`, either by building from source or downloading a binary.
    (`cargo install --git https://github.com/ubnt-intrepid/dot.git`)
