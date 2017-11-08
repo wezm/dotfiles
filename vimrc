@@ -278,20 +278,6 @@ map <C-H> <C-W>h<C-W>_
 " Lusty explorer options
 let g:LustyJugglerSuppressRubyWarning = 1
 
-" CommandT options
-let g:CommandTMaxDepth = 20
-let g:CommandTMaxFiles = 20000
-
-" CtrlP options
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_max_files = 20000
-let g:ctrlp_max_depth = 20
-
-" UltiSnips options
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
 " Use ripgrep when available
 if executable("rg")
     set grepprg=rg\ --vimgrep\ --no-heading
@@ -367,13 +353,6 @@ endif
     nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
     vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 " }
-
-" TagBar {
-    nnoremap <silent> <leader>tt :TagbarToggle<CR>
-"}
-
-" Gundo
-nnoremap <Leader>u :GundoToggle<CR>
 
 " indent guides
 let g:indent_guides_start_level = 2
