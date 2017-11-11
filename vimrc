@@ -15,6 +15,8 @@ endfunction
 call plug#begin()
 Plug 'AndrewRadev/deleft.vim'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'LeonB/vim-nginx'
+Plug 'Yggdroot/indentLine'
 Plug 'ap/vim-css-color'
 Plug 'barlik/Vim-Jinja2-Syntax'
 Plug 'benekastah/neomake'
@@ -39,7 +41,6 @@ Plug 'kassio/neoterm'
 Plug 'kchmck/vim-coffee-script'
 Plug 'keith/investigate.vim'
 Plug 'lambdatoast/elm.vim'
-Plug 'LeonB/vim-nginx'
 Plug 'machakann/vim-highlightedyank'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'mxw/vim-jsx'
@@ -48,6 +49,7 @@ Plug 'osyo-manga/vim-over'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'pearofducks/ansible-vim'
+Plug 'reasonml-editor/vim-reason'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
@@ -63,7 +65,6 @@ Plug 'tpope/vim-surround'
 Plug 'udalov/kotlin-vim'
 Plug 'uptech/vim-open-alternate'
 Plug 'vim-utils/vim-troll-stopper'
-Plug 'Yggdroot/indentLine'
 call plug#end()
 
 filetype plugin indent on      " Proper indentation and filetype plugins
@@ -487,3 +488,7 @@ endfunction
 
 " Find the alternate file for the current path and open it
 nnoremap <leader>. :w<cr>:call AltCommand(expand('%'), ':e')<cr>
+
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
+

@@ -73,7 +73,10 @@ fi
 
 if [[ -f /usr/share/fzf/key-bindings.zsh ]]; then
   source /usr/share/fzf/key-bindings.zsh
+elif [[ -f /usr/local/share/examples/fzf/shell/key-bindings.zsh ]]; then
+  source /usr/local/share/examples/fzf/shell/key-bindings.zsh
 fi
+
 
 # Base16 Shell
 BASE16_SHELL=$HOME/.config/base16-shell/

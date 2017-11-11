@@ -65,14 +65,29 @@ export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_DEFAULT_OPTS="--exact --history=$HOME/.fzfhistory"
 export FZF_TMUX="0"
 
-# TIlix/Terminix integration
+# Tilix integration
 if [ $TERMINIX_ID ] || [ $VTE_VERSION ]; then
-  source /etc/profile.d/vte.sh
+  if [[ -f /etc/profile.d/vte.sh ]]; then
+    source /etc/profile.d/vte.sh
+  elif [[ -f /usr/local/etc/profile.d/vte.sh ]]; then
+    source /usr/local/etc/profile.d/vte.sh
+  fi
 fi
 
 # Use preview in fzf
 if [ -x ~/.vim/plugged/fzf.vim/bin/preview.rb ]; then
   export FZF_CTRL_T_OPTS="--preview '~/.vim/plugged/fzf.vim/bin/preview.rb {} | head -200'"
+fi
+
+# OPAM configuration
+if [[ -d  "$HOME/.opam/opam-init/init.zsh" ]]; then
+  . "$HOME/.opam/opam-init/init.zsh"
+fi
+
+# BuckleScript
+if [[ -d "$HOME/Source/bucklescript/bin" ]]; then
+  export PATH="$HOME/Source/bucklescript/bin:$PATH"
+  export BSC_LIB="$HOME/Source/bucklescript/lib"
 fi
 
 source "$HOME/.zshenv_private"
