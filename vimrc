@@ -15,8 +15,6 @@ endfunction
 call plug#begin()
 Plug 'AndrewRadev/deleft.vim'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'LeonB/vim-nginx'
-Plug 'Yggdroot/indentLine'
 Plug 'ap/vim-css-color'
 Plug 'barlik/Vim-Jinja2-Syntax'
 Plug 'benekastah/neomake'
@@ -41,6 +39,7 @@ Plug 'kassio/neoterm'
 Plug 'kchmck/vim-coffee-script'
 Plug 'keith/investigate.vim'
 Plug 'lambdatoast/elm.vim'
+Plug 'LeonB/vim-nginx'
 Plug 'machakann/vim-highlightedyank'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'mxw/vim-jsx'
@@ -65,6 +64,7 @@ Plug 'tpope/vim-surround'
 Plug 'udalov/kotlin-vim'
 Plug 'uptech/vim-open-alternate'
 Plug 'vim-utils/vim-troll-stopper'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 filetype plugin indent on      " Proper indentation and filetype plugins
