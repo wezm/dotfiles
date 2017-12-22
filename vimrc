@@ -315,6 +315,8 @@ if has("autocmd")
 
   au FileType slim IndentLinesEnable
   au FileType coffee IndentLinesEnable
+
+  " autocmd BufNewFile,BufReadPost *.go setlocal listchars="tab:> ,trail:.,extends:>"
 endif
 
 " Ctags {
