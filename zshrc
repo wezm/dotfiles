@@ -73,7 +73,10 @@ fi
 
 if [[ -f /usr/share/fzf/key-bindings.zsh ]]; then
   source /usr/share/fzf/key-bindings.zsh
+elif [[ -f /usr/local/share/examples/fzf/shell/key-bindings.zsh ]]; then
+  source /usr/local/share/examples/fzf/shell/key-bindings.zsh
 fi
+
 
 # Base16 Shell
 BASE16_SHELL=$HOME/.config/base16-shell/
@@ -93,3 +96,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # fi
 
 [ -f ~/.dotfiles/z/z.sh ] && source ~/.dotfiles/z/z.sh
+
+# OPAM configuration
+. /home/wmoore/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

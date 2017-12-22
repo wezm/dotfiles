@@ -48,6 +48,7 @@ Plug 'osyo-manga/vim-over'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'pearofducks/ansible-vim'
+Plug 'reasonml-editor/vim-reason'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
@@ -489,3 +490,8 @@ endfunction
 
 " Find the alternate file for the current path and open it
 nnoremap <leader>. :w<cr>:call AltCommand(expand('%'), ':e')<cr>
+
+" OCaml/Reason
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
+

@@ -16,3 +16,6 @@
 [submodule "z"]
 	path = z
 	url = https://github.com/rupa/z.git
+[submodule "nvm"]
+	path = nvm
+	url = https://github.com/creationix/nvm.git
