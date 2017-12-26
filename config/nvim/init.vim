@@ -51,3 +51,6 @@ tnoremap JJ <C-\><C-n>
 
 " reload when written
 autocmd! bufwritepost init.vim source %
+
+" check files when focused again (probably only works in Neovim GTK)
+autocmd BufEnter,FocusGained * checktime
