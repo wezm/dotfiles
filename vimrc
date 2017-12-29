@@ -65,6 +65,10 @@ Plug 'udalov/kotlin-vim'
 Plug 'uptech/vim-open-alternate'
 Plug 'vim-utils/vim-troll-stopper'
 Plug 'Yggdroot/indentLine'
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 filetype plugin indent on      " Proper indentation and filetype plugins
@@ -128,11 +132,6 @@ endif
 
 set autoread
 
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
-
 "Credit joshdick
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
@@ -144,6 +143,11 @@ if (empty($TMUX))
   if (has("termguicolors"))
     set termguicolors
   endif
+endif
+
+if filereadable(expand("~/.vimrc_background"))
+  " let base16colorspace=256
+  source ~/.vimrc_background
 endif
 
 set colorcolumn=100
@@ -474,6 +478,11 @@ let g:indentLine_enabled = 0
 let g:indentLine_char = '│'
 let g:indentLine_color_term = 239
 let g:indentLine_color_gui = '#616161'
+
+" lightline
+let g:airline_powerline_fonts = 1
+let g:airline_theme='minimalist'
+let g:airline#extensions#whitespace#checks = [ 'trailing' ]
 
 " Alternate files
 " Needs alt: https://github.com/uptech/alt
