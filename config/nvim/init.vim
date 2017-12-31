@@ -41,13 +41,9 @@ let g:neoterm_size = '24'
 let g:neoterm_autoscroll = 1
 tnoremap JJ <C-\><C-n>
 
-" Neomake {
-  " disable ruby code checkers, they're too noisy
-  " let g:neomake_ruby_enabled_makers = ['mri']
-
-  " run Neomake after each write
-  autocmd! BufWritePost * Neomake
-" }
+" Neomake
+" When writing a buffer, and on normal mode changes (after 750ms).
+call neomake#configure#automake('nw', 750)
 
 " reload when written
 autocmd! bufwritepost init.vim source %
