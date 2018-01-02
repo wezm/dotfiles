@@ -69,6 +69,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
+
 call plug#end()
 
 filetype plugin indent on      " Proper indentation and filetype plugins
@@ -479,11 +480,10 @@ let g:indentLine_char = '│'
 let g:indentLine_color_term = 239
 let g:indentLine_color_gui = '#616161'
 
-" lightline
+" airline
 let g:airline_powerline_fonts = 1
 let g:airline_theme='monochrome'
 let g:airline#extensions#whitespace#checks = [ 'trailing' ]
-
 " Alternate files
 " Needs alt: https://github.com/uptech/alt
 " Run a given vim command on the results of alt from a given path.
