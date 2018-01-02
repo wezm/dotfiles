@@ -481,7 +481,7 @@ let g:indentLine_color_gui = '#616161'
 
 " lightline
 let g:airline_powerline_fonts = 1
-let g:airline_theme='minimalist'
+let g:airline_theme='monochrome'
 let g:airline#extensions#whitespace#checks = [ 'trailing' ]
 
 " Alternate files
