@@ -41,6 +41,10 @@ let g:neoterm_size = '24'
 let g:neoterm_autoscroll = 1
 tnoremap JJ <C-\><C-n>
 
+" NeovimGtk
+" Use GTK  clipboard
+let g:GuiInternalClipboard = 1
+
 " Neomake
 " When writing a buffer, and on normal mode changes (after 750ms).
 call neomake#configure#automake('nw', 750)
@@ -48,5 +52,5 @@ call neomake#configure#automake('nw', 750)
 " reload when written
 autocmd! bufwritepost init.vim source %
 
-" check files when focused again (probably only works in Neovim GTK)
+" check files when focused again (probably only works in NeovimGtk)
 autocmd BufEnter,FocusGained * checktime
