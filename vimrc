@@ -315,6 +315,7 @@ if has("autocmd")
 
   " Enable spell checking in git commits
   autocmd Filetype gitcommit setlocal spell
+  autocmd Filetype markdown setlocal spell
 
   " Set foldmethod to indentation for CoffeeScript files
   autocmd BufNewFile,BufReadPost *.coffee setlocal foldmethod=indent
