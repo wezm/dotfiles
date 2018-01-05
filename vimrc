@@ -63,7 +63,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'udalov/kotlin-vim'
 Plug 'uptech/vim-open-alternate'
-Plug 'vim-utils/vim-troll-stopper'
+" Plug 'vim-utils/vim-troll-stopper'
 Plug 'Yggdroot/indentLine'
 
 Plug 'vim-airline/vim-airline'
