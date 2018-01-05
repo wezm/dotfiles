@@ -50,6 +50,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'pearofducks/ansible-vim'
 Plug 'reasonml-editor/vim-reason'
 Plug 'rust-lang/rust.vim'
+Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'sirtaj/vim-openscad'
@@ -63,13 +64,10 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'udalov/kotlin-vim'
 Plug 'uptech/vim-open-alternate'
-" Plug 'vim-utils/vim-troll-stopper'
-Plug 'Yggdroot/indentLine'
-
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ryanoasis/vim-devicons'
-
+" Plug 'vim-utils/vim-troll-stopper'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 filetype plugin indent on      " Proper indentation and filetype plugins
