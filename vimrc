@@ -299,6 +299,7 @@ let g:investigate_command_for_rust = '^i!/usr/bin/zeal rust:^s'
 " markdown-composer
 " Don't automatically open browser when loading a Markdown file
 let g:markdown_composer_autostart = 0
+let g:markdown_composer_syntax_theme = 'tomorrow-night'
 
 if has("autocmd")
   au  BufNewFile,BufRead *.mustache set syntax=mustache
@@ -485,17 +486,6 @@ let g:airline_theme='monochrome'
 let g:airline#extensions#whitespace#checks = [ 'trailing' ]
 " Alternate files
 " Needs alt: https://github.com/uptech/alt
-" Run a given vim command on the results of alt from a given path.
-" See usage below.
-" function! AltCommand(path, vim_command)
-"         let l:alternate = system("find . -path ./_site -prune -or -path ./target -prune -or -path ./.DS_Store -prune -or -path ./build -prune -or -path ./Carthage -prune -or -path tags -prune -or -path ./tmp -prune -or -path ./log -prune -or -path ./.git -prune -or -type f -print | alt -f - " . a:path)
-"         if empty(l:alternate)
-"                 echo "No alternate file for " . a:path . " exists!"
-"         else
-"                 exec a:vim_command . " " . l:alternate
-"         endif
-" endfunction
-
 " Run a given vim command on the results of alt from a given path.
 " See usage below.
 function! AltCommand(path, vim_command)
