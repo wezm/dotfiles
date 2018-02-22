@@ -50,7 +50,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'pearofducks/ansible-vim'
 Plug 'reasonml-editor/vim-reason'
 Plug 'rust-lang/rust.vim'
-Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'sirtaj/vim-openscad'
@@ -61,6 +60,7 @@ Plug 'tpope/vim-cucumber'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'udalov/kotlin-vim'
 Plug 'uptech/vim-open-alternate'
@@ -68,6 +68,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Plug 'vim-utils/vim-troll-stopper'
 Plug 'Yggdroot/indentLine'
+Plug 'ryanoasis/vim-devicons' " need to load late to patch other plugins
 call plug#end()
 
 filetype plugin indent on      " Proper indentation and filetype plugins
@@ -482,8 +483,9 @@ let g:indentLine_color_gui = '#616161'
 
 " airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme='monochrome'
+let g:airline_theme='minimalist'
 let g:airline#extensions#whitespace#checks = [ 'trailing' ]
+
 " Alternate files
 " Needs alt: https://github.com/uptech/alt
 " Run a given vim command on the results of alt from a given path.

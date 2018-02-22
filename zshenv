@@ -90,4 +90,6 @@ if [[ -d "$HOME/Source/bucklescript/bin" ]]; then
   export BSC_LIB="$HOME/Source/bucklescript/lib"
 fi
 
+export NVIM_GTK_PREFER_DARK_THEME=1
+
 source "$HOME/.zshenv_private"
