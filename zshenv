@@ -85,9 +85,9 @@ if [[ -d  "$HOME/.opam/opam-init/init.zsh" ]]; then
 fi
 
 # BuckleScript
-if [[ -d "$HOME/Source/bucklescript/bin" ]]; then
-  export PATH="$HOME/Source/bucklescript/bin:$PATH"
-  export BSC_LIB="$HOME/Source/bucklescript/lib"
+if [[ -d "$HOME/Source/bucklescript/lib" ]]; then
+  export PATH="$HOME/Source/bucklescript/lib:$PATH"
+  export BSC_LIB="$HOME/Source/bucklescript/jscomp/stdlib"
 fi
 
 export NVIM_GTK_PREFER_DARK_THEME=1
