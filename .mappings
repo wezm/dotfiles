@@ -1,6 +1,6 @@
 [general]
 config = "~/.config"
-ctags = "~/.ctags"
+ctags = "~/.ctags.d/custom.ctags"
 gitattributes = "~/.gitattributes"
 gvimrc = "~/.gvimrc"
 rbenv = "~/.rbenv"
