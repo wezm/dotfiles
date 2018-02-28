@@ -59,7 +59,7 @@ source $ZSH/oh-my-zsh.sh
 unsetopt auto_name_dirs
 
 # nvm
-NVM_DIR=$HOME/.nvm
+NVM_DIR=$HOME/.dotfiles/nvm
 if [ -s $NVM_DIR/nvm.sh ]; then
   source $NVM_DIR/nvm.sh
 fi
