@@ -503,6 +503,7 @@ endfunction
 nnoremap <leader>. :w<cr>:call AltCommand(expand('%'), ':e')<cr>
 
 " OCaml/Reason
-let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-execute "set rtp+=" . g:opamshare . "/merlin/vim"
-
+if executable('opam') == 1
+  let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+  execute "set rtp+=" . g:opamshare . "/merlin/vim"
+endif
