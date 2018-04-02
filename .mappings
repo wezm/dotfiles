@@ -14,6 +14,7 @@ vimrc = "~/.vimrc"
 oh-my-zsh = "~/.oh-my-zsh"
 zshrc = "~/.zshrc"
 zshenv = "~/.zshenv"
+"gpg-agent.conf" = "~/.gnupg/gpg-agent.conf"
 
 # Link in parts from private submodule
 "private/ssh" = "~/.ssh"
@@ -23,10 +24,6 @@ zshenv = "~/.zshenv"
 
 [linux]
 toprc = "~/.toprc"
-"autostart/copyq.desktop" = "~/.config/autostart/copyq.desktop"
-"autostart/dropbox.desktop" = "~/.config/autostart/dropbox.desktop"
-"autostart/pygrid.desktop" = "~/.config/autostart/pygrid.desktop"
-"autostart/xbanish.desktop" = "~/.config/autostart/xbanish.desktop"
 
 [freebsd]
 
