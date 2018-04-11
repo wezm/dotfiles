@@ -395,6 +395,8 @@ command! ConvertDoubleQuotes :%s/"\([^"'#]*\)"/'\1'/g | noh
 command! Erb2slim :%!erb2slim % -
 " edit vimrc
 command! Vimrc :tabe ~/.vimrc
+" edit README
+command! Readme :tabe README.md
 
 " SuperTab
 " Use completion context to determin the completion mechanism to use. For
