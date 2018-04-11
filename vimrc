@@ -48,7 +48,6 @@ Plug 'osyo-manga/vim-over'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'pearofducks/ansible-vim'
-Plug 'reasonml-editor/vim-reason'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
@@ -69,6 +68,19 @@ Plug 'vim-airline/vim-airline-themes'
 " Plug 'vim-utils/vim-troll-stopper'
 Plug 'Yggdroot/indentLine'
 Plug 'ryanoasis/vim-devicons' " need to load late to patch other plugins
+
+if has('nvim')
+  Plug 'autozimu/LanguageClient-neovim', {
+      \ 'branch': 'next',
+      \ 'do': 'bash install.sh',
+      \ }
+  Plug 'reasonml-editor/vim-reason-plus'
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  " Plug 'Shougo/deoplete.nvim'
+  " Plug 'roxma/nvim-yarp'
+  " Plug 'roxma/vim-hug-neovim-rpc'
+endif
 call plug#end()
 
 filetype plugin indent on      " Proper indentation and filetype plugins
@@ -502,8 +514,30 @@ endfunction
 " Find the alternate file for the current path and open it
 nnoremap <leader>. :w<cr>:call AltCommand(expand('%'), ':e')<cr>
 
-" OCaml/Reason
-if executable('opam') == 1
-  let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-  execute "set rtp+=" . g:opamshare . "/merlin/vim"
-endif
+" deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+" let g:deoplete#sources = {}
+" let g:deoplete#sources._ = ['buffer']
+" let g:deoplete#sources.cpp = ['buffer', 'tag']
+
+" LanguageClient-neovim
+let g:LanguageClient_serverCommands = {
+    \ 'css': ['css-languageserver', '--stdio'],
+    \ 'sass': ['css-languageserver', '--stdio'],
+    \ 'scss': ['css-languageserver', '--stdio'],
+    \ 'less': ['css-languageserver', '--stdio'],
+    \ 'json': ['json-languageserver', '--stdio'],
+    \ 'html': ['html-languageserver', '--stdio'],
+    \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['javascript-typescript-stdio'],
+    \ 'ocaml': ['ocaml-language-server', '--stdio'],
+    \ 'reason': ['ocaml-language-server', '--stdio'],
+    \ 'ruby': ['language_server-ruby'],
+    \ 'rust': ['rls'],
+    \ }
+
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> gf :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
