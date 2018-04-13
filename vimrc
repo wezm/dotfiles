@@ -68,6 +68,7 @@ Plug 'vim-airline/vim-airline-themes'
 " Plug 'vim-utils/vim-troll-stopper'
 Plug 'Yggdroot/indentLine'
 Plug 'ryanoasis/vim-devicons' " need to load late to patch other plugins
+Plug 'aklt/plantuml-syntax'
 
 if has('nvim')
   Plug 'autozimu/LanguageClient-neovim', {
