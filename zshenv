@@ -47,8 +47,6 @@ fi
 
 export CUCUMBER_FORMAT=pretty
 
-export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
-
 export GOPATH=$HOME/Source/Go
 if [[ -d "$GOPATH/bin" ]]; then
   export PATH="$PATH:$GOPATH/bin"
