@@ -42,8 +42,12 @@ let g:neoterm_autoscroll = 1
 tnoremap JJ <C-\><C-n>
 
 " NeovimGtk
-" Use GTK  clipboard
-let g:GuiInternalClipboard = 1
+if exists('g:GtkGuiLoaded')
+  " Use GTK  clipboard
+  let g:GuiInternalClipboard = 1
+  " Disable native popup an use vim one instead
+  call rpcnotify(1, 'Gui', 'Option', 'Popupmenu', 0)
+endif
 
 " Neomake
 " When writing a buffer, and on normal mode changes (after 750ms).
