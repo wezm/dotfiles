@@ -56,6 +56,7 @@ Plug 'slim-template/vim-slim'
 Plug 'smerrill/vcl-vim-plugin'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-cucumber'
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
@@ -82,6 +83,7 @@ else
   " Plug 'roxma/nvim-yarp'
   " Plug 'roxma/vim-hug-neovim-rpc'
 endif
+
 call plug#end()
 
 filetype plugin indent on      " Proper indentation and filetype plugins
@@ -164,6 +166,7 @@ if filereadable(expand("~/.vimrc_background"))
 endif
 
 set colorcolumn=100
+set signcolumn=yes " Always show sign column
 
 set sessionoptions-=options
 
