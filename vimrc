@@ -29,9 +29,7 @@ Plug 'ervandew/supertab'
 Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
 Plug 'godlygeek/tabular'
 Plug 'hashivim/vim-terraform'
-Plug 'itspriddle/vim-marked', { 'on': 'MarkedOpen' }
 Plug 'janko-m/vim-test'
-Plug 'jreybert/vimagit', { 'branch': 'next' }
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
@@ -39,6 +37,7 @@ Plug 'kassio/neoterm'
 Plug 'kchmck/vim-coffee-script'
 Plug 'keith/investigate.vim'
 Plug 'lambdatoast/elm.vim'
+Plug 'leafgarland/typescript-vim'
 Plug 'LeonB/vim-nginx'
 Plug 'machakann/vim-highlightedyank'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
@@ -528,6 +527,7 @@ let g:deoplete#enable_smart_case = 1
 " let g:deoplete#sources.cpp = ['buffer', 'tag']
 
 " LanguageClient-neovim
+" https://github.com/theia-ide/typescript-language-server
 let g:LanguageClient_serverCommands = {
     \ 'css': ['css-languageserver', '--stdio'],
     \ 'sass': ['css-languageserver', '--stdio'],
@@ -536,6 +536,7 @@ let g:LanguageClient_serverCommands = {
     \ 'json': ['json-languageserver', '--stdio'],
     \ 'html': ['html-languageserver', '--stdio'],
     \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'typescript': ['typescript-language-server', '--stdio'],
     \ 'javascript.jsx': ['javascript-typescript-stdio'],
     \ 'ocaml': ['ocaml-language-server', '--stdio'],
     \ 'reason': ['ocaml-language-server', '--stdio'],
