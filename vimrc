@@ -328,9 +328,12 @@ if has("autocmd")
   " reload vimrc when written
   autocmd! bufwritepost .vimrc source %
 
-  " Enable spell checking in git commits
+  " Enable spell checking in git commits and markdown
   autocmd Filetype gitcommit setlocal spell
   autocmd Filetype markdown setlocal spell
+
+  " Use 4 spaces in TypeScript
+  autocmd Filetype typescript setlocal sw=4
 
   " Set foldmethod to indentation for CoffeeScript files
   autocmd BufNewFile,BufReadPost *.coffee setlocal foldmethod=indent
