@@ -28,6 +28,8 @@ fi
 $(which yarn 2>&1 > /dev/null)
 if [[ $? -eq 0 ]]; then
   export PATH="$PATH:$(yarn global bin --offline)"
+elif [[ -d "$HOME/.yarn/bin" ]]; then
+  export PATH="$HOME/.yarn/bin:$PATH"
 fi
 
 if [[ -d "$HOME/.local/bin" ]]; then

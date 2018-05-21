@@ -59,7 +59,8 @@ source $ZSH/oh-my-zsh.sh
 unsetopt auto_name_dirs
 
 # nvm
-NVM_DIR=$HOME/.dotfiles/nvm
+# realpath is to work around nvm not liking being symlinked
+NVM_DIR=$(realpath "$HOME/.nvm")
 if [ -s $NVM_DIR/nvm.sh ]; then
   source $NVM_DIR/nvm.sh
 fi
