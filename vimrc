@@ -445,6 +445,8 @@ endif
     nnoremap <C-p>b :Buffers<CR>
     " nnoremap <C-p>f :Colors<CR>
     nnoremap <C-p>a :Rg 
+    " Search for word under cursor, c/o Di
+    nnoremap <silent> <Leader>w :Rg <C-R><C-W><CR>
     nnoremap <C-p>L :Lines<CR>
     nnoremap <C-p>l :BLines<CR>
     nnoremap <C-p>T :Tags<CR>
