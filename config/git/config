@@ -1,6 +1,7 @@
 [user]
 	email = wes@wezm.net
 	name = Wesley Moore
+	signingkey = 68016C9C3F4CC606B77660E9BF67766C0BC2D0EE
 [color]
 	ui = auto
 	branch = auto
@@ -59,3 +60,5 @@
 # include supported in git >= v1.7.10
 [include]
 	path = config_private
+[commit]
+	gpgsign = true
