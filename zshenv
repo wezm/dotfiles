@@ -39,7 +39,6 @@ fi
 `which nvim 2>&1 > /dev/null`
 if [[ $? -eq 0 ]]; then
   export EDITOR=nvim
-  export MANPAGER="nvim -c 'set ft=man' -" # Use Neovim as man pager
   alias vim=nvim
 elif [[ -f /Applications/MacVim.app/Contents/MacOS/Vim ]]; then
   export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
