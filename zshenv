@@ -61,7 +61,8 @@ if [[ "$system" = "Darwin" ]]; then
 fi
 
 # fzf
-export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_DEFAULT_COMMAND='fd --type f --color=never'
+export FZF_ALT_C_COMMAND='fd --type d . --color=never'
 export FZF_DEFAULT_OPTS="--exact --history=$HOME/.fzfhistory"
 export FZF_TMUX="0"
 
