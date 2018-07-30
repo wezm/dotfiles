@@ -62,3 +62,5 @@
 	path = config_private
 [commit]
 	gpgsign = true
+[rebase]
+	autoStash = true
