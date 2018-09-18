@@ -76,11 +76,9 @@ if has('nvim')
       \ 'do': 'bash install.sh',
       \ }
   Plug 'reasonml-editor/vim-reason-plus'
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  " Plug 'Shougo/deoplete.nvim'
-  " Plug 'roxma/nvim-yarp'
-  " Plug 'roxma/vim-hug-neovim-rpc'
+  " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'ncm2/ncm2'
+  Plug 'roxma/nvim-yarp'
 endif
 
 call plug#end()
@@ -90,7 +88,8 @@ filetype plugin indent on      " Proper indentation and filetype plugins
 set backspace=indent,eol,start " Allow backspacing over everything in insert mode
 set autoindent                 " Always set auto-indenting on
 set complete-=i                " Don't complete in included files
-set completeopt=menuone,preview
+" set completeopt=menuone,preview
+set completeopt=noinsert,menuone,noselect
 set smarttab
 set viminfo='20,\"500          " read/write a .viminfo file -- limit regs to 500 lines
 set history=50                 " keep 50 lines of command history
@@ -525,11 +524,14 @@ endfunction
 nnoremap <leader>. :w<cr>:call AltCommand(expand('%'), ':e')<cr>
 
 " deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
+" let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_smart_case = 1
 " let g:deoplete#sources = {}
 " let g:deoplete#sources._ = ['buffer']
 " let g:deoplete#sources.cpp = ['buffer', 'tag']
+
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
 
 " LanguageClient-neovim
 " https://github.com/theia-ide/typescript-language-server
