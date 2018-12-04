@@ -93,4 +93,15 @@ fi
 
 export NVIM_GTK_PREFER_DARK_THEME=1
 
+# Alacritty
+$(which gsettings 2>&1 > /dev/null)
+if [[ $? -eq 0 ]]; then
+  gnome_scaling_factor=$(gsettings get org.gnome.desktop.interface scaling-factor | awk '{ print $2 }')
+  if [[ $gnome_scaling_factor -gt 0 ]]; then
+    export WINIT_HIDPI_FACTOR=$gnome_scaling_factor
+  else
+    export WINIT_HIDPI_FACTOR=1
+  fi
+fi
+
 source "$HOME/.zshenv_private"
