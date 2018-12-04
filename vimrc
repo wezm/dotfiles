@@ -545,8 +545,7 @@ let g:LanguageClient_serverCommands = {
     \ 'javascript': ['typescript-language-server', '--stdio'],
     \ 'typescript': ['typescript-language-server', '--stdio'],
     \ 'javascript.jsx': ['typescript-language-server', '--stdio'],
-    \ 'ocaml': ['ocaml-language-server', '--stdio'],
-    \ 'reason': ['ocaml-language-server', '--stdio'],
+    \ 'reason': ['/home/wmoore/.local/bin/reason-language-server.exe'],
     \ 'ruby': ['language_server-ruby'],
     \ 'rust': ['rls'],
     \ }
