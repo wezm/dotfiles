@@ -104,4 +104,7 @@ if [[ $? -eq 0 ]]; then
   fi
 fi
 
+# Make bat use less instead of more on FreeBSD
+export BAT_PAGER=less
+
 source "$HOME/.zshenv_private"
