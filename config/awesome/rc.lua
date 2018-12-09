@@ -354,7 +354,37 @@ globalkeys = gears.table.join(
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
+              {description = "show the menubar", group = "launcher"}),
+
+    -- Media keys
+    awful.key({}, "XF86AudioMute", function()
+                  awful.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle", false)
+              end,
+              {description = "mute default output", group = "media"}),
+
+    awful.key({}, "XF86AudioLowerVolume", function()
+                  awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ -10%", false)
+              end,
+              {description = "volume down", group = "media"}),
+
+    awful.key({}, "XF86AudioRaiseVolume", function()
+                  awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +10%", false)
+              end,
+              {description = "volume up", group = "media"}),
+
+    awful.key({}, "XF86MonBrightnessDown", function()
+                  -- awful.spawn("/usr/bin/pkexec /usr/bin/brillo -u 100000 -U 10", false)
+                  -- Above doesn't work but below does for some reason
+                  awful.spawn.easy_async("/usr/bin/pkexec /usr/bin/brillo -u 100000 -U 10", function(stdout, stderr, reason, exit_code)
+                  end)
+              end,
+              {description = "brightness down", group = "media"}),
+
+    awful.key({}, "XF86MonBrightnessUp", function()
+                  awful.spawn.easy_async("/usr/bin/pkexec /usr/bin/brillo -u 100000 -A 10", function(stdout, stderr, reason, exit_code)
+                  end)
+              end,
+              {description = "brightness up", group = "media"})
 )
 
 clientkeys = gears.table.join(
