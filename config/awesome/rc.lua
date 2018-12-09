@@ -208,6 +208,20 @@ awful.screen.connect_for_each_screen(function(s)
     -- Create a tasklist widget
     -- s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, tasklist_buttons)
 
+    -- Create a custom bar textbox widget
+    s.mybarbox = wibox.widget.textbox()
+
+    -- Spawn bar info
+    local bar_path = "/home/wmoore/Projects/bar/target/release/bar"
+    awful.spawn.with_line_callback(bar_path, {
+        stdout = function(line)
+            s.mybarbox.markup = line
+        end,
+        stderr = function(line)
+            naughty.notify { text = "ERR: "..line }
+        end
+    })
+
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s })
 
@@ -225,6 +239,7 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             -- mykeyboardlayout,
+            s.mybarbox,
             wibox.widget.systray(),
             mytextclock,
             s.mylayoutbox,
