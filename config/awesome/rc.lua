@@ -352,6 +352,13 @@ globalkeys = gears.table.join(
                   }
               end,
               {description = "lua execute prompt", group = "awesome"}),
+
+    awful.key({ modkey }, "b", function()
+                  myscreen = awful.screen.focused()
+                  myscreen.mywibox.visible = not myscreen.mywibox.visible
+              end,
+              {description = "toggle statusbar", group = "awesome"}),
+
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"}),
