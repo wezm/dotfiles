@@ -391,7 +391,22 @@ globalkeys = gears.table.join(
                   awful.spawn.easy_async("/usr/bin/pkexec /usr/bin/brillo -u 100000 -A 10", function(stdout, stderr, reason, exit_code)
                   end)
               end,
-              {description = "brightness up", group = "media"})
+              {description = "brightness up", group = "media"}),
+
+    awful.key({}, "Print", function ()
+                  awful.spawn("scrot -e 'mv $f ~/Pictures/ 2>/dev/null'", false)
+              end,
+              {description = "take screen shot", group = "media"}),
+
+    awful.key({ "Mod1" }, "Print", nil, function ()
+                   awful.spawn("scrot -u -e 'mv $f ~/Pictures/ 2>/dev/null'", false)
+               end,
+               {description = "take screenshot of current window", group = "media"}),
+
+    awful.key({ "Shift" }, "Print", nil, function ()
+                  awful.spawn("scrot -s -e 'mv $f ~/Pictures/ 2>/dev/null'", false)
+              end,
+              {description = "take screenshot of selected region", group = "media"})
 )
 
 clientkeys = gears.table.join(
