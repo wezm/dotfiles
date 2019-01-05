@@ -39,6 +39,11 @@ xrandr --dpi 192
 
 # Make gnome-keyring play nice
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+# NOTE: Auto-unlock of the keyring requires PAM configuration
+# https://wiki.archlinux.org/index.php/GNOME/Keyring#PAM_method
+# Add auth optional pam_gnome_keyring.so at the end of the auth section and
+# session optional pam_gnome_keyring.so auto_start at the end of the session
+# section.
 export SSH_AUTH_SOCK
 
 # Configure track pad on the fly
