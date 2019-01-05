@@ -41,10 +41,15 @@ xrandr --dpi 192
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 
-# Configure track pad
+# Configure track pad on the fly
 # xinput set-prop 16 294 1         # Natural scrolling
 # xinput set-prop 16 302 '{0' '1}' # Use 2 or 3 fingers for right and middle click
 # xinput set-prop 16 306 0.5       # Increase acceleration
+
+# Configure mouse on the fly
+# xinput set-button-map 7 1 2 3 5 4
+
+# Arch Linux
 # These are set via /etc/X11/xorg.conf.d/30-touchpad.conf
 # Section "InputClass"
 #     Identifier "TouchPad"
@@ -53,6 +58,15 @@ export SSH_AUTH_SOCK
 #     Option "ClickMethod" "clickfinger"
 #     Option "NaturalScrolling" "true"
 #     Option "AccelSpeed" "0.5"
+# EndSection
+
+# FreeBSD
+# /usr/local/etc/X11/xorg.conf.d/30-mouse.conf
+# http://onethingwell.org/post/8779215052/reverse-scrolling-x11
+# Section "InputClass"
+#     Identifier "Mouse"
+#     MatchDriver "mouse"
+#     Option "ZAxisMapping" "5 4"
 # EndSection
 
 # Start compositor and WM
