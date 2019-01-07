@@ -194,7 +194,7 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    awful.tag({ "www", "email", "im", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -313,6 +313,9 @@ globalkeys = gears.table.join(
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
+    -- && xset dpms force off
+    awful.key({ modkey, "Mod1",   }, "l",     function () awful.spawn("i3lock -e --color=000000") end,
+              {description = "lock the screen", group = "awesome"}),
 
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
@@ -374,12 +377,12 @@ globalkeys = gears.table.join(
               {description = "mute default output", group = "media"}),
 
     awful.key({}, "XF86AudioLowerVolume", function()
-                  awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ -10%", false)
+                  awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%", false)
               end,
               {description = "volume down", group = "media"}),
 
     awful.key({}, "XF86AudioRaiseVolume", function()
-                  awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +10%", false)
+                  awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%", false)
               end,
               {description = "volume up", group = "media"}),
 
