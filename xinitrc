@@ -76,4 +76,5 @@ export SSH_AUTH_SOCK
 
 # Start compositor and WM
 compton &
+copyq &
 awesome
