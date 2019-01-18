@@ -7,7 +7,9 @@ local wibox = require("wibox")
 -- Theme handling library
 local beautiful = require("beautiful")
 -- Notification library
+local _dbus = dbus; dbus = nil -- https://github.com/awesomeWM/awesome/issues/1285
 local naughty = require("naughty")
+dbus = _dbus
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 -- Enable hotkeys help widget for VIM and other apps

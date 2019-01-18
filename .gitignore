@@ -7,3 +7,8 @@
 /config/chromium
 /config/google-chrome
 /config/libreoffice
+/config/dconf/user
+/config/git/config_private
+/config/mimeapps.list
+/config/neofetch
+/config/pulse
