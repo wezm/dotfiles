@@ -523,6 +523,13 @@ endfunction
 " Find the alternate file for the current path and open it
 nnoremap <leader>. :w<cr>:call AltCommand(expand('%'), ':e')<cr>
 
+" Try to automagically fix the Paste bug:
+" https://github.com/neovim/neovim/issues/7994
+" Courtesy of didoesdigital
+" au InsertLeave * set nopaste
+" Turn off paste mode and the awful <Paste> bug
+nnoremap <leader>v mx:s/<Paste[>]//e<CR>:set nopaste<CR>:noh<CR>`x
+
 " deoplete
 " let g:deoplete#enable_at_startup = 1
 " let g:deoplete#enable_smart_case = 1
@@ -546,7 +553,6 @@ let g:LanguageClient_serverCommands = {
     \ 'typescript': ['typescript-language-server', '--stdio'],
     \ 'javascript.jsx': ['typescript-language-server', '--stdio'],
     \ 'reason': ['/home/wmoore/.local/bin/reason-language-server.exe'],
-    \ 'ruby': ['language_server-ruby'],
     \ 'rust': ['rls'],
     \ }
 
