@@ -49,9 +49,9 @@ HIST_STAMPS="yyyy-mm-dd"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 BUNDLED_COMMANDS=(sidekiq)
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor root)
+
 # bundler is loader after the rails plugin to that stuff works properly
-plugins=(brew capistrano cargo extract gem git history-substring-search knife postgres rails bundler zsh-syntax-highlighting)
+plugins=(brew capistrano cargo extract gem git history-substring-search postgres rails bundler)
 
 source $ZSH/oh-my-zsh.sh
 
