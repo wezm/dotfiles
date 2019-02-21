@@ -36,8 +36,8 @@ nnoremap <silent> ,tl :call neoterm#clear()<cr>
 nnoremap <silent> ,tk :call neoterm#kill()<cr>
 
 " neoterm/neovim terminal
-let g:neoterm_default_mod = 'botright'
-let g:neoterm_size = '24'
+let g:neoterm_default_mod = 'vertical'
+" let g:neoterm_size = '24'
 let g:neoterm_autoscroll = 1
 tnoremap JJ <C-\><C-n>
 
