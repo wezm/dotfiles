@@ -401,19 +401,19 @@ globalkeys = gears.table.join(
               {description = "brightness up", group = "media"}),
 
     awful.key({}, "Print", function ()
-                  awful.spawn("scrot -e 'mv $f ~/Pictures/ 2>/dev/null'", false)
+                  awful.spawn.with_shell("cd ~/Pictures && shotgun \"Screenshot from $(date '+%Y-%m-%d %H-%M-%S').png\"", false)
               end,
               {description = "take screen shot", group = "media"}),
 
-    awful.key({ "Mod1" }, "Print", nil, function ()
-                   awful.spawn("scrot -u -e 'mv $f ~/Pictures/ 2>/dev/null'", false)
-               end,
-               {description = "take screenshot of current window", group = "media"}),
+    -- awful.key({ "Mod1" }, "Print", nil, function ()
+    --                awful.spawn("scrot -u -e 'mv $f ~/Pictures/ 2>/dev/null'", false)
+    --            end,
+    --            {description = "take screenshot of current window", group = "media"}),
 
     awful.key({ "Shift" }, "Print", nil, function ()
-                  awful.spawn("scrot -s -e 'mv $f ~/Pictures/ 2>/dev/null'", false)
+                  awful.spawn.with_shell("cd ~/Pictures && shotgun $(slop -c 0,0,0,0.75 -l -f \"-i %i -g %g\") \"Screenshot from $(date '+%Y-%m-%d %H-%M-%S').png\"", false)
               end,
-              {description = "take screenshot of selected region", group = "media"})
+              {description = "take screenshot of selected region or window", group = "media"})
 )
 
 clientkeys = gears.table.join(
