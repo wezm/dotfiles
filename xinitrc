@@ -33,6 +33,7 @@ fi
 
 # Set DPI so that things render in HiDPI properly
 xrandr --dpi 192
+export GDK_SCALE=2
 
 # This is done by /etc/X11/xinit/xinitrc.d/50-systemd-user.sh on Arch:
 # dbus-update-activation-environment --systemd DISPLAY 
@@ -45,6 +46,9 @@ eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 # session optional pam_gnome_keyring.so auto_start at the end of the session
 # section.
 export SSH_AUTH_SOCK
+
+# Polkit agent for virt-manager, etc. (gnome-polkit package on Arch)
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Configure track pad on the fly
 # xinput set-prop 16 294 1         # Natural scrolling

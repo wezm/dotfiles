@@ -107,4 +107,7 @@ fi
 # Make bat use less instead of more on FreeBSD
 export BAT_PAGER=less
 
+# Smooth scrolling in Firefox
+export MOZ_USE_XINPUT2=1
+
 source "$HOME/.zshenv_private"
