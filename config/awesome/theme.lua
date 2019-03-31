@@ -8,6 +8,7 @@ local dpi = xresources.apply_dpi
 
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_themes_dir()
+local configuration_dir = gfs.get_configuration_dir()
 
 local theme = {}
 
@@ -97,7 +98,8 @@ theme.titlebar_maximized_button_focus_inactive  = themes_path.."default/titlebar
 theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
 
-theme.wallpaper = themes_path.."default/background.png"
+-- theme.wallpaper = themes_path.."default/background.png"
+theme.wallpaper = configuration_dir .. "wallpaper.jpg"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"
@@ -118,8 +120,7 @@ theme.layout_cornersw = themes_path.."default/layouts/cornersww.png"
 theme.layout_cornerse = themes_path.."default/layouts/cornersew.png"
 
 -- lain layout icons
-theme.lain_icons         = os.getenv("HOME") ..
-                           "/.config/awesome/lain/icons/layout/default/"
+theme.lain_icons         = configuration_dir .. "lain/icons/layout/default/"
 theme.layout_termfair    = theme.lain_icons .. "termfairw.png"
 theme.layout_centerfair  = theme.lain_icons .. "centerfairw.png"  -- termfair.center
 theme.layout_cascade     = theme.lain_icons .. "cascadew.png"
