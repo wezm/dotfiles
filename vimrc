@@ -69,6 +69,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 Plug 'ryanoasis/vim-devicons' " need to load late to patch other plugins
 Plug 'aklt/plantuml-syntax'
+Plug 'https://git.sr.ht/~wezm/vim-mercury'
 
 if has('nvim')
   Plug 'autozimu/LanguageClient-neovim', {
@@ -330,6 +331,7 @@ if has("autocmd")
   " Enable spell checking in git commits and markdown
   autocmd Filetype gitcommit setlocal spell
   autocmd Filetype markdown setlocal spell
+  " autocmd Filetype markdown call deoplete#disable()
 
   " Use 4 spaces in TypeScript
   autocmd Filetype typescript setlocal sw=4
