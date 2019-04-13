@@ -58,13 +58,6 @@ source $ZSH/oh-my-zsh.sh
 # Fix for broken zsh prompt
 unsetopt auto_name_dirs
 
-# nvm
-# realpath is to work around nvm not liking being symlinked
-NVM_DIR=$(realpath "$HOME/.nvm")
-if [ -s $NVM_DIR/nvm.sh ]; then
-  source $NVM_DIR/nvm.sh
-fi
-
 # rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
@@ -78,7 +71,6 @@ elif [[ -f /usr/local/share/examples/fzf/shell/key-bindings.zsh ]]; then
   source /usr/local/share/examples/fzf/shell/key-bindings.zsh
 fi
 
-
 # Base16 Shell
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
@@ -86,15 +78,6 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 source $ZSH/custom/prompt.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-export PATH="$HOME/.cargo/bin:$PATH"
-
-# SSH key management
-# `which envoy 2>&1 > /dev/null`
-# if [[ $? -eq 0 ]]; then
-#   # envoy -t ssh-agent -a id_rsa id_rsa_old
-#   source <(envoy -p)
-# fi
 
 [ -f ~/.dotfiles/z/z.sh ] && source ~/.dotfiles/z/z.sh
 
