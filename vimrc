@@ -29,6 +29,7 @@ Plug 'ervandew/supertab'
 Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
 Plug 'godlygeek/tabular'
 Plug 'hashivim/vim-terraform'
+Plug 'idris-hackers/idris-vim'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
