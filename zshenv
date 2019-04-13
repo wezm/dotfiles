@@ -110,4 +110,7 @@ export BAT_PAGER=less
 # Smooth scrolling in Firefox
 export MOZ_USE_XINPUT2=1
 
+# Some defaults for less
+export LESS="-FRX"
+
 source "$HOME/.zshenv_private"

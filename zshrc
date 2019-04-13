@@ -51,7 +51,7 @@ HIST_STAMPS="yyyy-mm-dd"
 BUNDLED_COMMANDS=(sidekiq)
 
 # bundler is loader after the rails plugin to that stuff works properly
-plugins=(brew capistrano cargo extract gem git history-substring-search postgres rails bundler)
+plugins=(capistrano cargo extract gem git history-substring-search postgres rails bundler)
 
 source $ZSH/oh-my-zsh.sh
 
