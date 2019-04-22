@@ -564,6 +564,7 @@ let g:LanguageClient_serverCommands = {
     \ 'reason': ['/home/wmoore/.local/bin/reason-language-server.exe'],
     \ 'rust': ['rls'],
     \ }
+let g:LanguageClient_useVirtualText = 0
 
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
