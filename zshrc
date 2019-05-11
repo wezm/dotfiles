@@ -51,7 +51,7 @@ HIST_STAMPS="yyyy-mm-dd"
 BUNDLED_COMMANDS=(sidekiq)
 
 # bundler is loader after the rails plugin to that stuff works properly
-plugins=(capistrano cargo extract gem git history-substring-search postgres rails bundler)
+plugins=(cargo extract gem git history-substring-search postgres rails bundler)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -70,6 +70,9 @@ if [[ -f /usr/share/fzf/key-bindings.zsh ]]; then
 elif [[ -f /usr/local/share/examples/fzf/shell/key-bindings.zsh ]]; then
   source /usr/local/share/examples/fzf/shell/key-bindings.zsh
 fi
+
+# fnm - Fast Node Manager
+if which fnm > /dev/null; then eval "`fnm env --multi`"; fi
 
 # Base16 Shell
 BASE16_SHELL=$HOME/.config/base16-shell/
