@@ -8,7 +8,9 @@ export GDK_SCALE=2
 # dbus-update-activation-environment --systemd DISPLAY 
 
 # Make gnome-keyring play nice
+# https://wiki.archlinux.org/index.php/GNOME/Keyring#Start_SSH_and_Secrets_components_of_keyring_daemon
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+
 # NOTE: Auto-unlock of the keyring requires PAM configuration
 # https://wiki.archlinux.org/index.php/GNOME/Keyring#PAM_method
 # Add auth optional pam_gnome_keyring.so at the end of the auth section and
@@ -49,5 +51,5 @@ export SSH_AUTH_SOCK
 
 # Start compositor and WM
 compton &
+gnome-screensaver &
 copyq &
-light-locker &
