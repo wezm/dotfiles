@@ -314,7 +314,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
     -- && xset dpms force off
-    awful.key({ modkey, "Mod1",   }, "l",     function () awful.spawn("i3lock -e --color=000000") end,
+    awful.key({ modkey, "Mod1",   }, "l",     function () awful.spawn("loginctl lock-session") end,
               {description = "lock the screen", group = "awesome"}),
 
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
