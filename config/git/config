@@ -64,3 +64,5 @@
 	gpgsign = true
 [rebase]
 	autoStash = true
+[merge]
+	tool = bc3
