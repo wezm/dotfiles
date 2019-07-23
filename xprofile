@@ -18,7 +18,7 @@ eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 # section.
 export SSH_AUTH_SOCK
 
-# Polkit agent for virt-manager, etc. (gnome-polkit package on Arch)
+# Polkit agent for virt-manager, etc. (polkit-gnome package on Arch)
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Configure track pad on the fly
@@ -47,6 +47,15 @@ export SSH_AUTH_SOCK
 #     Identifier "Mouse"
 #     MatchDriver "mouse"
 #     Option "ZAxisMapping" "5 4"
+# EndSection
+
+# Arch
+# /etc/X11/xorg.conf.d/30-mouse.conf
+# Section "InputClass"
+#     Identifier "Mouse"
+#     Driver "libinput"
+#     MatchIsPointer "on"
+#     Option "NaturalScrolling" "true"
 # EndSection
 
 # Start compositor and WM
