@@ -216,7 +216,7 @@ awful.screen.connect_for_each_screen(function(s)
     s.mybarbox = wibox.widget.textbox()
 
     -- Spawn bar info
-    local bar_path = "/home/wmoore/Projects/bar/target/release/bar -a -w"
+    local bar_path = "/home/wmoore/Projects/bar/target/release/bar -a"
     awful.spawn.with_line_callback(bar_path, {
         stdout = function(line)
             s.mybarbox.markup = line
