@@ -544,6 +544,7 @@ awful.rules.rules = {
         class = {
           "Arandr",
           "Gpick",
+          "Gnome-calculator",
           "Kruler",
           "MessageWin",  -- kalarm.
           "Sxiv",
