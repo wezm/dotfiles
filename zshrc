@@ -65,10 +65,20 @@ if [[ -f /usr/local/share/zsh/site-functions/_aws ]]; then
   source /usr/local/share/zsh/site-functions/_aws
 fi
 
-if [[ -f /usr/share/fzf/key-bindings.zsh ]]; then
-  source /usr/share/fzf/key-bindings.zsh
-elif [[ -f /usr/local/share/examples/fzf/shell/key-bindings.zsh ]]; then
-  source /usr/local/share/examples/fzf/shell/key-bindings.zsh
+# fzf
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# if [[ -f /usr/share/fzf/key-bindings.zsh ]]; then
+#   source /usr/share/fzf/key-bindings.zsh
+# elif [[ -f /usr/local/share/examples/fzf/shell/key-bindings.zsh ]]; then
+#   source /usr/local/share/examples/fzf/shell/key-bindings.zsh
+# fi
+
+# skim
+if [[ -f /usr/share/skim/key-bindings.zsh ]]; then
+  source /usr/share/skim/key-bindings.zsh
+elif [[ -f /usr/local/share/examples/skim/shell/key-bindings.zsh ]]; then
+  source /usr/local/share/examples/skim/shell/key-bindings.zsh
 fi
 
 # fnm - Fast Node Manager
@@ -79,8 +89,6 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 source $ZSH/custom/prompt.sh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [ -f ~/.dotfiles/z/z.sh ] && source ~/.dotfiles/z/z.sh
 
