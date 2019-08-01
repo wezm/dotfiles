@@ -548,6 +548,7 @@ awful.rules.rules = {
           "Kruler",
           "MessageWin",  -- kalarm.
           "Sxiv",
+          "Tilda",
           "Wpa_gui",
           "pinentry",
           "veromix",
