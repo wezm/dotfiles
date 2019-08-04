@@ -70,6 +70,7 @@ Plug 'uptech/vim-open-alternate'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Plug 'vim-utils/vim-troll-stopper'
+Plug 'vmchale/dhall-vim'
 Plug 'Yggdroot/indentLine'
 Plug 'ryanoasis/vim-devicons' " need to load late to patch other plugins
 Plug 'aklt/plantuml-syntax'
