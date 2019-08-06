@@ -66,6 +66,10 @@ export FZF_ALT_C_COMMAND='fd --type d . --color=never'
 export FZF_DEFAULT_OPTS="--exact --history=$HOME/.fzfhistory"
 export FZF_TMUX="0"
 
+# fzf
+export SKIM_DEFAULT_COMMAND="fd --type f --color=never"
+export SKIM_DEFAULT_OPTIONS="--exact"
+
 # Tilix integration
 if [ $TERMINIX_ID ] || [ $VTE_VERSION ]; then
   if [[ -f /etc/profile.d/vte.sh ]]; then
