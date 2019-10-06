@@ -9,17 +9,48 @@ restic backup \
   --exclude target \
   --exclude ~/Downloads \
   --exclude ~/Source \
-  --exclude ~/.rustup \
-  --exclude ~/.cargo \
-  --exclude ~/.cache \
-  --exclude ~/.Idea\* \
-  --exclude ~/.CLion\* \
   --exclude ~/.bundle \
   --exclude ~/.cabal \
-  --exclude ~/.opam \
-  --exclude ~/.rancher \
-  --exclude ~/.yarn \
+  --exclude ~/.cache \
+  --exclude ~/.cargo \
+  --exclude ~/.CLion\* \
+  --exclude ~/.dbeaver-drivers \
+  --exclude ~/.dbeaver4 \
+  --exclude ~/.debug \
+  --exclude ~/.dmrc \
+  --exclude ~/.docker \
   --exclude ~/.dub \
+  --exclude ~/.eclipse \
+  --exclude ~/.energia15 \
+  --exclude ~/.esd_auth \
+  --exclude ~/.fnm \
+  --exclude ~/.gem \
+  --exclude ~/.ghc \
+  --exclude ~/.Idea\* \
+  --exclude ~/.idris \
+  --exclude ~/.java \
+  --exclude ~/.lesshst \
+  --exclude ~/.mindustry \
+  --exclude ~/.mozilla \
+  --exclude ~/.npm \
+  --exclude ~/.nv \
+  --exclude ~/.nvidia-settings-rc \
+  --exclude ~/.opam \
+  --exclude ~/.oracle_jre_usage \
+  --exclude ~/.password-store \
+  --exclude ~/.pki \
+  --exclude ~/.rancher \
+  --exclude ~/.rustup \
+  --exclude ~/.ssr \
+  --exclude ~/.stack \
+  --exclude ~/.subversion \
+  --exclude ~/.swt \
+  --exclude ~/.tig_history \
+  --exclude ~/.vimrc_background \
+  --exclude ~/.vimundo \
+  --exclude ~/.vscode \
+  --exclude ~/.xargo \
+  --exclude ~/.yarn \
   --exclude ~/.dotfiles/nvm \
   --exclude ~/.dotfiles/yarn \
   --exclude ~/.dotfiles/rbenv \
