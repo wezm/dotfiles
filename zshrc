@@ -65,14 +65,11 @@ if [[ -f /usr/local/share/zsh/site-functions/_aws ]]; then
   source /usr/local/share/zsh/site-functions/_aws
 fi
 
-# fzf
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# if [[ -f /usr/share/fzf/key-bindings.zsh ]]; then
-#   source /usr/share/fzf/key-bindings.zsh
-# elif [[ -f /usr/local/share/examples/fzf/shell/key-bindings.zsh ]]; then
-#   source /usr/local/share/examples/fzf/shell/key-bindings.zsh
-# fi
+# crenv
+if [[ -d "$HOME/.crenv/bin" ]]; then
+  export PATH="$HOME/.crenv/bin:$PATH"
+  eval "$(crenv init -)"
+fi
 
 # skim
 if [[ -f /usr/share/skim/key-bindings.zsh ]]; then
