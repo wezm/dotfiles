@@ -28,6 +28,7 @@ Plug 'edkolev/promptline.vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'ervandew/supertab'
 Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
+Plug 'GEverding/vim-hocon'
 Plug 'godlygeek/tabular'
 Plug 'hashivim/vim-terraform'
 Plug 'idris-hackers/idris-vim'
@@ -51,7 +52,9 @@ Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'pearofducks/ansible-vim'
 Plug 'pest-parser/pest.vim'
+Plug 'rhysd/vim-crystal'
 Plug 'rust-lang/rust.vim'
+Plug 'ron-rs/ron.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'sirtaj/vim-openscad'
@@ -74,7 +77,7 @@ Plug 'vmchale/dhall-vim'
 Plug 'Yggdroot/indentLine'
 Plug 'ryanoasis/vim-devicons' " need to load late to patch other plugins
 Plug 'aklt/plantuml-syntax'
-Plug 'https://git.sr.ht/~wezm/vim-mercury'
+Plug 'wezm/vim-mercury'
 
 if has('nvim')
   Plug 'autozimu/LanguageClient-neovim', {
