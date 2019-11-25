@@ -6,3 +6,4 @@
 *.un~
 Session.vim
 /tags
+.idea
