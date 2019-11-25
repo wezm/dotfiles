@@ -29,7 +29,6 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'ervandew/supertab'
 Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
 Plug 'GEverding/vim-hocon'
-Plug 'glacambre/firenvim', { 'do': function('firenvim#install') }
 Plug 'godlygeek/tabular'
 Plug 'hashivim/vim-terraform'
 Plug 'idris-hackers/idris-vim'
