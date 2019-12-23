@@ -59,7 +59,7 @@ source $ZSH/oh-my-zsh.sh
 unsetopt auto_name_dirs
 
 # rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if command -v rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 if [[ -f /usr/local/share/zsh/site-functions/_aws ]]; then
   source /usr/local/share/zsh/site-functions/_aws
@@ -79,7 +79,7 @@ elif [[ -f /usr/local/share/examples/skim/shell/key-bindings.zsh ]]; then
 fi
 
 # fnm - Fast Node Manager
-if which fnm > /dev/null; then eval "`fnm env --multi`"; fi
+if command -v fnm > /dev/null; then eval "`fnm env --multi`"; fi
 
 # Base16 Shell
 BASE16_SHELL=$HOME/.config/base16-shell/

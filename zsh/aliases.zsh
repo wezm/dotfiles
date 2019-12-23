@@ -54,7 +54,7 @@ alias ct='cargo test'
 alias cr='cargo run'
 alias cu='cargo update'
 
-which exa 2>&1 > /dev/null
+command -v exa > /dev/null
 if [[ $? -eq 0 ]]; then
   # Override default oh-my-zsh directories aliases with exa ones
   # https://the.exa.website/
@@ -65,6 +65,8 @@ if [[ $? -eq 0 ]]; then
   alias ll='exa -l'
   alias la='exa -la'
 fi
+
+if command -v gopass > /dev/null; then alias pass=gopass; fi
 
 alias zswap='sudo grep -R . /sys/kernel/debug/zswap'
 

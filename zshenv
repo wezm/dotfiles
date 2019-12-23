@@ -25,7 +25,7 @@ if [[ -d "$HOME/.rbenv/bin" ]]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
 fi
 
-$(which yarn 2>&1 > /dev/null)
+command -v yarn > /dev/null
 if [[ $? -eq 0 ]]; then
   export PATH="$PATH:$(yarn global bin --offline)"
 elif [[ -d "$HOME/.yarn/bin" ]]; then
@@ -36,7 +36,7 @@ if [[ -d "$HOME/.local/bin" ]]; then
   export PATH="$HOME/.local/bin:$PATH"
 fi
 
-`which nvim 2>&1 > /dev/null`
+command -v nvim > /dev/null
 if [[ $? -eq 0 ]]; then
   export EDITOR=nvim
   alias vim=nvim
@@ -98,7 +98,7 @@ fi
 export NVIM_GTK_PREFER_DARK_THEME=1
 
 # Alacritty
-$(which gsettings 2>&1 > /dev/null)
+command -v gsettings > /dev/null
 if [[ $? -eq 0 ]]; then
   gnome_scaling_factor=$(gsettings get org.gnome.desktop.interface scaling-factor | awk '{ print $2 }')
   if [[ $gnome_scaling_factor -gt 0 ]]; then
