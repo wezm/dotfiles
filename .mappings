@@ -25,7 +25,6 @@ zshenv = "~/.zshenv"
 
 [linux]
 toprc = "~/.toprc"
-xmonad = "~/.xmonad"
 
 [freebsd]
 
