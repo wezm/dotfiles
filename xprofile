@@ -58,6 +58,10 @@ export SSH_AUTH_SOCK
 #     Option "NaturalScrolling" "true"
 # EndSection
 
+# Use menu key as compose key
+# https://wiki.archlinux.org/index.php/Xorg/Keyboard_configuration#Configuring_compose_key
+setxkbmap -option compose:menu
+
 # Start compositor and WM
 compton &
 gnome-screensaver &
