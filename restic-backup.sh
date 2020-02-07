@@ -13,6 +13,7 @@ restic backup \
   --exclude ~/.cabal \
   --exclude ~/.cache \
   --exclude ~/.cargo \
+  --exclude ~/.crenv \
   --exclude ~/.CLion\* \
   --exclude ~/.dbeaver-drivers \
   --exclude ~/.dbeaver4 \
