@@ -68,3 +68,9 @@
 	tool = bc3
 [checkout]
 	defaultRemote = origin
+
+[sendemail]
+	smtpserver = smtp.fastmail.com
+	smtpuser = wezm@imap.cc
+	smtpencryption = tls
+	smtpserverport = 587
