@@ -567,7 +567,7 @@ let g:LanguageClient_serverCommands = {
     \ 'typescript': ['typescript-language-server', '--stdio'],
     \ 'javascript.jsx': ['typescript-language-server', '--stdio'],
     \ 'reason': ['/home/wmoore/.local/bin/reason-language-server.exe'],
-    \ 'rust': ['rls'],
+    \ 'rust': ['ra_lsp_server-linux'],
     \ }
 let g:LanguageClient_useVirtualText = 0
 
