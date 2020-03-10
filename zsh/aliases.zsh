@@ -71,3 +71,8 @@ if command -v gopass > /dev/null; then alias pass=gopass; fi
 alias zswap='sudo grep -R . /sys/kernel/debug/zswap'
 
 alias ip='ip --color'
+
+command -v ytop > /dev/null
+if [[ $? -eq 0 ]]; then
+  alias top=ytop
+fi
