@@ -1,0 +1,6 @@
+# /usr/share/X11/locale/used_locale/Compose
+# where used_locale is for example en_US.UTF-8.
+include "%L"
+
+<Multi_key> <period> <period> <period>   : "…"   ellipsis # HORIZONTAL ELLIPSIS
+<Multi_key> <period> <period> <bar>      : "⋮"   U22ee    # VERTICAL ELLIPSIS
