@@ -72,7 +72,11 @@ alias zswap='sudo grep -R . /sys/kernel/debug/zswap'
 
 alias ip='ip --color'
 
-command -v ytop > /dev/null
+# command -v ytop > /dev/null
+# if [[ $? -eq 0 ]]; then
+#   alias top="ytop -m"
+# fi
+command -v zenith > /dev/null
 if [[ $? -eq 0 ]]; then
-  alias top=ytop
+  alias top="zenith -d0 -n0 --disable-history"
 fi
