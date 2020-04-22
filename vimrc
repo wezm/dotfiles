@@ -298,12 +298,15 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
 map <F4> :noh<CR>
+map <F5> @:<CR>
 
 " Easier moving in tabs and windows
 map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
 map <C-L> <C-W>l<C-W>_
 map <C-H> <C-W>h<C-W>_
+
+" let g:xml_syntax_folding=1
 
 " Lusty explorer options
 let g:LustyJugglerSuppressRubyWarning = 1
@@ -325,7 +328,7 @@ let g:investigate_command_for_rust = '^i!/usr/bin/zeal rust:^s'
 " markdown-composer
 " Don't automatically open browser when loading a Markdown file
 let g:markdown_composer_autostart = 0
-let g:markdown_composer_syntax_theme = 'tomorrow-night'
+" let g:markdown_composer_syntax_theme = 'tomorrow-night'
 
 if has("autocmd")
   au  BufNewFile,BufRead *.mustache set syntax=mustache
@@ -554,7 +557,7 @@ nnoremap <leader>v mx:s/<Paste[>]//e<CR>:set nopaste<CR>:noh<CR>`x
 " let g:deoplete#sources.cpp = ['buffer', 'tag']
 
 " enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
+" autocmd BufEnter * call ncm2#enable_for_buffer()
 
 " LanguageClient-neovim
 " https://github.com/theia-ide/typescript-language-server
@@ -569,7 +572,7 @@ let g:LanguageClient_serverCommands = {
     \ 'typescript': ['typescript-language-server', '--stdio'],
     \ 'javascript.jsx': ['typescript-language-server', '--stdio'],
     \ 'reason': ['/home/wmoore/.local/bin/reason-language-server.exe'],
-    \ 'rust': ['ra_lsp_server-linux'],
+    \ 'rust': ['rust-analyzer'],
     \ }
 let g:LanguageClient_useVirtualText = 0
 
