@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ffmpeg -f pulse -i default -c:a aac "$@"

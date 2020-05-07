@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ffmpeg -f v4l2 -video_size 1280x720 -input_format mjpeg -i /dev/video0 -f pulse -i default -c:v libx264 -preset ultrafast -c:a aac "$@"
