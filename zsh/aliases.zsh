@@ -23,39 +23,20 @@ aurget () {
 alias t='tig'
 alias ts='tig status'
 alias tb='tig blame'
-
-# Vimish stuff
-alias vless="/usr/share/nvim/runtime/macros/less.sh"
-alias vf="vifm"
-
-# Capistrano
-alias capss="cap staging ssh"
-alias capsc="cap staging console"
-alias capsd="cap staging deploy"
-alias capps="cap production ssh"
-alias cappc="cap production console"
-alias cappd="cap production deploy"
-
-# Other
-alias ff='mdfind -onlyin . -name'
-alias fff='mdfind -name'
-alias ffff='mdfind -onlyin .'
+alias th='tig stash'
 
 # Rails
 alias ttr='touch tmp/restart.txt'
 
-# Projects, mnemonic: j = jump
-alias jm='cd ~/Projects/Musicast'
-alias jl='cd ~/Projects/pkb'
-
 # Cargo
 alias cb='cargo build'
-alias ct='cargo test'
+alias cc='cargo check'
 alias cr='cargo run'
+alias ct='cargo test'
 alias cu='cargo update'
 
-command -v exa > /dev/null
-if [[ $? -eq 0 ]]; then
+# Use exa as ls
+if command -v exa > /dev/null; then
   # Override default oh-my-zsh directories aliases with exa ones
   # https://the.exa.website/
   unalias ls
@@ -66,17 +47,16 @@ if [[ $? -eq 0 ]]; then
   alias la='exa -la'
 fi
 
+# Use gopass as pass
 if command -v gopass > /dev/null; then alias pass=gopass; fi
 
 alias zswap='sudo grep -R . /sys/kernel/debug/zswap'
 
 alias ip='ip --color'
 
-# command -v ytop > /dev/null
-# if [[ $? -eq 0 ]]; then
-#   alias top="ytop -m"
-# fi
-command -v zenith > /dev/null
-if [[ $? -eq 0 ]]; then
-  alias top="zenith -d0 -n0 --disable-history"
-fi
+# Use zenith as top
+if command -v zenith > /dev/null; then alias top="zenith -d0 -n0 --disable-history"; fi
+
+# Use bat as cat
+if command -v bat > /dev/null; then alias cat=bat; fi
+
