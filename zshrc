@@ -87,7 +87,8 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 
 source $ZSH/custom/prompt.sh
 
-[ -f ~/.dotfiles/z/z.sh ] && source ~/.dotfiles/z/z.sh
+#[ -f ~/.dotfiles/z/z.sh ] && source ~/.dotfiles/z/z.sh
+if command -v zoxide > /dev/null; then eval "$(zoxide init zsh)"; fi
 
 # OPAM configuration
 . /home/wmoore/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

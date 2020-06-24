@@ -63,6 +63,7 @@ export SSH_AUTH_SOCK
 setxkbmap -option compose:menu
 
 # Start compositor and WM
-compton &
+picom &
 gnome-screensaver &
 copyq &
+tilda &

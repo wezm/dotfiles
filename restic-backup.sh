@@ -9,6 +9,7 @@ restic backup \
   --exclude target \
   --exclude ~/Downloads \
   --exclude ~/Source \
+  --exclude ~/.atom \
   --exclude ~/.bundle \
   --exclude ~/.cabal \
   --exclude ~/.cache \
@@ -55,7 +56,7 @@ restic backup \
   --exclude ~/.dotfiles/nvm \
   --exclude ~/.dotfiles/yarn \
   --exclude ~/.dotfiles/rbenv \
-  --exclude ~/.dotfile/config/*/Cache \
+  --exclude ~/.dotfiles/config/\*/Cache \
   --exclude ~/.dotfiles/config/nvim/plugged \
   --exclude ~/.dotfiles/config/Atom \
   --exclude ~/.dotfiles/config/Code \

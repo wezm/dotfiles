@@ -36,6 +36,8 @@ if [[ -d "$HOME/.local/bin" ]]; then
   export PATH="$HOME/.local/bin:$PATH"
 fi
 
+[ -d ~/.local/opt/mercury-2020-04-15/bin ] && export PATH="$HOME/.local/opt/mercury-2020-04-15/bin:$PATH"
+
 command -v nvim > /dev/null
 if [[ $? -eq 0 ]]; then
   export EDITOR=nvim
@@ -63,12 +65,12 @@ fi
 # fzf
 export FZF_DEFAULT_COMMAND='fd --type f --color=never'
 export FZF_ALT_C_COMMAND='fd --type d . --color=never'
-export FZF_DEFAULT_OPTS="--exact --history=$HOME/.fzfhistory"
+export FZF_DEFAULT_OPTS="--exact --history=$HOME/.cache/fzfhistory"
 export FZF_TMUX="0"
 
-# fzf
+# skim
 export SKIM_DEFAULT_COMMAND="fd --type f --color=never"
-export SKIM_DEFAULT_OPTIONS="--exact"
+export SKIM_DEFAULT_OPTIONS="--exact --history=$HOME/.cache/skimhistory"
 
 # Tilix integration
 if [ $TERMINIX_ID ] || [ $VTE_VERSION ]; then
@@ -107,9 +109,6 @@ if [[ $? -eq 0 ]]; then
     export WINIT_HIDPI_FACTOR=1
   fi
 fi
-
-# Make bat use less instead of more on FreeBSD
-export BAT_PAGER=less
 
 # Smooth scrolling in Firefox
 export MOZ_USE_XINPUT2=1

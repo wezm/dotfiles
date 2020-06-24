@@ -74,3 +74,5 @@
 	smtpuser = wezm@imap.cc
 	smtpencryption = tls
 	smtpserverport = 587
+[pull]
+	rebase = false

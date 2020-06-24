@@ -13,6 +13,7 @@ function! BuildComposer(info)
 endfunction
 
 call plug#begin()
+Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/deleft.vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
@@ -229,6 +230,8 @@ iab figther    fighter
 iab flase      false
 iab fro        for
 iab fucntion   function
+iab glpyh      glyph
+iab Glpyh      Glyph
 iab homepgae   homepage
 iab locatoin   location
 iab logifle    logfile
@@ -453,7 +456,7 @@ endif
 
     " nnoremap <silent> <Leader><Leader> :Files<CR>
     nnoremap <C-p>F :Files<CR>
-    nnoremap <Leader><Leader> :GitFiles<CR>
+    nnoremap <Leader><Leader> :Buffers<CR>
     nnoremap <C-p>f :GitFiles<CR>
     nnoremap <C-p>c :GitFiles?<CR>
     nnoremap <C-p>b :Buffers<CR>
@@ -526,6 +529,13 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='minimalist'
 let g:airline#extensions#whitespace#checks = [ 'trailing' ]
 
+" gitgutter
+" let g:gitgutter_sign_added = '﹢'
+let g:gitgutter_sign_modified = '▪'
+" let g:gitgutter_sign_removed = '-'
+" let g:gitgutter_sign_removed_first_line = '^^'
+" let g:gitgutter_sign_modified_removed = 'ww'
+
 " Alternate files
 " Needs alt: https://github.com/uptech/alt
 " Run a given vim command on the results of alt from a given path.
@@ -563,18 +573,21 @@ nnoremap <leader>v mx:s/<Paste[>]//e<CR>:set nopaste<CR>:noh<CR>`x
 " https://github.com/theia-ide/typescript-language-server
 let g:LanguageClient_serverCommands = {
     \ 'css': ['css-languageserver', '--stdio'],
-    \ 'sass': ['css-languageserver', '--stdio'],
-    \ 'scss': ['css-languageserver', '--stdio'],
-    \ 'less': ['css-languageserver', '--stdio'],
-    \ 'json': ['json-languageserver', '--stdio'],
+    \ 'go': ['gopls'],
     \ 'html': ['html-languageserver', '--stdio'],
     \ 'javascript': ['typescript-language-server', '--stdio'],
-    \ 'typescript': ['typescript-language-server', '--stdio'],
     \ 'javascript.jsx': ['typescript-language-server', '--stdio'],
+    \ 'json': ['json-languageserver', '--stdio'],
+    \ 'less': ['css-languageserver', '--stdio'],
     \ 'reason': ['/home/wmoore/.local/bin/reason-language-server.exe'],
     \ 'rust': ['rust-analyzer'],
+    \ 'sass': ['css-languageserver', '--stdio'],
+    \ 'scss': ['css-languageserver', '--stdio'],
+    \ 'typescript': ['typescript-language-server', '--stdio'],
     \ }
-let g:LanguageClient_useVirtualText = 0
+let g:LanguageClient_useVirtualText = 'Diagnostics'
+" let g:LanguageClient_loggingFile = expand('/tmp/LanguageClient.log')
+" let g:LanguageClient_loggingLevel = 'INFO'
 
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
