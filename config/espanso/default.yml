@@ -1,8 +1,10 @@
 # espanso configuration file
 
-# This is the default configuration file, change it as you like it
 # You can refer to the official documentation:
 # https://espanso.org/docs/
+
+# Packages in use
+# * all-emojis
 
 # Matches are the substitution rules, when you type the "trigger" string
 # it gets replaced by the "replace" string.
@@ -24,7 +26,15 @@ matches:
       - name: date
         type: date
         params:
-          format: "%d %b %Y"
+          format: "%d %b %Y" # 17 Aug 2020
+
+  - trigger: "dddate"
+    replace: "{{date}}"
+    vars:
+      - name: date
+        type: shell
+        params:
+          cmd: "date" # Sun 28 Jun 2020 10:53:15 AEST
 
   - trigger: "ttime"
     replace: "{{time}}"
@@ -32,20 +42,11 @@ matches:
       - name: time
         type: date
         params:
-          format: "%H:%M:%S %P"
+          format: "%r" # 12:34:60 AM
 
   # Markdown
   - trigger: ";mdl"
-    replace: "[$|$]({{clipboard}})"
+    replace: "[$|$]({{clipboard}})" # [|](https://example.com)
     vars:
       - name: "clipboard"
         type: "clipboard"
-
-  # Shell commands
-  # - trigger: ";shell"
-  #   replace: "{{output}}"
-  #   vars:
-  #     - name: output
-  #       type: shell
-  #       params:
-  #         cmd: "echo Hello from your shell"
