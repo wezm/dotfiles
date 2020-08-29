@@ -47,9 +47,6 @@ if command -v exa > /dev/null; then
   alias la='exa -la'
 fi
 
-# Use gopass as pass
-if command -v gopass > /dev/null; then alias pass=gopass; fi
-
 alias zswap='sudo grep -R . /sys/kernel/debug/zswap'
 
 alias ip='ip --color'
