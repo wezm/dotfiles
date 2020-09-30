@@ -42,6 +42,7 @@
 	line-graphics = "utf-8"
 	mouse = true
 	refresh-mode = auto
+	main-view-id = yes
 [tig "bind"]
 	status = + !git commit --amend
 	status = C !git commit --verbose
