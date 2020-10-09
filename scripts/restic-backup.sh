@@ -9,50 +9,69 @@ restic backup \
   --exclude target \
   --exclude ~/Downloads \
   --exclude ~/Source \
+  \
+  --exclude ~/.android \
+  --exclude ~/.arduino15 \
+  --exclude ~/.aspnet \
   --exclude ~/.atom \
+  --exclude ~/.audacity-data \
+  --exclude ~/.azurefunctions \
   --exclude ~/.bundle \
   --exclude ~/.cabal \
   --exclude ~/.cache \
   --exclude ~/.cargo \
+  --exclude ~/.CLion2019.1 \
+  --exclude ~/.CLion2019.2 \
+  --exclude ~/.CLion2019.3 \
+  --exclude ~/.cmake \
   --exclude ~/.crenv \
-  --exclude ~/.CLion\* \
   --exclude ~/.dbeaver-drivers \
   --exclude ~/.dbeaver4 \
   --exclude ~/.debug \
-  --exclude ~/.dmrc \
-  --exclude ~/.docker \
-  --exclude ~/.dub \
+  --exclude ~/.dotnet \
   --exclude ~/.eclipse \
+  --exclude ~/.elm \
   --exclude ~/.energia15 \
-  --exclude ~/.esd_auth \
+  --exclude ~/.enve \
+  --exclude ~/.filite \
   --exclude ~/.fnm \
   --exclude ~/.gem \
   --exclude ~/.ghc \
-  --exclude ~/.Idea\* \
+  --exclude ~/.gnome \
+  --exclude ~/.gphoto \
+  --exclude ~/.idea \
   --exclude ~/.idris \
   --exclude ~/.java \
-  --exclude ~/.lesshst \
-  --exclude ~/.mindustry \
+  --exclude ~/.jssc \
+  --exclude ~/.MCTranscodingSDK \
+  --exclude ~/.mono \
   --exclude ~/.mozilla \
+  --exclude ~/.mozilla.aerocool \
+  --exclude ~/.node-gyp \
   --exclude ~/.npm \
+  --exclude ~/.nuget \
   --exclude ~/.nv \
-  --exclude ~/.nvidia-settings-rc \
-  --exclude ~/.opam \
+  --exclude ~/.omnisharp \
   --exclude ~/.oracle_jre_usage \
-  --exclude ~/.password-store \
+  --exclude ~/.parallel \
+  --exclude ~/.pipewire-media-session \
   --exclude ~/.pki \
-  --exclude ~/.rancher \
+  --exclude ~/.purple \
   --exclude ~/.rustup \
   --exclude ~/.ssr \
-  --exclude ~/.stack \
   --exclude ~/.subversion \
+  --exclude ~/.svg-buddy \
+  --exclude ~/.swipl-dir-history \
   --exclude ~/.swt \
-  --exclude ~/.tig_history \
-  --exclude ~/.vimrc_background \
-  --exclude ~/.vimundo \
+  --exclude ~/.templateengine \
+  --exclude ~/.var \
   --exclude ~/.vscode \
+  --exclude ~/.w3m \
   --exclude ~/.xargo \
   --exclude ~/.yarn \
+  --exclude ~/.zenith \
+  --exclude ~/.zgen.bk \
+  \
   --exclude ~/.dotfiles/nvm \
   --exclude ~/.dotfiles/yarn \
   --exclude ~/.dotfiles/rbenv \
