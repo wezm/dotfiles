@@ -4,3 +4,6 @@ include "%L"
 
 <Multi_key> <period> <period> <period>   : "…"   ellipsis # HORIZONTAL ELLIPSIS
 <Multi_key> <period> <period> <bar>      : "⋮"   U22ee    # VERTICAL ELLIPSIS
+
+<Multi_key> <0> <c>      : "℃"   U2103 # DEGREE CELSIUS
+
