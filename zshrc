@@ -79,7 +79,7 @@ elif [[ -f /usr/local/share/examples/skim/shell/key-bindings.zsh ]]; then
 fi
 
 # fnm - Fast Node Manager
-if command -v fnm > /dev/null; then eval "`fnm env --multi`"; fi
+if command -v fnm > /dev/null; then eval "`fnm env`"; fi
 
 # Base16 Shell
 BASE16_SHELL=$HOME/.config/base16-shell/
