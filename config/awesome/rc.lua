@@ -536,10 +536,14 @@ awful.rules.rules = {
     },
 
     -- Floating clients.
+    -- Run xprop and click on the window to determine its class, etc.
     { rule_any = {
+        -- To get a client instance from the command line, use the command
+        -- xprop WM_CLASS. The instance will be the first string.
         instance = {
           "DTA",  -- Firefox addon DownThemAll.
           "copyq",  -- Includes session name in class.
+          "qemu",
         },
         class = {
           "Arandr",
