@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -e
+
+# This script runs in ash on Alpine Linux. wget is the busybox wget.
+
+# # min	hour	day	month	weekday	command
+# 59	10	*	*	*	/home/wmoore/follower-count wezm >> /home/wmoore/follower-count.csv
+
+export PATH="$HOME/.cargo/bin:$PATH"
+
+USERNAME="$1"
+if [ -z "$USERNAME" ]; then
+  echo "Usage: follower-count username"
+  exit 1
+fi
+
+DATE=$(date -u '+%Y-%m-%dT%H:%M:%SZ')
+COUNT=$(wget -O - -o /dev/null "https://nitter.net/$USERNAME" | scraper -t '.profile-statlist .followers .profile-stat-num' | tr -cd '0-9')
+
+echo "$DATE","$COUNT"
