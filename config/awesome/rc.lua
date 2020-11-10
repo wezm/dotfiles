@@ -556,6 +556,8 @@ awful.rules.rules = {
           "Wpa_gui",
           "pinentry",
           "veromix",
+          "uxplay",
+          "Org.gnome.Nautilus",
           "xtightvncviewer"},
 
         name = {
@@ -566,6 +568,10 @@ awful.rules.rules = {
           "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
         }
       }, properties = { floating = true }},
+
+    -- Floating and titlebars enabled
+    { rule = { class = "Pavucontrol" },
+      properties = { floating = true, titlebars_enabled = true } },
 
     -- Add titlebars to normal clients and dialogs
     { rule_any = {type = { "dialog" }
