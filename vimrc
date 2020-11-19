@@ -75,6 +75,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Plug 'vim-utils/vim-troll-stopper'
 Plug 'vmchale/dhall-vim'
+Plug 'vmchale/ion-vim'
 Plug 'Yggdroot/indentLine'
 Plug 'ryanoasis/vim-devicons' " need to load late to patch other plugins
 Plug 'aklt/plantuml-syntax'
@@ -309,7 +310,7 @@ map <C-K> <C-W>k<C-W>_
 map <C-L> <C-W>l<C-W>_
 map <C-H> <C-W>h<C-W>_
 
-" let g:xml_syntax_folding=1
+let g:xml_syntax_folding=1
 
 " Lusty explorer options
 let g:LustyJugglerSuppressRubyWarning = 1
@@ -359,6 +360,8 @@ if has("autocmd")
   au FileType coffee IndentLinesEnable
 
   " autocmd BufNewFile,BufReadPost *.go setlocal listchars="tab:> ,trail:.,extends:>"
+
+  autocmd Filetype mercury set colorcolumn=80
 endif
 
 " Ctags {
@@ -420,6 +423,8 @@ command! Erb2slim :%!erb2slim % -
 command! Vimrc :tabe ~/.vimrc
 " edit README
 command! Readme :tabe README.md
+" read PKBUILD sha256sums
+command! Sha256Sums :r! makepkg -g 2>/dev/null
 
 " SuperTab
 " Use completion context to determin the completion mechanism to use. For

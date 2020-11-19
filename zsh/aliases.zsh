@@ -56,5 +56,8 @@ alias ip='ip --color'
 if command -v zenith > /dev/null; then alias top="zenith -d0 -n0 --disable-history"; fi
 
 # Use bat as cat
-if command -v bat > /dev/null; then alias cat=bat; fi
+if command -v bat > /dev/null; then
+  alias cat=bat;
+  alias b=bat
+fi
 
