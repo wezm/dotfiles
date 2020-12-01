@@ -35,6 +35,7 @@ alias cc='cargo check'
 alias cr='cargo run'
 alias ct='cargo test'
 alias cu='cargo update'
+alias fmt='cargo fmt'
 
 # Use exa as ls
 if command -v exa > /dev/null; then
