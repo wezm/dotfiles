@@ -16,6 +16,6 @@ if [ -z "$USERNAME" ]; then
 fi
 
 DATE=$(date -u '+%Y-%m-%dT%H:%M:%SZ')
-COUNT=$(wget -O - -o /dev/null "https://nitter.net/$USERNAME" | scraper -t '.profile-statlist .followers .profile-stat-num' | tr -cd '0-9')
+COUNT=$(wget -O - -o /dev/null "https://nitter.decentralised.social/$USERNAME" | scraper -t '.profile-statlist .followers .profile-stat-num' | tr -cd '0-9')
 
 echo "$DATE","$COUNT"
