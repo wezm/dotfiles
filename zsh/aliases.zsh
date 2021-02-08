@@ -62,3 +62,7 @@ if command -v bat > /dev/null; then
   alias b=bat
 fi
 
+# Use ht via its original name
+if command -v ht-rs > /dev/null; then
+  alias ht=ht-rs
+fi
