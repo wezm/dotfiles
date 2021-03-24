@@ -40,7 +40,6 @@ Plug 'lotabout/skim.vim' " Depends on skim plugin, which is installed with the s
 Plug 'junegunn/vim-easy-align'
 Plug 'kassio/neoterm'
 Plug 'kchmck/vim-coffee-script'
-Plug 'keith/investigate.vim'
 Plug 'lambdatoast/elm.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'LeonB/vim-nginx'
