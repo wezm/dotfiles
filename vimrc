@@ -350,8 +350,8 @@ if has("autocmd")
   autocmd Filetype markdown setlocal spell
   " autocmd Filetype markdown call deoplete#disable()
 
-  " Use 4 spaces in TypeScript
-  autocmd Filetype typescript setlocal sw=4
+  " Use 4 spaces in JavaScript and TypeScript
+  autocmd Filetype typescript,javascript,javascript.jsx setlocal sw=4
 
   " Set foldmethod to indentation for CoffeeScript files
   autocmd BufNewFile,BufReadPost *.coffee setlocal foldmethod=indent
