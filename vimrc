@@ -341,6 +341,8 @@ if has("autocmd")
 
   au BufRead,BufNewFile *.go set filetype=go
 
+  au BufRead,BufNewFile *.mun set filetype=mun
+
   " reload vimrc when written
   autocmd! bufwritepost .vimrc source %
 
@@ -588,10 +590,15 @@ let g:LanguageClient_serverCommands = {
     \ 'sass': ['css-languageserver', '--stdio'],
     \ 'scss': ['css-languageserver', '--stdio'],
     \ 'typescript': ['typescript-language-server', '--stdio'],
+    \ 'mun': ['mun', 'language-server'],
     \ }
 let g:LanguageClient_useVirtualText = 'Diagnostics'
 " let g:LanguageClient_loggingFile = expand('/tmp/LanguageClient.log')
 " let g:LanguageClient_loggingLevel = 'INFO'
+let g:LanguageClient_rootMarkers = {
+    \ 'mun': ['mun.toml'],
+    \ }
+
 
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
