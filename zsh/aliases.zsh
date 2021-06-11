@@ -61,3 +61,6 @@ if command -v bat > /dev/null; then
   alias cat=bat;
   alias b=bat
 fi
+
+# Use bsdtar as tar
+if command -v bsdtar > /dev/null; then alias tar=bsdtar; fi
