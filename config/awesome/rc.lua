@@ -544,6 +544,7 @@ awful.rules.rules = {
           "DTA",  -- Firefox addon DownThemAll.
           "copyq",  -- Includes session name in class.
           "qemu",
+          "1password",
         },
         class = {
           "Arandr",
