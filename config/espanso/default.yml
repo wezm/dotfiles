@@ -19,6 +19,16 @@ matches:
   - trigger: ";shrug"
     replace: "¯\\_(ツ)_/¯"
 
+  # mercury
+  - trigger: ";iio"
+    replace: "io, io"
+
+  - trigger: ";du"
+    replace: "di, uo"
+
+  - trigger: ";io"
+    replace: "!IO"
+
   # Date and Time
   - trigger: "ddate"
     replace: "{{date}}"
@@ -32,9 +42,10 @@ matches:
     replace: "{{date}}"
     vars:
       - name: date
-        type: shell
+        type: script
         params:
-          cmd: "date" # Sun 28 Jun 2020 10:53:15 AEST
+          args:
+            - "date" # Sun 28 Jun 2020 10:53:15 AEST
 
   - trigger: "ttime"
     replace: "{{time}}"
@@ -50,3 +61,15 @@ matches:
     vars:
       - name: "clipboard"
         type: "clipboard"
+
+  # Links
+  - trigger: ";tw"
+    replace: "{{link}}"
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+      - name: link
+        type: shell
+        params:
+          cmd: "awk 'BEGIN { link = ENVIRON[\"ESPANSO_CLIPBOARD\"]; sub(/twitter\\.com/, \"nitter.decentralised.social\", link); print link }'"
+
