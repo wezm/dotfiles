@@ -63,7 +63,7 @@ matches:
         type: "clipboard"
 
   # Links
-  - trigger: ";tw"
+  - trigger: ";nit"
     replace: "{{link}}"
     vars:
       - name: "clipboard"
