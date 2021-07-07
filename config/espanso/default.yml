@@ -29,6 +29,19 @@ matches:
   - trigger: ";io"
     replace: "!IO"
 
+  # Don't work for some reason:
+  # - trigger: ";pred"
+  #   replace: |
+  #     :- pred {{form1.name}}().
+  #     :- mode {{form1.name}}() is det.
+
+  #     {{form1.name}}() :-
+  #   vars:
+  #     - name: "form1"
+  #       type: form
+  #       params:
+  #         layout: "Predicate name {{name}}"
+
   # Date and Time
   - trigger: "ddate"
     replace: "{{date}}"

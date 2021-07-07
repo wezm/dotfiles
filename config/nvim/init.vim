@@ -53,6 +53,18 @@ endif
 " When writing a buffer, and on normal mode changes (after 750ms).
 call neomake#configure#automake('nw', 750)
 
+" LuaSnip
+lua require('snippets')
+imap <silent><expr> <C-\> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<C-\>'
+inoremap <silent> <S-C-\> <cmd>lua require'luasnip'.jump(-1)<Cr>
+
+snoremap <silent> <C-\> <cmd>lua require('luasnip').jump(1)<Cr>
+snoremap <silent> <S-C-\> <cmd>lua require('luasnip').jump(-1)<Cr>
+
+imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+
+
 " reload when written
 autocmd! bufwritepost init.vim source %
 

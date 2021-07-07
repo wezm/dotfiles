@@ -40,6 +40,7 @@ Plug 'lotabout/skim.vim' " Depends on skim plugin, which is installed with the s
 Plug 'junegunn/vim-easy-align'
 Plug 'kassio/neoterm'
 Plug 'kchmck/vim-coffee-script'
+Plug 'L3MON4D3/LuaSnip'
 Plug 'lambdatoast/elm.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'LeonB/vim-nginx'
@@ -508,12 +509,12 @@ endif
     " xmap <leader><tab> <plug>(fzf-maps-x)
     " omap <leader><tab> <plug>(fzf-maps-o)
     "
-    command! -bang -nargs=* Rg
-          \ call fzf#vim#grep(
-          \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
-          \   <bang>0 ? fzf#vim#with_preview('up:60%')
-          \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-          \   <bang>0)
+    " command! -bang -nargs=* Rg
+    "       \ call fzf#vim#grep(
+    "       \   'rg --column --line-number --no-heading --color=always -- '.shellescape(<q-args>), 1,
+    "       \   <bang>0 ? fzf#vim#with_preview('up:60%')
+    "       \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+    "       \   <bang>0)
 " }
 
 " vim-surround {
