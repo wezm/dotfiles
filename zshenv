@@ -116,4 +116,11 @@ export MOZ_USE_XINPUT2=1
 # Some defaults for less
 export LESS="-FRX"
 
+# Perl and CPAN
+PATH="/home/wmoore/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/wmoore/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/wmoore/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/wmoore/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/wmoore/perl5"; export PERL_MM_OPT;
+
 source "$HOME/.zshenv_private"
