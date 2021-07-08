@@ -79,3 +79,5 @@
 	rebase = false
 [init]
 	defaultBranch = main
+[advice]
+	addEmptyPathspec = false
