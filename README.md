@@ -31,6 +31,16 @@ enabled (to clone repos).
     # xbps-install neovim
     nvim :PlugInstall
 
+## gsettings
+
+### Monospace font
+
+    gsettings set org.gnome.desktop.interface monospace-font-name 'PragmataPro Mono Regular 10'
+
+### Location services
+
+    gsettings set org.gnome.system.location enabled true
+
 [dot]: https://github.com/ubnt-intrepid/dot
 [Void Linux]: http://www.voidlinux.eu/
 [Neovim]: https://neovim.io/
