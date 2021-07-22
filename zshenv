@@ -72,6 +72,8 @@ export FZF_TMUX="0"
 export SKIM_DEFAULT_COMMAND="fd --type f --color=never"
 export SKIM_DEFAULT_OPTIONS="--exact --history=$HOME/.cache/skimhistory"
 
+export GRAB_HOME="$HOME/Source"
+
 # Tilix integration
 if [ $TERMINIX_ID ] || [ $VTE_VERSION ]; then
   if [[ -f /etc/profile.d/vte.sh ]]; then
@@ -122,5 +124,10 @@ PERL5LIB="/home/wmoore/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LI
 PERL_LOCAL_LIB_ROOT="/home/wmoore/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/wmoore/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/wmoore/perl5"; export PERL_MM_OPT;
+
+# Deno
+if [[ -d "$HOME/.deno/bin" ]]; then
+  export PATH="$HOME/.deno/bin:$PATH"
+fi
 
 source "$HOME/.zshenv_private"
