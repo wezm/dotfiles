@@ -371,6 +371,21 @@ globalkeys = gears.table.join(
               {description = "show the menubar", group = "launcher"}),
 
     -- Media keys
+    awful.key({}, "XF86AudioPrev", function()
+                  awful.spawn("playerctl previous", false)
+              end,
+              {description = "prev track", group = "media"}),
+
+    awful.key({}, "XF86AudioPlay", function()
+                  awful.spawn("playerctl play-pause", false)
+              end,
+              {description = "play/pause", group = "media"}),
+
+    awful.key({}, "XF86AudioNext", function()
+                  awful.spawn("playerctl next", false)
+              end,
+              {description = "next track", group = "media"}),
+
     awful.key({}, "XF86AudioMute", function()
                   awful.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle", false)
               end,
@@ -386,6 +401,7 @@ globalkeys = gears.table.join(
               end,
               {description = "volume up", group = "media"}),
 
+    -- Screen brightness
     awful.key({}, "XF86MonBrightnessDown", function()
                   -- awful.spawn("/usr/bin/pkexec /usr/bin/brillo -u 100000 -U 10", false)
                   -- Above doesn't work but below does for some reason
@@ -400,6 +416,7 @@ globalkeys = gears.table.join(
               end,
               {description = "brightness up", group = "media"}),
 
+    -- Screenshots
     awful.key({}, "Print", function ()
                   awful.spawn.with_shell("cd ~/Pictures && shotgun \"Screenshot from $(date '+%Y-%m-%d %H-%M-%S').png\"", false)
               end,
