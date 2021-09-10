@@ -103,7 +103,7 @@ set complete-=i                " Don't complete in included files
 set completeopt=noinsert,menuone,noselect
 set smarttab
 set viminfo='20,\"500          " read/write a .viminfo file -- limit regs to 500 lines
-set history=50                 " keep 50 lines of command history
+set history=100                 " keep 50 lines of command history
 set laststatus=2
 set ruler                      " Show the cursor position all the time
 set sm                         " Show matching braces
@@ -123,11 +123,6 @@ set softtabstop=2
 set shiftwidth=2
 
 set mouse=a
-
-" Use <C-L> to clear the highlighting of :set hlsearch.
-if maparg('<C-L>', 'n') ==# ''
-  nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
-endif
 
 set number         " Line numbers
 " set relativenumber " Relative line numbers
@@ -186,11 +181,13 @@ set guioptions-=t " No tear off menus
 set splitbelow
 set splitright
 
-" Persistent undo 7.3 onwards
-if exists("+undofile")
-  set undofile
-  set undodir=~/.vimundo,.
+" Persistent undo
+let s:undodir = $HOME . "/.vimundo"
+if !isdirectory(s:undodir)
+    call mkdir(s:undodir, "", 0700)
 endif
+let &undodir=s:undodir
+set undofile
 
 " Allow editing past the end of link in visual block mode
 set virtualedit=block
@@ -304,6 +301,13 @@ vnoremap <F1> <ESC>
 map <F4> :noh<CR>
 map <F5> @:<CR>
 
+" Easier to press toggle buffer
+nnoremap <Backspace> <C-^>
+
+" When navigating, center the cursor
+nnoremap n nzz
+nnoremap N Nzz
+
 " Easier moving in tabs and windows
 map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
@@ -341,8 +345,8 @@ if has("autocmd")
   "au BufWritePost *.c,*.cpp,*.h,*.rb,*.py silent! !ctags -R &
 
   au BufRead,BufNewFile *.go set filetype=go
-
   au BufRead,BufNewFile *.mun set filetype=mun
+  au BufRead,BufNewFile *.tera set filetype=jinja
 
   " reload vimrc when written
   autocmd! bufwritepost .vimrc source %
