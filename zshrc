@@ -58,8 +58,11 @@ source $ZSH/oh-my-zsh.sh
 # Fix for broken zsh prompt
 unsetopt auto_name_dirs
 
-# rbenv
-if command -v rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+# frum - Ruby version manager
+if command -v frum > /dev/null; then
+  export FRUM_DIR="$HOME/.config/frum"
+  eval "$(frum init)"
+fi
 
 if [[ -f /usr/local/share/zsh/site-functions/_aws ]]; then
   source /usr/local/share/zsh/site-functions/_aws

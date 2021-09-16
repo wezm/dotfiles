@@ -21,10 +21,6 @@ if [[ -d "$HOME/.cargo/bin" ]]; then
   export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
-if [[ -d "$HOME/.rbenv/bin" ]]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
-fi
-
 command -v yarn > /dev/null
 if [[ $? -eq 0 ]]; then
   export PATH="$PATH:$(yarn global bin --offline)"
