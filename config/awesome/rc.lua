@@ -591,10 +591,21 @@ awful.rules.rules = {
     { rule = { class = "Pavucontrol" },
       properties = { floating = true, titlebars_enabled = true } },
 
+    -- Spawn some floating windows always centered
+    { rule_any = {
+        instance = {
+          "copyq",
+          "1password",
+        },
+        class = {
+          "pinentry"
+        },
+      },
+      properties = { floating = true, placement = awful.placement.centered } },
+
     -- Add titlebars to normal clients and dialogs
-    { rule_any = {type = { "dialog" }
-      }, properties = { titlebars_enabled = true }
-    },
+    { rule_any = {type = { "dialog" } },
+      properties = { titlebars_enabled = true } },
 
     -- Start these clients full-screen
     { rule = { class = "Bcompare" },
