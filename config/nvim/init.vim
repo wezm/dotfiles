@@ -64,6 +64,18 @@ snoremap <silent> <S-C-\> <cmd>lua require('luasnip').jump(-1)<Cr>
 imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
 smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
 
+" nvim-tree
+let g:nvim_tree_ignore = [ '.pyc', '.git', '.hg', '.svn', '.bzr' ]
+let g:nvim_tree_gitignore = 1 "0 by default
+let g:nvim_tree_quit_on_open = 1 "0 by default, closes the tree when you open a file
+let g:nvim_tree_highlight_opened_files = 1 "0 by default, will enable folder and file icon highlight for opened files/directories.
+let g:nvim_tree_group_empty = 1 " 0 by default, compact folders that only contain a single folder into one node in the file tree
+let g:nvim_tree_icon_padding = '  ' "one space by default, used for rendering the space between the icon and the filename. Use with caution, it could break rendering if you set an empty string depending on your font.
+
+lua require('tree')
+
+map <Leader>e :NvimTreeFindFile<CR>
+map <Leader>t :NvimTreeToggle<CR>
 
 " reload when written
 autocmd! bufwritepost init.vim source %
