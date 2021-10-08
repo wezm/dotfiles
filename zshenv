@@ -68,6 +68,8 @@ export FZF_TMUX="0"
 export SKIM_DEFAULT_COMMAND="fd --type f --color=never"
 export SKIM_DEFAULT_OPTIONS="--exact --history=$HOME/.cache/skimhistory"
 
+# git-grab
+# https://github.com/wezm/git-grab
 export GRAB_HOME="$HOME/Source"
 
 # Tilix integration
