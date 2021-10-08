@@ -29,6 +29,9 @@ matches:
   - trigger: ";io"
     replace: "!IO"
 
+  - trigger: ";pl"
+    replace: "print_line($|$, !IO),"
+
   # Don't work for some reason:
   # - trigger: ";pred"
   #   replace: |
