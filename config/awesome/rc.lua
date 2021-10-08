@@ -576,6 +576,7 @@ awful.rules.rules = {
           "veromix",
           "uxplay",
           "Org.gnome.Nautilus",
+          "vlc",
           "xtightvncviewer"},
 
         name = {
@@ -598,7 +599,8 @@ awful.rules.rules = {
           "1password",
         },
         class = {
-          "pinentry"
+          "pinentry",
+          "Org.gnome.NautilusPreviewer"
         },
       },
       properties = { floating = true, placement = awful.placement.centered } },
