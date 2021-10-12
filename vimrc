@@ -56,6 +56,7 @@ Plug 'rhysd/vim-crystal'
 Plug 'rust-lang/rust.vim'
 Plug 'ron-rs/ron.vim'
 Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
 Plug 'sirtaj/vim-openscad'
 Plug 'slim-template/vim-slim'
 Plug 'smerrill/vcl-vim-plugin'
@@ -89,8 +90,6 @@ if has('nvim')
   Plug 'ncm2/ncm2'
   Plug 'roxma/nvim-yarp'
   Plug 'L3MON4D3/LuaSnip'
-  Plug 'kyazdani42/nvim-web-devicons' " for file icons
-  Plug 'kyazdani42/nvim-tree.lua'
 endif
 
 call plug#end()
@@ -374,6 +373,24 @@ endif
     set tags=./tags;/,~/.vimtags
 " }
 
+" NerdTree {
+    " map <C-E> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
+    map <Leader>e :NERDTreeFind<CR>
+    map <Leader>t :NERDTreeToggle<CR>
+    map <Leader>m :NERDTreeMirror<CR>
+    " nmap <leader>nt :NERDTreeFind<CR>
+
+    let NERDSpaceDelims=1
+    let NERDTreeChDirMode=0
+    let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
+    let NERDTreeKeepTreeInNewTab=1
+    let NERDTreeMouseMode=2
+    let NERDTreeQuitOnOpen=1
+    let NERDTreeShowBookmarks=1
+    let NERDTreeShowHidden=1
+    let g:nerdtree_tabs_open_on_gui_startup=0
+" }
+
 " Tabularize {
     " nmap <Leader>a& :Tabularize /&<CR>
     " vmap <Leader>a& :Tabularize /&<CR>
@@ -428,10 +445,10 @@ if has("autocmd") && exists("+omnifunc")
 
   " Get SuperTab to use omnifunc when available, fall back on keyword
   " completion
-  " autocmd FileType *
-  "     \ if &omnifunc != '' |
-  "     \   call SuperTabChain(&omnifunc, "<c-p>") |
-  "     \ endif
+  autocmd FileType *
+      \ if &omnifunc != '' |
+      \   call SuperTabChain(&omnifunc, "<c-p>") |
+      \ endif
 endif
 
 
