@@ -430,7 +430,14 @@ globalkeys = gears.table.join(
     awful.key({ "Shift" }, "Print", nil, function ()
                   awful.spawn.with_shell("cd ~/Pictures && shotgun $(slop -c 0,0,0,0.75 -l -f \"-i %i -g %g\") \"Screenshot from $(date '+%Y-%m-%d %H-%M-%S').png\"", false)
               end,
-              {description = "take screenshot of selected region or window", group = "media"})
+              {description = "take screenshot of selected region or window", group = "media"}),
+
+    -- Dunst
+    awful.key({ "Control" }, "grave", function()
+                  awful.spawn("dunstctl history-pop", false)
+              end,
+              {description = "pop one notification from history", group = "notifications"})
+
 )
 
 clientkeys = gears.table.join(
