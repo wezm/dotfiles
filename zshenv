@@ -126,3 +126,4 @@ if [[ -d "$HOME/.deno/bin" ]]; then
 fi
 
 source "$HOME/.zshenv_private"
+if [ -e /home/wmoore/.nix-profile/etc/profile.d/nix.sh ]; then . /home/wmoore/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
