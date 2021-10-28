@@ -19,7 +19,7 @@ matches:
   - trigger: ";shrug"
     replace: "¯\\_(ツ)_/¯"
 
-  # mercury
+  # Work
   - trigger: ";iio"
     replace: "io, io"
 
@@ -31,6 +31,9 @@ matches:
 
   - trigger: ";pl"
     replace: "print_line($|$, !IO),"
+
+  - trigger: ";prs"
+    replace: "./bin/prince --shell"
 
   # Don't work for some reason:
   # - trigger: ";pred"
@@ -78,7 +81,7 @@ matches:
       - name: "clipboard"
         type: "clipboard"
 
-  # Links
+  # Links and URLs
   - trigger: ";nit"
     replace: "{{link}}"
     vars:
@@ -89,3 +92,11 @@ matches:
         params:
           cmd: "awk 'BEGIN { link = ENVIRON[\"ESPANSO_CLIPBOARD\"]; sub(/twitter\\.com/, \"nitter.decentralised.social\", link); print link }'"
 
+  - trigger: ";tw"
+    replace: "https://twitter.com/"
+
+  - trigger: ";www"
+    replace: "https://www.wezm.net/"
+
+  - trigger: ";gh"
+    replace: "github.com"

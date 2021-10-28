@@ -45,7 +45,9 @@ Plug 'leafgarland/typescript-vim'
 Plug 'LeonB/vim-nginx'
 Plug 'machakann/vim-highlightedyank'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+Plug 'mg979/vim-visual-multi'
 Plug 'mxw/vim-jsx'
+Plug 'NoahTheDuke/vim-just'
 Plug 'nono/vim-handlebars'
 Plug 'osyo-manga/vim-over'
 Plug 'othree/html5.vim'
@@ -112,6 +114,7 @@ set nrformats-=octal
 
 set ttimeout
 set ttimeoutlen=100
+set updatetime=1000
 
 " Enable (potentially insecure) modeline parsing
 set modeline
@@ -540,6 +543,7 @@ let g:airline_theme='minimalist'
 let g:airline#extensions#whitespace#checks = [ 'trailing' ]
 
 " gitgutter
+let g:gitgutter_grep = 'rg'
 " let g:gitgutter_sign_added = '﹢'
 let g:gitgutter_sign_modified = '▪'
 " let g:gitgutter_sign_removed = '-'

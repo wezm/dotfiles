@@ -3,6 +3,14 @@ source ~/.vimrc
 " Interactive substitute
 set inccommand=split
 
+" GNvim -- https://github.com/vhakulinen/gnvim
+if exists('g:gnvim')
+  set guifont=PragmataProMonoLiga:h9.5
+  " set GnvimCursorEnableAnimations 0
+  " call gnvim#cursor#enable_animations(0)
+  call rpcnotify(g:gnvim_channel_id, 'Gnvim', 'EnableCursorAnimations', 0)
+endif
+
 " Easier terminal navigation
 tnoremap <A-h> <C-\><C-n><C-w>h
 tnoremap <A-j> <C-\><C-n><C-w>j
