@@ -303,13 +303,6 @@ vnoremap <F1> <ESC>
 map <F4> :noh<CR>
 map <F5> @:<CR>
 
-" Easier to press toggle buffer
-nnoremap <Backspace> <C-^>
-
-" When navigating, center the cursor
-nnoremap n nzz
-nnoremap N Nzz
-
 " Easier moving in tabs and windows
 map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
