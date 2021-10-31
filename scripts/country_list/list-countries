@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require 'csv'
+require 'countries'
+require 'sort_alphabetical'
+
+csv = CSV.new($stdout, :force_quotes => true)
+
+ISO3166::Country.codes.map do |code|
+  country = ISO3166::Country.new(code)
+  raise "unknown country code #{code}" if country.nil?
+
+  [country.translations['en'] || country.name, country.alpha2]
+end.sort_alphabetical.each { |row| csv << row }

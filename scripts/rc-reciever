@@ -1,0 +1,5 @@
+#!/bin/sh
+
+modprobe serio
+modprobe fsia6b
+inputattach --fsia6b /dev/ttyUSB0

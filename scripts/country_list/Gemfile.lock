@@ -1,0 +1,21 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    countries (4.0.1)
+      i18n_data (~> 0.13.0)
+      sixarm_ruby_unaccent (~> 1.1)
+    i18n_data (0.13.0)
+    sixarm_ruby_unaccent (1.2.0)
+    sort_alphabetical (1.1.0)
+      unicode_utils (>= 1.2.2)
+    unicode_utils (1.4.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  countries (~> 4.0)
+  sort_alphabetical (~> 1.1)
+
+BUNDLED WITH
+   2.1.4
