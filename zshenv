@@ -34,8 +34,6 @@ if [[ -d "$HOME/.local/bin" ]]; then
   export PATH="$HOME/.local/bin:$PATH"
 fi
 
-[ -d ~/.local/opt/mercury-2020-04-15/bin ] && export PATH="$HOME/.local/opt/mercury-2020-04-15/bin:$PATH"
-
 command -v nvim > /dev/null
 if [[ $? -eq 0 ]]; then
   export EDITOR=nvim
