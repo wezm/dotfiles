@@ -51,9 +51,6 @@ if [[ -d "$GOPATH/bin" ]]; then
   export PATH="$PATH:$GOPATH/bin"
 fi
 
-# Make PATH uniq
-# echo $PATH | awk -v ORS=: -F: '{ for (i = 1; i < NF; i++) { if (!seen[$i]) print $i; seen[$i] = 1 } }' }
-
 if [[ "$system" = "Darwin" ]]; then
   export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
 fi
