@@ -417,8 +417,8 @@ globalkeys = gears.table.join(
               {description = "brightness up", group = "media"}),
 
     -- Screenshots
-    awful.key({}, "Print", function ()
-                  awful.spawn.with_shell("cd ~/Pictures && shotgun \"Screenshot from $(date '+%Y-%m-%d %H-%M-%S').png\"", false)
+    awful.key({ "Shift" }, "Print", function ()
+                  awful.spawn.with_shell("cd ~/Pictures && menyoki capture --root save \"Screenshot from $(date '+%Y-%m-%d %H-%M-%S').png\"", false)
               end,
               {description = "take screen shot", group = "media"}),
 
@@ -427,8 +427,8 @@ globalkeys = gears.table.join(
     --            end,
     --            {description = "take screenshot of current window", group = "media"}),
 
-    awful.key({ "Shift" }, "Print", nil, function ()
-                  awful.spawn.with_shell("cd ~/Pictures && shotgun $(slop -c 0,0,0,0.75 -l -f \"-i %i -g %g\") \"Screenshot from $(date '+%Y-%m-%d %H-%M-%S').png\"", false)
+    awful.key({}, "Print", nil, function ()
+                  awful.spawn.with_shell("cd ~/Pictures && menyoki capture --root --size $(slop -c 0,0,0,0.75 -l) save \"Screenshot from $(date '+%Y-%m-%d %H-%M-%S').png\"", false)
               end,
               {description = "take screenshot of selected region or window", group = "media"}),
 
