@@ -607,6 +607,7 @@ awful.rules.rules = {
         },
         class = {
           "pinentry",
+          "Emote",
           "Org.gnome.NautilusPreviewer"
         },
       },
