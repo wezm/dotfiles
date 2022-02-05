@@ -1,6 +1,7 @@
 [general]
 config = "~/.config"
 ctags = "~/.ctags.d/custom.ctags"
+"cargo-config.toml" = "~/.cargo/config.toml"
 gitattributes = "~/.gitattributes"
 gvimrc = "~/.gvimrc"
 rbenv = "~/.rbenv"
