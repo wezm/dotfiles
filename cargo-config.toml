@@ -1,2 +1,2 @@
 [build]
-target = "/home/wmoore/Source/Rust"
+target-dir = "/home/wmoore/Source/Rust"
