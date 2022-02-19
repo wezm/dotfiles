@@ -16,6 +16,7 @@ zsh = "~/.oh-my-zsh/custom"
 zshrc = "~/.zshrc"
 zshenv = "~/.zshenv"
 "gpg-agent.conf" = "~/.gnupg/gpg-agent.conf"
+quiltrc = "~/.quiltrc"
 
 # Link in parts from private submodule
 "private/ssh" = "~/.ssh"
