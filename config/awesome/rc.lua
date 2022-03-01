@@ -567,7 +567,6 @@ awful.rules.rules = {
         instance = {
           "DTA",  -- Firefox addon DownThemAll.
           "copyq",  -- Includes session name in class.
-          "qemu",
           "1password",
         },
         class = {
@@ -598,6 +597,9 @@ awful.rules.rules = {
     -- Floating and titlebars enabled
     { rule = { class = "Pavucontrol" },
       properties = { floating = true, titlebars_enabled = true } },
+
+    { rule = { instance = "qemu" },
+      properties = { floating = true, titlebars_enabled = true, border_width = 4 } },
 
     -- Spawn some floating windows always centered
     { rule_any = {
