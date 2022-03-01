@@ -35,6 +35,9 @@ matches:
   - trigger: ";prs"
     replace: "./bin/prince --shell"
 
+  - trigger: ";jd"
+    replace: "js_dense_array_dump($|$, !IO),"
+
   # Don't work for some reason:
   # - trigger: ";pred"
   #   replace: |
@@ -81,7 +84,9 @@ matches:
       - name: "clipboard"
         type: "clipboard"
 
-  # Links and URLs
+  ## Links and URLs
+
+  # Rewrite Twitter links to Nitter links
   - trigger: ";nit"
     replace: "{{link}}"
     vars:
@@ -90,7 +95,18 @@ matches:
       - name: link
         type: shell
         params:
-          cmd: "awk 'BEGIN { link = ENVIRON[\"ESPANSO_CLIPBOARD\"]; sub(/twitter\\.com/, \"nitter.decentralised.social\", link); print link }'"
+          cmd: "awk 'BEGIN { link = ENVIRON[\"ESPANSO_CLIPBOARD\"]; sub(/twitter\\.com/, \"nitter.net\", link); print link }'"
+
+  # Rewrite Medium links to Scribe links
+  - trigger: ";scribe"
+    replace: "{{link}}"
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+      - name: link
+        type: shell
+        params:
+          cmd: "awk 'BEGIN { link = ENVIRON[\"ESPANSO_CLIPBOARD\"]; sub(/medium\\.com/, \"scribe.rip\", link); print link }'"
 
   - trigger: ";tw"
     replace: "https://twitter.com/"
@@ -99,4 +115,4 @@ matches:
     replace: "https://www.wezm.net/"
 
   - trigger: ";gh"
-    replace: "github.com"
+    replace: "github.com/"
