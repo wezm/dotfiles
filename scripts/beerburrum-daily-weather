@@ -1,0 +1,31 @@
+#!/bin/sh
+
+set -e
+
+BASE_URL="http://www.bom.gov.au"
+
+# http://www.bom.gov.au/climate/dwo/202203/text/IDCJDW4010.202203.csv
+
+curl -L --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:98.0) Gecko/20100101 Firefox/98.0" \
+  -O "${BASE_URL}/climate/dwo/202203/text/IDCJDW4010.202203.csv" \
+  -O "${BASE_URL}/climate/dwo/202202/text/IDCJDW4010.202202.csv" \
+  -O "${BASE_URL}/climate/dwo/202201/text/IDCJDW4010.202201.csv" \
+  -O "${BASE_URL}/climate/dwo/202112/text/IDCJDW4010.202112.csv" \
+  -O "${BASE_URL}/climate/dwo/202111/text/IDCJDW4010.202111.csv" \
+  -O "${BASE_URL}/climate/dwo/202110/text/IDCJDW4010.202110.csv" \
+  -O "${BASE_URL}/climate/dwo/202109/text/IDCJDW4010.202109.csv" \
+  -O "${BASE_URL}/climate/dwo/202108/text/IDCJDW4010.202108.csv" \
+  -O "${BASE_URL}/climate/dwo/202107/text/IDCJDW4010.202107.csv" \
+  -O "${BASE_URL}/climate/dwo/202106/text/IDCJDW4010.202106.csv" \
+  -O "${BASE_URL}/climate/dwo/202105/text/IDCJDW4010.202105.csv" \
+  -O "${BASE_URL}/climate/dwo/202104/text/IDCJDW4010.202104.csv" \
+  -O "${BASE_URL}/climate/dwo/202103/text/IDCJDW4010.202103.csv" \
+  -O "${BASE_URL}/climate/dwo/202102/text/IDCJDW4010.202102.csv"
+
+# Convert afterwards:
+#
+# mkdir unix
+# for f in *.csv; iconv -f ISO-8859-1 -t UTF8 "$f" | dos2unix | sed -e '$a\' > "unix/$f"
+#
+# Concat
+# cat $(ls -1 unix/IDC*.csv | sort) | rg '^,\d' > unix/data.csv
