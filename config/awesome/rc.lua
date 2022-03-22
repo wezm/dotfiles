@@ -610,6 +610,7 @@ awful.rules.rules = {
         class = {
           "pinentry",
           "Emote",
+          "onagre",
           "Org.gnome.NautilusPreviewer"
         },
       },
