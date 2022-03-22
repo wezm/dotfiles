@@ -83,15 +83,21 @@ Plug 'aklt/plantuml-syntax'
 Plug 'wezm/vim-mercury'
 
 if has('nvim')
-  Plug 'autozimu/LanguageClient-neovim', {
-      \ 'branch': 'next',
-      \ 'do': 'bash install.sh',
-      \ }
+  Plug 'neovim/nvim-lspconfig'
+  " Plug 'autozimu/LanguageClient-neovim', {
+  "     \ 'branch': 'next',
+  "     \ 'do': 'bash install.sh',
+  "     \ }
   Plug 'reasonml-editor/vim-reason-plus'
   " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'ncm2/ncm2'
+
+  " Completion framework
+  Plug 'hrsh7th/nvim-cmp'
+  " Plug 'ncm2/ncm2'
   Plug 'roxma/nvim-yarp'
   Plug 'L3MON4D3/LuaSnip'
+  " To enable more of the features of rust-analyzer, such as inlay hints and more!
+  Plug 'simrat39/rust-tools.nvim'
 endif
 
 call plug#end()
@@ -103,9 +109,10 @@ set autoindent                 " Always set auto-indenting on
 set complete-=i                " Don't complete in included files
 " set completeopt=menuone,preview
 set completeopt=noinsert,menuone,noselect
+set shortmess+=c               " Avoid showing extra messages when using completion
 set smarttab
 set viminfo='20,\"500          " read/write a .viminfo file -- limit regs to 500 lines
-set history=100                 " keep 50 lines of command history
+set history=100                " keep 50 lines of command history
 set laststatus=2
 set ruler                      " Show the cursor position all the time
 set sm                         " Show matching braces
@@ -518,10 +525,10 @@ endif
 
 " vim-surround {
   " Start interactive EasyAlign in visual mode (e.g. vipga)
-  xmap ga <Plug>(EasyAlign)
+  xmap gA <Plug>(EasyAlign)
 
   " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-  nmap ga <Plug>(EasyAlign)
+  nmap gA <Plug>(EasyAlign)
 " }
 
 " indentLine
@@ -578,33 +585,33 @@ nnoremap <leader>v mx:s/<Paste[>]//e<CR>:set nopaste<CR>:noh<CR>`x
 
 " LanguageClient-neovim
 " https://github.com/theia-ide/typescript-language-server
-let g:LanguageClient_serverCommands = {
-    \ 'css': ['css-languageserver', '--stdio'],
-    \ 'go': ['gopls'],
-    \ 'html': ['html-languageserver', '--stdio'],
-    \ 'javascript': ['typescript-language-server', '--stdio'],
-    \ 'javascript.jsx': ['typescript-language-server', '--stdio'],
-    \ 'json': ['json-languageserver', '--stdio'],
-    \ 'less': ['css-languageserver', '--stdio'],
-    \ 'reason': ['/home/wmoore/.local/bin/reason-language-server.exe'],
-    \ 'rust': ['rust-analyzer'],
-    \ 'sass': ['css-languageserver', '--stdio'],
-    \ 'scss': ['css-languageserver', '--stdio'],
-    \ 'typescript': ['typescript-language-server', '--stdio'],
-    \ 'mun': ['mun', 'language-server'],
-    \ }
-let g:LanguageClient_useVirtualText = 'Diagnostics'
-" let g:LanguageClient_loggingFile = expand('/tmp/LanguageClient.log')
-" let g:LanguageClient_loggingLevel = 'INFO'
-let g:LanguageClient_rootMarkers = {
-    \ 'mun': ['mun.toml'],
-    \ }
+" let g:LanguageClient_serverCommands = {
+"     \ 'css': ['css-languageserver', '--stdio'],
+"     \ 'go': ['gopls'],
+"     \ 'html': ['html-languageserver', '--stdio'],
+"     \ 'javascript': ['typescript-language-server', '--stdio'],
+"     \ 'javascript.jsx': ['typescript-language-server', '--stdio'],
+"     \ 'json': ['json-languageserver', '--stdio'],
+"     \ 'less': ['css-languageserver', '--stdio'],
+"     \ 'reason': ['/home/wmoore/.local/bin/reason-language-server.exe'],
+"     \ 'rust': ['rust-analyzer'],
+"     \ 'sass': ['css-languageserver', '--stdio'],
+"     \ 'scss': ['css-languageserver', '--stdio'],
+"     \ 'typescript': ['typescript-language-server', '--stdio'],
+"     \ 'mun': ['mun', 'language-server'],
+"     \ }
+" let g:LanguageClient_useVirtualText = 'Diagnostics'
+" " let g:LanguageClient_loggingFile = expand('/tmp/LanguageClient.log')
+" " let g:LanguageClient_loggingLevel = 'INFO'
+" let g:LanguageClient_rootMarkers = {
+"     \ 'mun': ['mun.toml'],
+"     \ }
 
 
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> gf :call LanguageClient#textDocument_formatting()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+" nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+" nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+" nnoremap <silent> gf :call LanguageClient#textDocument_formatting()<CR>
+" nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 " vim-visual-multi
 " https://github.com/mg979/vim-visual-multi
