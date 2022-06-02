@@ -13,7 +13,6 @@ function! BuildComposer(info)
 endfunction
 
 call plug#begin()
-Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/deleft.vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
@@ -98,6 +97,7 @@ if has('nvim')
   Plug 'L3MON4D3/LuaSnip'
   " To enable more of the features of rust-analyzer, such as inlay hints and more!
   Plug 'simrat39/rust-tools.nvim'
+  Plug 'lewis6991/gitsigns.nvim'
 endif
 
 call plug#end()
@@ -541,14 +541,6 @@ let g:indentLine_color_gui = '#616161'
 let g:airline_powerline_fonts = 1
 let g:airline_theme='minimalist'
 let g:airline#extensions#whitespace#checks = [ 'trailing' ]
-
-" gitgutter
-let g:gitgutter_grep = 'rg'
-" let g:gitgutter_sign_added = '﹢'
-let g:gitgutter_sign_modified = '▪'
-" let g:gitgutter_sign_removed = '-'
-" let g:gitgutter_sign_removed_first_line = '^^'
-" let g:gitgutter_sign_modified_removed = 'ww'
 
 " Alternate files
 " Needs alt: https://github.com/uptech/alt

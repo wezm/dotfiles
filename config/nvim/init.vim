@@ -93,3 +93,6 @@ nnoremap <silent> gf    <cmd>lua vim.lsp.buf.formatting()<CR>
 nnoremap <silent> ga    <cmd>lua vim.lsp.buf.code_action()<CR>
 
 lua require('completion')
+
+" lewis6991/gitsigns.nvim
+lua require('signs')
