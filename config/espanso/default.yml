@@ -19,6 +19,10 @@ matches:
   - trigger: ";shrug"
     replace: "¯\\_(ツ)_/¯"
 
+  # Symbols
+  - trigger: ";cmd"
+    replace: "⌘"
+
   # Work
   - trigger: ";iio"
     replace: "io, io"
