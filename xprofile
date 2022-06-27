@@ -67,3 +67,5 @@ picom &
 gnome-screensaver &
 copyq &
 tilda &
+emote &
+xbanish -t 3 &
