@@ -16,6 +16,7 @@ call plug#begin()
 Plug 'AndrewRadev/deleft.vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
+Plug 'arthurxavierx/vim-caser'
 Plug 'barlik/Vim-Jinja2-Syntax'
 Plug 'benekastah/neomake'
 Plug 'bkad/CamelCaseMotion'
@@ -33,9 +34,10 @@ Plug 'godlygeek/tabular'
 Plug 'hashivim/vim-terraform'
 Plug 'idris-hackers/idris-vim'
 Plug 'janko-m/vim-test'
-" Plug 'junegunn/fzf'
-" Plug 'junegunn/fzf.vim'
-Plug 'lotabout/skim.vim' " Depends on skim plugin, which is installed with the skim package on Arch
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+" Disabled as it seems broken
+" Plug 'lotabout/skim.vim' " Depends on skim plugin, which is installed with the skim package on Arch
 Plug 'junegunn/vim-easy-align'
 Plug 'kassio/neoterm'
 Plug 'kchmck/vim-coffee-script'
@@ -423,8 +425,6 @@ let g:promptline_preset = {
 
 " convert old ruby hash syntax
 command! ConvertHashSyntax :%s/:\([^ ]*\)\(\s*\)=>/\1:/g | noh
-" convert double to single quoted strings
-command! ConvertDoubleQuotes :%s/"\([^"'#]*\)"/'\1'/g | noh
 " convert current file from ERB to Slim
 command! Erb2slim :%!erb2slim % -
 " edit vimrc
@@ -433,6 +433,28 @@ command! Vimrc :tabe ~/.vimrc
 command! Readme :tabe README.md
 " read PKBUILD sha256sums
 command! Sha256Sums :r! makepkg -g 2>/dev/null
+
+" Fathom conversion commands
+" convert text pasted from OpenType spec to fathom
+function FathomConvert() range
+    execute a:firstline . ',' . a:lastline .
+      \ 's/\vuint([0-9]{2})/u\1be/e'
+    execute a:firstline . ',' . a:lastline .
+      \ 's/\vint([0-9]{2})/s\1be/e'
+    execute a:firstline . ',' . a:lastline .
+      \ 's/\(\w\+\)\s\+\([a-zA-Z0-9_\[ \]\.]\+\)\s\+\(.*\)/\/\/\/ \3\r\2<- \1,/e'
+    noh
+endfunction
+
+" convert spec array to fathom array
+function FathomArray() range
+    execute a:firstline . ',' . a:lastline .
+      \ 's/\[\([^]]\+\)\] <- \([^,]\+\)/ <- array16 \1 \2/'
+    noh
+endfunction
+
+nmap <Leader>fa :call FathomArray()<CR>
+vmap <Leader>fs :call FathomConvert()<CR>
 
 " SuperTab
 " Use completion context to determin the completion mechanism to use. For
@@ -604,6 +626,9 @@ nnoremap <leader>v mx:s/<Paste[>]//e<CR>:set nopaste<CR>:noh<CR>`x
 " nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 " nnoremap <silent> gf :call LanguageClient#textDocument_formatting()<CR>
 " nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+
+" disable vim-abolish mappings in favour of vim-caser
+let g:abolish_no_mappings = 1
 
 " vim-visual-multi
 " https://github.com/mg979/vim-visual-multi
