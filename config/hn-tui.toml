@@ -1,0 +1,2 @@
+use_pacman_loading = false
+url_open_command = { command = "handlr", options = ["open"] }
