@@ -42,6 +42,18 @@ matches:
   - trigger: ";jd"
     replace: "js_dense_array_dump($|$, !IO),"
 
+  - trigger: ";meeting"
+    replace: "{{date}}"
+    vars:
+      - name: date
+        type: script
+        params:
+          args:
+            - "date"
+            - "-d"
+            - "friday" 
+            - "+Meeting %d %b %Y"
+
   # Don't work for some reason:
   # - trigger: ";pred"
   #   replace: |
@@ -87,6 +99,9 @@ matches:
     vars:
       - name: "clipboard"
         type: "clipboard"
+
+  - trigger: "3`"
+    replace: "```\n```"
 
   ## Links and URLs
 
