@@ -546,7 +546,7 @@ key_bindings:
   #- { key: Return,   mods: Alt,           action: ToggleFullscreen }
 
   # (macOS only)
-  - { key: A,  mods: Control|Shift, action: SpawnNewInstance                 }
+  - { key: A,  mods: Control|Shift, action: CreateNewWindow        }
   #- { key: Key0,   mods: Command,         action: ResetFontSize    }
   #- { key: Equals, mods: Command,         action: IncreaseFontSize }
   #- { key: Add,    mods: Command,         action: IncreaseFontSize }
