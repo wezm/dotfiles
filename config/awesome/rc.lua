@@ -578,6 +578,7 @@ awful.rules.rules = {
           "Kruler",
           "MessageWin",  -- kalarm.
           "Sxiv",
+          "SimpleScreenRecorder",
           "Tilda",
           "Wpa_gui",
           "pinentry",
