@@ -84,10 +84,6 @@ fi
 # fnm - Fast Node Manager
 if command -v fnm > /dev/null; then eval "`fnm env`"; fi
 
-# Base16 Shell
-BASE16_SHELL=$HOME/.config/base16-shell/
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
-
 source $ZSH/custom/prompt.sh
 
 #[ -f ~/.dotfiles/z/z.sh ] && source ~/.dotfiles/z/z.sh
