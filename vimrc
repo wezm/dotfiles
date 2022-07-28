@@ -100,6 +100,7 @@ if has('nvim')
   " To enable more of the features of rust-analyzer, such as inlay hints and more!
   Plug 'simrat39/rust-tools.nvim'
   Plug 'lewis6991/gitsigns.nvim'
+  Plug 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
 endif
 
 call plug#end()

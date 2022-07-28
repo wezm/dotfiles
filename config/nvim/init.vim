@@ -3,9 +3,11 @@ source ~/.vimrc
 " Interactive substitute
 set inccommand=split
 
+" GNvim and reovim use this to set the font
+set guifont=PragmataProMonoLiga:h9.5
+
 " GNvim -- https://github.com/vhakulinen/gnvim
 if exists('g:gnvim')
-  set guifont=PragmataProMonoLiga:h9.5
   " set GnvimCursorEnableAnimations 0
   " call gnvim#cursor#enable_animations(0)
   call rpcnotify(g:gnvim_channel_id, 'Gnvim', 'EnableCursorAnimations', 0)
@@ -96,3 +98,7 @@ lua require('completion')
 
 " lewis6991/gitsigns.nvim
 lua require('signs')
+
+" lsp_lines.nvim
+lua require("lsp_lines").setup()
+lua vim.diagnostic.config({ virtual_text = false })
