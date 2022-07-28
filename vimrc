@@ -100,6 +100,7 @@ if has('nvim')
   " To enable more of the features of rust-analyzer, such as inlay hints and more!
   Plug 'simrat39/rust-tools.nvim'
   Plug 'lewis6991/gitsigns.nvim'
+  Plug 'RRethy/nvim-base16'
   Plug 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
 endif
 
@@ -177,10 +178,7 @@ if (empty($TMUX))
   endif
 endif
 
-if filereadable(expand("~/.vimrc_background"))
-  " let base16colorspace=256
-  source ~/.vimrc_background
-endif
+colorscheme base16-default-dark
 
 set colorcolumn=100
 set signcolumn=yes " Always show sign column
