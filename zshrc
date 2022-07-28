@@ -82,12 +82,11 @@ elif [[ -f /usr/local/share/examples/skim/shell/key-bindings.zsh ]]; then
 fi
 
 # fnm - Fast Node Manager
-if command -v fnm > /dev/null; then eval "`fnm env`"; fi
+command -v fnm > /dev/null && eval "`fnm env --shell zsh`"
 
 source $ZSH/custom/prompt.sh
 
-#[ -f ~/.dotfiles/z/z.sh ] && source ~/.dotfiles/z/z.sh
-if command -v zoxide > /dev/null; then eval "$(zoxide init zsh)"; fi
+command -v zoxide > /dev/null && eval "$(zoxide init zsh)"
 
 # OPAM configuration
 . /home/wmoore/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
