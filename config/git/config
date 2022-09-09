@@ -1,7 +1,7 @@
 [user]
 	email = wes@wezm.net
 	name = Wesley Moore
-	signingkey = 68016C9C3F4CC606B77660E9BF67766C0BC2D0EE
+	signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDVcZe1QPxVd/I7D2FyTZiLqg1K3Ire/Ap+0nExmSRw4gEWzufSFefNWUSYhCoAUdfAqaE1KzjY7zy+NQ0LIyJO/fnF0K1EeyoNVYZkB5VyfoCXkT+zamO03tCJTmX4/5v5stUuF4Rem1EmgJIbRGUWJ1gOdLYFtodj0WhGo7gU8uNwvVdyIhum5JhC1j6s1Rtv729PITFZ+JPEqkyMD1ZX8AVDamLZy4fhaHJD3xcTbkFxRHbZTMlfogD8c2MXKIV1Qk9FbuVeOuc5r08D/NkEFm9cOKPoJ5eLl+zDo7uoS3oTlyVrw80HixofqvTvZtGlXMQPRWH77EY9tUDvaYZz wmoore-new-key
 [color]
 	ui = auto
 	branch = auto
@@ -81,3 +81,5 @@
 	defaultBranch = main
 [advice]
 	addEmptyPathspec = false
+[gpg]
+	format = ssh
