@@ -1,0 +1,7 @@
+[[language]]
+name = "markdown"
+language-server = { command = "/opt/ltex-ls/bin/ltex-ls" }
+config = { ltex.language = "en-AU" }
+file-types = ["md"]
+scope = "source.markdown"
+roots = []
