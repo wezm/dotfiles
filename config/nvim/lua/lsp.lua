@@ -1,5 +1,7 @@
 local nvim_lsp = require'lspconfig'
 
+nvim_lsp["nickel_ls"].setup {}
+
 local opts = {
     tools = { -- rust-tools options
         autoSetHints = true,
