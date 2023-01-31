@@ -4,13 +4,19 @@ source ~/.vimrc
 set inccommand=split
 
 " GNvim and reovim use this to set the font
-set guifont=PragmataProMonoLiga:h9.5
+set guifont=PragmataPro_Mono:h9.5
 
 " GNvim -- https://github.com/vhakulinen/gnvim
 if exists('g:gnvim')
   " set GnvimCursorEnableAnimations 0
   " call gnvim#cursor#enable_animations(0)
   call rpcnotify(g:gnvim_channel_id, 'Gnvim', 'EnableCursorAnimations', 0)
+endif
+
+" Neovide
+if exists("g:neovide")
+  let g:neovide_cursor_animation_length=0
+  set guifont=PragmataPro_Mono:h12
 endif
 
 " Easier terminal navigation
@@ -45,6 +51,29 @@ nnoremap <silent> ,tl :call neoterm#clear()<cr>
 " kills the current job (send a <c-c>)
 nnoremap <silent> ,tk :call neoterm#kill()<cr>
 
+" " telescope {
+"   " Find files using Telescope command-line sugar.
+"   nnoremap <C-p>f <cmd>Telescope git_files<cr>
+"   nnoremap <C-p>F <cmd>Telescope find_files<cr>
+"   nnoremap <C-p>a <cmd>Telescope live_grep<cr>
+"   nnoremap <leader>w <cmd>Telescope grep_string<cr>
+"   nnoremap <leader><leader> <cmd>Telescope buffers<cr>
+"   nnoremap <C-p>h <cmd>Telescope oldfiles<cr>
+"   nnoremap <C-p>T <cmd>Telescope tags<cr>
+"   nnoremap <C-p>t <cmd>Telescope current_buffer_tags<cr>
+"   " nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+" " }
+
+" " lua <<EOL
+" "   require('telescope').setup{
+" "     pickers = {
+" "       git_files = {
+" "         sorter = "fzy_sorter",
+" "       }
+" "     },
+" "   }
+" " EOL
+
 " neoterm/neovim terminal
 let g:neoterm_default_mod = 'vertical'
 " let g:neoterm_size = '24'
@@ -61,7 +90,7 @@ endif
 
 " Neomake
 " When writing a buffer, and on normal mode changes (after 750ms).
-call neomake#configure#automake('nw', 750)
+" call neomake#configure#automake('nw', 750)
 
 " LuaSnip
 lua require('snippets')
@@ -81,18 +110,7 @@ autocmd! bufwritepost init.vim source %
 " check files when focused again (probably only works in NeovimGtk)
 autocmd BufEnter,FocusGained * checktime
 
-lua require('lsp')
-" nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> gd    <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
-nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
-nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
-nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> gf    <cmd>lua vim.lsp.buf.formatting()<CR>
-nnoremap <silent> ga    <cmd>lua vim.lsp.buf.code_action()<CR>
+" lua require('lsp')
 
 lua require('completion')
 
@@ -102,3 +120,15 @@ lua require('signs')
 " lsp_lines.nvim
 lua require("lsp_lines").setup()
 lua vim.diagnostic.config({ virtual_text = false })
+
+" DAP/Debugger support
+lua require('debugger')
+
+" nvim-base16
+lua require('base16-colorscheme').with_config { telescope = false } -- fix ugliness
+colorscheme base16-default-dark
+
+augroup highlight_yank
+  autocmd!
+  autocmd TextYankPost * silent! lua vim.highlight.on_yank {timeout=250}
+augroup END
