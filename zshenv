@@ -23,6 +23,11 @@ if [[ -d "$HOME/.cargo/bin" ]]; then
   export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
+# Nim
+if [[ -d "$HOME/.nimble/bin" ]]; then
+  export PATH="$HOME/.nimble/bin:$PATH"
+fi
+
 command -v yarn > /dev/null
 if [[ $? -eq 0 ]]; then
   export PATH="$PATH:$(yarn global bin --offline)"
@@ -123,6 +128,11 @@ PERL_MM_OPT="INSTALL_BASE=/home/wmoore/perl5"; export PERL_MM_OPT;
 # Deno
 if [[ -d "$HOME/.deno/bin" ]]; then
   export PATH="$HOME/.deno/bin:$PATH"
+fi
+
+# Make Valgrind work
+if [[ -f /etc/os-release ]]; then
+  grep -q '^ID=arch' /etc/os-release && export DEBUGINFOD_URLS="https://debuginfod.archlinux.org/"
 fi
 
 source "$HOME/.zshenv_private"
