@@ -18,21 +18,21 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
 Plug 'arthurxavierx/vim-caser'
 Plug 'barlik/Vim-Jinja2-Syntax'
-Plug 'benekastah/neomake'
+" Plug 'benekastah/neomake'
 Plug 'bkad/CamelCaseMotion'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'cespare/vim-toml'
 Plug 'chrisbra/csv.vim'
-Plug 'chriskempson/base16-vim'
+" Plug 'chriskempson/base16-vim'
 Plug 'davidoc/taskpaper.vim'
 Plug 'edkolev/promptline.vim'
 Plug 'elixir-lang/vim-elixir'
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
 Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
-Plug 'GEverding/vim-hocon'
+" Plug 'GEverding/vim-hocon'
 Plug 'gleam-lang/gleam.vim'
 Plug 'godlygeek/tabular'
-Plug 'hashivim/vim-terraform'
+" Plug 'hashivim/vim-terraform'
 Plug 'idris-hackers/idris-vim'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf'
@@ -41,11 +41,10 @@ Plug 'junegunn/fzf.vim'
 " Plug 'lotabout/skim.vim' " Depends on skim plugin, which is installed with the skim package on Arch
 Plug 'junegunn/vim-easy-align'
 Plug 'kassio/neoterm'
-Plug 'kchmck/vim-coffee-script'
+" Plug 'kchmck/vim-coffee-script'
 Plug 'lambdatoast/elm.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'LeonB/vim-nginx'
-Plug 'machakann/vim-highlightedyank'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'mg979/vim-visual-multi'
 Plug 'mxw/vim-jsx'
@@ -55,16 +54,16 @@ Plug 'nono/vim-handlebars'
 Plug 'osyo-manga/vim-over'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
-Plug 'pearofducks/ansible-vim'
+" Plug 'pearofducks/ansible-vim'
 Plug 'pest-parser/pest.vim'
 Plug 'qnighy/lalrpop.vim'
 Plug 'rhysd/vim-crystal'
-Plug 'rust-lang/rust.vim'
+" Plug 'rust-lang/rust.vim'
 Plug 'ron-rs/ron.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'sirtaj/vim-openscad'
-Plug 'slim-template/vim-slim'
+" Plug 'slim-template/vim-slim'
 Plug 'smerrill/vcl-vim-plugin'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-cucumber'
@@ -74,37 +73,50 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
-Plug 'udalov/kotlin-vim'
+" Plug 'udalov/kotlin-vim'
 Plug 'uptech/vim-open-alternate'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Plug 'vim-utils/vim-troll-stopper'
-Plug 'vmchale/dhall-vim'
-Plug 'vmchale/ion-vim'
+" Plug 'vmchale/dhall-vim'
+" Plug 'vmchale/ion-vim'
 Plug 'Yggdroot/indentLine'
 Plug 'ryanoasis/vim-devicons' " need to load late to patch other plugins
-Plug 'aklt/plantuml-syntax'
+" Plug 'aklt/plantuml-syntax'
 Plug 'wezm/vim-mercury'
+
+Plug '~/Work/fathom.vim'
 
 if has('nvim')
   Plug 'neovim/nvim-lspconfig'
-  " Plug 'autozimu/LanguageClient-neovim', {
-  "     \ 'branch': 'next',
-  "     \ 'do': 'bash install.sh',
-  "     \ }
+
   Plug 'reasonml-editor/vim-reason-plus'
-  " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'L3MON4D3/LuaSnip'
 
   " Completion framework
+  Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/cmp-path'
+  Plug 'hrsh7th/cmp-cmdline'
   Plug 'hrsh7th/nvim-cmp'
-  " Plug 'ncm2/ncm2'
-  Plug 'roxma/nvim-yarp'
-  Plug 'L3MON4D3/LuaSnip'
+  Plug 'saadparwaiz1/cmp_luasnip'
+  Plug 'hrsh7th/nvim-cmp'
+
   " To enable more of the features of rust-analyzer, such as inlay hints and more!
   Plug 'simrat39/rust-tools.nvim'
   Plug 'lewis6991/gitsigns.nvim'
   Plug 'RRethy/nvim-base16'
   Plug 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
+
+  " Debugger
+  Plug 'mfussenegger/nvim-dap'
+  Plug 'rcarriga/nvim-dap-ui'
+
+  " Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
+
+  " General
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-treesitter/nvim-treesitter'
 endif
 
 call plug#end()
@@ -115,7 +127,11 @@ set backspace=indent,eol,start " Allow backspacing over everything in insert mod
 set autoindent                 " Always set auto-indenting on
 set complete-=i                " Don't complete in included files
 " set completeopt=menuone,preview
-set completeopt=noinsert,menuone,noselect
+" menuone: popup even when there's only one match
+" noinsert: Do not insert text until a selection is made
+" noselect: Do not select, force user to select one from the menu
+" set completeopt=noinsert,menuone,noselect
+set completeopt=menu,menuone,noselect
 set shortmess+=c               " Avoid showing extra messages when using completion
 set smarttab
 set viminfo='20,\"500          " read/write a .viminfo file -- limit regs to 500 lines
@@ -180,8 +196,6 @@ if (empty($TMUX))
     set termguicolors
   endif
 endif
-
-colorscheme base16-default-dark
 
 set colorcolumn=100
 set signcolumn=yes " Always show sign column
@@ -332,9 +346,6 @@ if executable("rg")
     let g:ackprg = 'rg --vimgrep --no-heading' " ack.vim
 endif
 
-" highlightedyank
-let g:highlightedyank_highlight_duration = 250
-
 " investigate.vim
 let g:investigate_command_for_ruby = '^i!/usr/bin/zeal ruby:^s'
 let g:investigate_command_for_rust = '^i!/usr/bin/zeal rust:^s'
@@ -461,22 +472,22 @@ vmap <Leader>fs :call FathomConvert()<CR>
 " SuperTab
 " Use completion context to determin the completion mechanism to use. For
 " example when on a . complete methods, when on a / complete paths
-let g:SuperTabDefaultCompletionType = 'context'
-if has("autocmd") && exists("+omnifunc")
-  " Fall back on syntaxcomplete if omnifunc is not defined
-  " https://github.com/vim-scripts/SyntaxComplete
-  autocmd Filetype *
-      \ if &omnifunc == '' |
-      \   setlocal omnifunc=syntaxcomplete#Complete |
-      \ endif
+" let g:SuperTabDefaultCompletionType = 'context'
+" if has("autocmd") && exists("+omnifunc")
+"   " Fall back on syntaxcomplete if omnifunc is not defined
+"   " https://github.com/vim-scripts/SyntaxComplete
+"   autocmd Filetype *
+"       \ if &omnifunc == '' |
+"       \   setlocal omnifunc=syntaxcomplete#Complete |
+"       \ endif
 
-  " Get SuperTab to use omnifunc when available, fall back on keyword
-  " completion
-  autocmd FileType *
-      \ if &omnifunc != '' |
-      \   call SuperTabChain(&omnifunc, "<c-p>") |
-      \ endif
-endif
+"   " Get SuperTab to use omnifunc when available, fall back on keyword
+"   " completion
+"   autocmd FileType *
+"       \ if &omnifunc != '' |
+"       \   call SuperTabChain(&omnifunc, "<c-p>") |
+"       \ endif
+" endif
 
 
 " fzf {
