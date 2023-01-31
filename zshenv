@@ -28,25 +28,27 @@ if [[ -d "$HOME/.nimble/bin" ]]; then
   export PATH="$HOME/.nimble/bin:$PATH"
 fi
 
-command -v yarn > /dev/null
-if [[ $? -eq 0 ]]; then
-  export PATH="$PATH:$(yarn global bin --offline)"
-elif [[ -d "$HOME/.yarn/bin" ]]; then
-  export PATH="$HOME/.yarn/bin:$PATH"
-fi
-
 if [[ -d "$HOME/.local/bin" ]]; then
   export PATH="$HOME/.local/bin:$PATH"
 fi
 
-command -v nvim > /dev/null
+# Use helix; nvim; vim as editor in that order
+command -v helix> /dev/null
 if [[ $? -eq 0 ]]; then
-  export EDITOR=nvim
-  alias vim=nvim
-elif [[ -f /Applications/MacVim.app/Contents/MacOS/Vim ]]; then
-  export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
+  export EDITOR=helix
 else
-  export EDITOR=vim
+  command -v nvim> /dev/null
+  if [[ $? -eq 0 ]]; then
+    export EDITOR=nvim
+  else
+    export EDITOR=vim
+  fi
+fi
+
+# alias vim to nvim if present
+command -v nvim> /dev/null
+if [[ $? -eq 0 ]]; then
+  alias vim=nvim
 fi
 
 export CUCUMBER_FORMAT=pretty

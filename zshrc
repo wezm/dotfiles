@@ -83,6 +83,12 @@ fi
 
 # fnm - Fast Node Manager
 command -v fnm > /dev/null && eval "`fnm env --shell zsh`"
+command -v yarn > /dev/null
+if [[ $? -eq 0 ]]; then
+  export PATH="$PATH:$(yarn global bin --offline)"
+elif [[ -d "$HOME/.yarn/bin" ]]; then
+  export PATH="$HOME/.yarn/bin:$PATH"
+fi
 
 source $ZSH/custom/prompt.sh
 
