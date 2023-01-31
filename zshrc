@@ -51,7 +51,7 @@ HIST_STAMPS="yyyy-mm-dd"
 BUNDLED_COMMANDS=(sidekiq)
 
 # bundler is loader after the rails plugin to that stuff works properly
-plugins=(cargo extract gem git history-substring-search postgres rails bundler)
+plugins=(cargo extract git history-substring-search postgres)
 
 source $ZSH/oh-my-zsh.sh
 
