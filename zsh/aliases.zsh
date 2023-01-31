@@ -25,10 +25,6 @@ alias ts='tig status'
 alias tb='tig blame'
 alias th='tig stash'
 
-# Rails
-unalias sd # So the sd tool works
-alias ttr='touch tmp/restart.txt'
-
 # Cargo
 alias cb='cargo build'
 alias cc='cargo check'
