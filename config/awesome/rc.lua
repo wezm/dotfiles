@@ -584,7 +584,7 @@ awful.rules.rules = {
           "pinentry",
           "veromix",
           "uxplay",
-          "Org.gnome.Nautilus",
+          "org.gnome.Nautilus",
           "vlc",
           "xtightvncviewer"},
 
