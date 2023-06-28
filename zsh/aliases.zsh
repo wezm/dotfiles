@@ -33,8 +33,8 @@ alias ct='cargo test'
 alias cu='cargo update'
 alias fmt='cargo fmt'
 
-# Use exa as ls
 if command -v exa > /dev/null; then
+  # Use exa as ls
   # Override default oh-my-zsh directories aliases with exa ones
   # https://the.exa.website/
   unalias ls
@@ -43,6 +43,15 @@ if command -v exa > /dev/null; then
   alias ls='exa'
   alias ll='exa -l'
   alias la='exa -la'
+elif command -v lsd > /dev/null; then
+  # Use lsd as ls
+  # https://github.com/lsd-rs/lsd
+  unalias ls
+  unalias lsa
+  alias l='lsd'
+  alias ls='lsd'
+  alias ll='lsd -l'
+  alias la='lsd -la'
 fi
 
 alias zswap='sudo grep -R . /sys/kernel/debug/zswap'
