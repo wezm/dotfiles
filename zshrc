@@ -74,11 +74,11 @@ if [[ -d "$HOME/.crenv/bin" ]]; then
   eval "$(crenv init -)"
 fi
 
-# skim
-if [[ -f /usr/share/skim/key-bindings.zsh ]]; then
-  source /usr/share/skim/key-bindings.zsh
-elif [[ -f /usr/local/share/examples/skim/shell/key-bindings.zsh ]]; then
-  source /usr/local/share/examples/skim/shell/key-bindings.zsh
+# fzf
+if [[ -f /usr/share/fzf/key-bindings.zsh ]]; then
+  source /usr/share/fzf/key-bindings.zsh
+elif [[ -f /usr/local/share/examples/fzf/shell/key-bindings.zsh ]]; then
+  source /usr/local/share/examples/fzf/shell/key-bindings.zsh
 fi
 
 # fnm - Fast Node Manager
