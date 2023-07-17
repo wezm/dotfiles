@@ -105,4 +105,7 @@ matches:
   - trigger: ;www
     replace: "https://www.wezm.net/"
   - trigger: ;gh
-    replace: github.com/
+    replace: "github.com/"
+  - trigger: ;mm
+    replace: "wezm@mastodon.decentralised.social"
+
