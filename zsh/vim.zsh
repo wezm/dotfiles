@@ -8,8 +8,8 @@ function v() {
   line_number=$parts[2]
 
   if [[ $line_number -gt 0 ]]; then
-    helix "$file:$line_number"
+    vim "+$line_number" "$file"
   else
-    helix $@
+    vim $@
   fi
 }

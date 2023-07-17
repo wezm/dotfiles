@@ -33,16 +33,22 @@ if [[ -d "$HOME/.local/bin" ]]; then
 fi
 
 # Use helix; nvim; vim as editor in that order
-command -v helix> /dev/null
+# command -v helix> /dev/null
+# if [[ $? -eq 0 ]]; then
+#   export EDITOR=helix
+# else
+#   command -v nvim> /dev/null
+#   if [[ $? -eq 0 ]]; then
+#     export EDITOR=nvim
+#   else
+#     export EDITOR=vim
+#   fi
+# fi
+command -v nvim> /dev/null
 if [[ $? -eq 0 ]]; then
-  export EDITOR=helix
+  export EDITOR=nvim
 else
-  command -v nvim> /dev/null
-  if [[ $? -eq 0 ]]; then
-    export EDITOR=nvim
-  else
-    export EDITOR=vim
-  fi
+  export EDITOR=vim
 fi
 
 # alias vim to nvim if present
