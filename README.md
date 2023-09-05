@@ -37,6 +37,10 @@ enabled (to clone repos).
 
     gsettings set org.gnome.desktop.interface monospace-font-name 'PragmataPro Mono Regular 10'
 
+### HiDPI
+
+    gsettings set org.gnome.desktop.interface scaling-factor 2
+
 ### Location services
 
     gsettings set org.gnome.system.location enabled true
