@@ -1,7 +1,12 @@
 #!/bin/sh
 
-source "$HOME/.dotfiles/private/restic-backup-$(hostname).sh"
-export RESTIC_PASSWORD_FILE="$HOME/.dotfiles/private/restic-backup-$(hostname)-password.txt"
+hostname=$(uname -n)
+if [ "$hostname" = "arch-torrent" ]; then
+  hostname="torrent"
+fi
+
+. "$HOME/.dotfiles/private/restic-backup-${hostname}.sh"
+export RESTIC_PASSWORD_FILE="$HOME/.dotfiles/private/restic-backup-${hostname}-password.txt"
 
 # restic init
 
