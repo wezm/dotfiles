@@ -12,6 +12,7 @@ export RESTIC_PASSWORD_FILE="$HOME/.dotfiles/private/restic-backup-${hostname}-p
 
 restic backup \
   --exclude target \
+  --exclude node_modules \
   --exclude ~/Downloads \
   --exclude ~/Source \
   \
