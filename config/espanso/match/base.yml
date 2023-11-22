@@ -71,10 +71,6 @@ matches:
     vars:
       - name: clipboard
         type: clipboard
-  - trigger: "3`"
-    replace: |-
-      ```
-      ```
 
   ## Links and URLs
 
@@ -108,4 +104,8 @@ matches:
     replace: "github.com/"
   - trigger: ;mm
     replace: "wezm@mastodon.decentralised.social"
-
+  - trigger: ;src
+    replace: "[Source]({{clipboard}})"
+    vars:
+      - name: clipboard
+        type: clipboard
