@@ -7,6 +7,7 @@ fi
 
 . "$HOME/.dotfiles/private/restic-backup-${hostname}.sh"
 export RESTIC_PASSWORD_FILE="$HOME/.dotfiles/private/restic-backup-${hostname}-password.txt"
+export RESTIC_PROGRESS_FPS=1
 
 # restic init
 
