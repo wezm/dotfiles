@@ -182,7 +182,12 @@ local function set_wallpaper(s)
         if type(wallpaper) == "function" then
             wallpaper = wallpaper(s)
         end
-        gears.wallpaper.maximized(wallpaper, s, true)
+        local offset = 0
+        -- Attempt to detect portrait monitor and tweak position
+        if s.geometry.height > s.geometry.width then
+          offset = -350
+        end
+        gears.wallpaper.maximized(wallpaper, s, false, { x = offset, y = 0 })
     end
 end
 
