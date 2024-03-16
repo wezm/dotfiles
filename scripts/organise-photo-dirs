@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+
+# Organise files in directories named YYYY-MM-DD to YYYY/MM/DD
+#
+# ~/.dotfiles/scripts/organise-photo-dirs ../[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]
+#
+# Will move all matching directories into hierarchy under pwd.
+
+require 'fileutils'
+
+ARGV.each do |path|
+  dir = File.basename(path)
+  unless dir =~ /^([0-9]{4})-([0-9]{2})-([0-9]{2})$/
+    puts "Skipping #{path}"
+    next
+  end
+
+  year = $1
+  month = $2
+  day = $3
+
+  month_dir = "#{year}/#{month}"
+  new_dir = "#{year}/#{month}/#{day}"
+
+  # puts "mkdir #{month_dir}" unless File.exist?(month_dir)
+  # puts "mv #{path} #{new_dir}"
+  FileUtils.mkdir_p(month_dir, verbose: true) unless File.exist?(month_dir)
+  FileUtils.mv(path, new_dir, verbose: true)
+end
