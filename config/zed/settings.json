@@ -1,0 +1,54 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu. ->
+{
+  // "ui_font_size": 14,
+  "ui_font_family": "Cantarell",
+  "scroll_sensitivity": 1.4,
+  "buffer_font_size": 13,
+  "buffer_font_family": "PragmataPro Mono Liga",
+  "buffer_font_features": {
+    // Enable ligatures
+    "calt": true
+  },
+  "buffer_line_height": "standard",
+  "autosave": "on_window_change",
+  "preferred_line_length": 100,
+  "inlay_hints": { "enabled": true },
+  "soft_wrap": "editor_width",
+  "theme": "Base16 OceanicNext",
+  "vim_mode": true,
+  "vim": { "use_system_clipboard": "on_yank" },
+  "base_keymap": "JetBrains",
+  "terminal": {
+    "font_features": { "calt": false },
+    "line_height": "standard"
+  },
+  "auto_update": false,
+  "features": {
+    // Disable AI things
+    "inline_completion_provider": "none"
+  },
+  "assistant": { "version": "1", "enabled": false },
+  "lsp": {
+    "rust-analyzer": {
+      "initilization_options": {
+        "inlayHints": {
+          "maxLength": null,
+          "lifetimeElisionHints": {
+            "useParameterNames": true,
+            "enable": "skip_trivial"
+          },
+          "closureReturnTypeHints": {
+            "enable": "always"
+          }
+        }
+      }
+    }
+  }
+}
