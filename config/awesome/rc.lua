@@ -326,6 +326,8 @@ globalkeys = gears.table.join(
               {description = "open a terminal window", group = "launcher"}),
     awful.key({ modkey, "Shift"   }, "Return", function () awful.spawn(terminal) end,
               {description = "open a new terminal instance", group = "launcher"}),
+    awful.key({ "Control", "Mod1" }, "e",      function () awful.spawn("emojimart") end,
+              {description = "open emoji picker", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
@@ -628,6 +630,7 @@ awful.rules.rules = {
         class = {
           "pinentry",
           "Emote",
+          "Emojimart",
           "onagre",
           "Org.gnome.NautilusPreviewer"
         },
