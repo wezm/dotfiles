@@ -469,6 +469,9 @@ endfunction
 nmap <Leader>fa :call FathomArray()<CR>
 vmap <Leader>fs :call FathomConvert()<CR>
 
+" Turn inline Markdown link into reference link
+nnoremap <leader>r F[mxyf)Go<Esc>pF(cl: <Esc>f)x`xf(da)
+
 " SuperTab
 " Use completion context to determin the completion mechanism to use. For
 " example when on a . complete methods, when on a / complete paths
@@ -646,3 +649,7 @@ let g:abolish_no_mappings = 1
 " vim-visual-multi
 " https://github.com/mg979/vim-visual-multi
 let g:VM_leader = "''"
+
+" vim-mercury
+" Enables spell checking in comments
+let g:mercury_highlight_comment_special = 1

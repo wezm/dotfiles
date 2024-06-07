@@ -110,7 +110,7 @@ autocmd! bufwritepost init.vim source %
 " check files when focused again (probably only works in NeovimGtk)
 autocmd BufEnter,FocusGained * checktime
 
-" lua require('lsp')
+lua require('lsp')
 
 lua require('completion')
 
@@ -122,7 +122,7 @@ lua require("lsp_lines").setup()
 lua vim.diagnostic.config({ virtual_text = false })
 
 " DAP/Debugger support
-lua require('debugger')
+" lua require('debugger')
 
 " nvim-base16
 lua require('base16-colorscheme').with_config { telescope = false } -- fix ugliness
