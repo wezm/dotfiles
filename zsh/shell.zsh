@@ -7,3 +7,9 @@ function fix-colours() {
 function say() {
   echo $@ | festival --tts
 }
+
+# Take a number like 1836674418 and print it as mymr
+
+function fourcc() {
+  echo "$1" | awk '{ printf("0x%X", $0) }' | dtool h2s
+}
