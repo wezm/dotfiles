@@ -204,8 +204,9 @@ local opts = {
     },
 }
 
-require('rust-tools').setup(opts)
+-- FIXME: Causes and error reltaed to module 'debugger' not found
+-- require('rust-tools').setup(opts)
 
--- require('lspconfig')['rust_analyzer'].setup {
---   capabilities = capabilities
--- }
+require('lspconfig')['rust_analyzer'].setup {
+  capabilities = capabilities
+}
