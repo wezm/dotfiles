@@ -6,6 +6,11 @@ ForwardAgent yes
 
 Include private_config
 
+# Terrapin
+Host *
+  Ciphers -chacha20-poly1305@openssh.com
+  MACs -*etm@openssh.com
+
 Host aur.archlinux.org
   IdentityFile ~/.ssh/aur
   User aur
