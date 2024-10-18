@@ -1,0 +1,8 @@
+dimension TCelsius
+unit °C: TCelsius
+
+dimension TFahrenheit
+unit °F: TFahrenheit
+
+fn to_F(temp: TCelsius) -> TFahrenheit = (32 + 9 × (temp / °C) / 5) °F
+fn to_C(temp: TFahrenheit) -> TCelsius = (5 × (temp / °F - 32) / 9) °C
