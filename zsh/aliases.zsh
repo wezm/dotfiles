@@ -65,6 +65,15 @@ if command -v zenith > /dev/null; then alias top="zenith -d0 -n0 --disable-histo
 if command -v bat > /dev/null; then
   alias cat=bat;
   alias b=bat
+elif command -v batcat > /dev/null; then
+  # Urgh Debian
+  alias cat=batcat;
+  alias b=batcat
+fi
+
+# Urgh Debian
+if command -v fdfind > /dev/null; then
+  alias fd=fdfind
 fi
 
 # Use bsdtar as tar
