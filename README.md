@@ -9,8 +9,6 @@ My repo for configuration files, managed by [dot].
 2. Install `dot`, either by building from source or downloading a binary.
    (`cargo install --git https://github.com/ubnt-intrepid/dot.git`)
 5. Link files: `/home/wmoore/.cargo/bin/dot link`
-6. Run `base16_default-dark` once to set `~/.vimrc_background` to sync `vim`
-   with the shell theme.
 7. Open [Neovim] and install plugins: `:PlugInstall`
 
 ### Transcript
