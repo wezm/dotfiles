@@ -8,20 +8,34 @@
 // from the command palette or from `Zed` application menu. ->
 {
   // "ui_font_size": 14,
+  "languages": {
+    "Markdown": {
+      "show_edit_predictions": false
+    }
+  },
+  "assistant": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-7-sonnet-latest"
+    },
+    "version": "2"
+  },
+  "theme": "One Dark",
   "ui_font_family": "Cantarell",
   "scroll_sensitivity": 1.4,
   "buffer_font_size": 13,
   "buffer_font_family": "PragmataPro Mono Liga",
   "buffer_font_features": {
-    // Enable ligatures
+    // Enable ligatures (doesn't work on Linux yet: https://github.com/zed-industries/zed/issues/12176)
     "calt": true
   },
   "buffer_line_height": "standard",
-  "autosave": "on_window_change",
+  "autosave": "on_focus_change",
+  "format_on_save": "off",
   "preferred_line_length": 100,
   "inlay_hints": { "enabled": true },
   "soft_wrap": "editor_width",
-  "theme": "Base16 OceanicNext",
+  // "theme": "Base16 OceanicNext",
   "vim_mode": true,
   "vim": { "use_system_clipboard": "on_yank" },
   "base_keymap": "JetBrains",
@@ -31,10 +45,11 @@
   },
   "auto_update": false,
   "features": {
-    // Disable AI things
-    "inline_completion_provider": "none"
+    // edit predictions are nice, but rely on constant remote inference.
+    // I'd rather this happen locally, like Rust Rover.
+    "edit_prediction_provider": "none"
   },
-  "assistant": { "version": "1", "enabled": false },
+  // "assistant": { "version": "2", "enabled": false },
   "lsp": {
     "rust-analyzer": {
       "initilization_options": {
