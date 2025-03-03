@@ -16,6 +16,7 @@ restic backup \
   --exclude node_modules \
   --exclude ~/Downloads \
   --exclude ~/Source \
+  --exclude ~/Storage/crawl-data \
   \
   --exclude ~/.android \
   --exclude ~/.arduino15 \
