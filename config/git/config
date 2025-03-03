@@ -28,8 +28,6 @@
 	autocrlf = input
 [mergetool]
 	keepBackup = false
-[mergetool "vimdiff"]
-	path = /usr/bin/nvim
 [push]
 	default = tracking
 	recurseSubmodules = check
@@ -47,6 +45,8 @@
 	status = + !git commit --amend
 	status = C !git commit --verbose
 	status = X <git commit --verbose
+	generic = <Esc>[I :none  # Ignore xterm focus events
+	generic = <Esc>[O :none  # https://github.com/jonas/tig/issues/1292
 [help]
 	autoCorrect = 20
 [rerere]
@@ -54,9 +54,10 @@
 [diff "exif"]
 	textconv = exiftool
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 	required = true
+	process = git-lfs filter-process
 
 # include supported in git >= v1.7.10
 [include]
@@ -83,3 +84,5 @@
 	addEmptyPathspec = false
 [gpg]
 	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = /home/wmoore/.config/git/allowed_signers
