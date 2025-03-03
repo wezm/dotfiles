@@ -51,7 +51,7 @@
       // "cmd-alt-f7": "editor::FindAllReferences",
       "ctrl-b": "editor::GoToDefinition",
       // "cmd-alt-b": "editor::GoToDefinitionSplit",
-      "ctrl-shift-b": "editor::GoToTypeDefinition"
+      "ctrl-shift-b": "editor::GoToTypeDefinition",
       // "cmd-alt-shift-b": "editor::GoToTypeDefinitionSplit",
       // "alt-enter": "editor::ToggleCodeActions",
       // "f2": "editor::GoToDiagnostic",
@@ -62,6 +62,7 @@
       // "cmd-end": "editor::MoveToEnd",
       // "cmd-shift-home": "editor::SelectToBeginning",
       // "cmd-shift-end": "editor::SelectToEnd"
+      "gq": "vim::Rewrap"
     }
   },
   // {
