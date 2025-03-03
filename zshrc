@@ -90,6 +90,11 @@ elif [[ -d "$HOME/.yarn/bin" ]]; then
   export PATH="$HOME/.yarn/bin:$PATH"
 fi
 
+# deno
+if [[ -d "$HOME/.deno/bin" ]]; then
+  export PATH="$HOME/.deno/bin:$PATH"
+fi
+
 source $ZSH/custom/prompt.sh
 
 command -v zoxide > /dev/null && eval "$(zoxide init zsh)"
