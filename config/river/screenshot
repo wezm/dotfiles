@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -eu
+
+case "${1:-}" in
+    "screen")
+        cd ~/Pictures && wayshot --stdout --slurp "$(slurp -c 000000BF -o -r)" | \
+            magic convert - -units PixelsPerCentimeter -density 56.69 \
+                "Screenshot from $(date '+%Y-%m-%d %H-%M-%S').png"
+        ;;
+    "all")
+        cd ~/Pictures && wayshot --stdout | \
+            magick convert - -units PixelsPerCentimeter -density 56.69 \
+                "Screenshot from $(date '+%Y-%m-%d %H-%M-%S').png"
+        ;;
+    *)
+        # Select window (eventually; currenly only allows interactive region selection)
+        cd ~/Pictures && wayshot --stdout --slurp "$(slurp -c 000000BF)" | \
+            magic convert - -units PixelsPerCentimeter -density 56.69 \
+                "Screenshot from $(date '+%Y-%m-%d %H-%M-%S').png"
+        ;;
+esac

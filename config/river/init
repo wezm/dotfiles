@@ -3,6 +3,18 @@
 # See the river(1), riverctl(1), and rivertile(1) man pages for complete
 # documentation.
 
+# Ouput configuration
+wlr-randr \
+  --output DP-1 --mode 3840x2160 --pos 0,0 --transform normal --scale 2 \
+  --output DP-3 --mode 3840x2160 --pos 1920,0 --transform 90 --scale 2
+
+# Input configuration
+riverctl input pointer-\* natural-scroll enabled
+riverctl keyboard-layout -options "compose:menu" us
+
+riverctl hide-cursor timeout 3000
+riverctl hide-cursor when-typing enabled
+
 # Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
 
 # For development/testing under Awesome, use Alt, switch to Mod4 later
@@ -116,6 +128,23 @@ riverctl map normal $Super F11 enter-mode passthrough
 # Super+F11 to return to normal mode
 riverctl map passthrough $Super F11 enter-mode normal
 
+# Super+p to run launcher
+riverctl map normal $Super P spawn 'yofi apps'
+
+# Super+r to run command
+riverctl map normal $Super R spawn 'yofi binapps'
+
+# Screenshots
+# Everything
+# riverctl map normal Shift Print spawn "cd ~/Pictures && wayshot --stdout | magick convert - -units PixelsPerCentimeter # -density 56.69 \"Screenshot from $(date '+%Y-%m-%d %H-%M-%S').png\""
+riverctl map normal Shift Print spawn ""
+
+# Select output (screen)
+# riverctl map normal Alt Print spawn "cd ~/Pictures && wayshot --stdout --slurp \"\$(slurp -c 000000BF -o -r)\" | magic convert - -units PixelsPerCentimeter -density 56.69 \"Screenshot from \$(date '+%Y-%m-%d %H-%M-%S').png\""
+
+# Select window (eventually; currenly only allows interactive region selection)
+# riverctl map normal None Print spawn "cd ~/Pictures && wayshot --stdout --slurp \"\$(slurp -c 000000BF)\" | magic convert - -units PixelsPerCentimeter -density 56.69 \"Screenshot from \$(date '+%Y-%m-%d %H-%M-%S').png\""
+
 # Various media key mapping examples for both normal and locked mode which do
 # not have a modifier
 for mode in normal locked
@@ -158,8 +187,12 @@ riverctl rule-add -app-id "bar" csd
 
 # Set the default layout generator to be rivertile and start it.
 # River will send the process group of the init executable SIGTERM on exit.
-riverctl default-layout rivertile
-rivertile -view-padding 6 -outer-padding 6 &
+#riverctl default-layout rivertile
+#rivertile -view-padding 6 -outer-padding 6 &
+riverctl default-layout luatile
+river-luatile &
 
-/home/wmoore/Source/github.com/elkowar/eww/target/release/eww daemon
-/home/wmoore/Source/github.com/elkowar/eww/target/release/eww open bar
+# Bar
+eww daemon
+eww open bar --screen 0 --id primary
+eww open bar --screen 1 --id secondary
