@@ -143,5 +143,9 @@ if [[ -f /etc/os-release ]]; then
   grep -q '^ID=arch' /etc/os-release && export DEBUGINFOD_URLS="https://debuginfod.archlinux.org/"
 fi
 
+# Janet
+export JANET_TREE=$HOME/.local/jpm_tree
+export JANET_PATH=$HOME/.local/jpm_tree/lib
+
 source "$HOME/.zshenv_private"
 if [ -e /home/wmoore/.nix-profile/etc/profile.d/nix.sh ]; then . /home/wmoore/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
