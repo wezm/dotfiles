@@ -179,11 +179,25 @@ riverctl set-repeat 50 300
 # Enable focus-follows-cursor
 riverctl focus-follows-cursor normal
 
+# Rules
+
 # Make all views with an app-id that starts with "float" and title "foo" start floating.
 riverctl rule-add -app-id 'float*' -title 'foo' float
 
 # Make all views with app-id "bar" and any title use client-side decorations
 riverctl rule-add -app-id "bar" csd
+
+riverctl rule-add -app-id "1Password" float
+riverctl rule-add -app-id "virt-manager" float
+
+# Startup
+# NOTE: As of GNOME 46 ssh agent functionalit has been moved to gcr (gcr-4
+# package on Arch). To use it install the package and enable the user service
+# systemctl --user enable gcr-ssh-agent.service
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
+
+# Polkit agent for virt-manager, etc. (polkit-gnome package on Arch)
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Set the default layout generator to be rivertile and start it.
 # River will send the process group of the init executable SIGTERM on exit.
