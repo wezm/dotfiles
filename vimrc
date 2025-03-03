@@ -27,6 +27,7 @@ Plug 'chrisbra/csv.vim'
 Plug 'davidoc/taskpaper.vim'
 Plug 'edkolev/promptline.vim'
 Plug 'elixir-lang/vim-elixir'
+Plug 'elkowar/yuck.vim'
 " Plug 'ervandew/supertab'
 Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
 " Plug 'GEverding/vim-hocon'
@@ -34,6 +35,7 @@ Plug 'gleam-lang/gleam.vim'
 Plug 'godlygeek/tabular'
 " Plug 'hashivim/vim-terraform'
 Plug 'idris-hackers/idris-vim'
+Plug 'janet-lang/janet.vim'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -100,7 +102,6 @@ if has('nvim')
   Plug 'hrsh7th/cmp-cmdline'
   Plug 'hrsh7th/nvim-cmp'
   Plug 'saadparwaiz1/cmp_luasnip'
-  Plug 'hrsh7th/nvim-cmp'
 
   " To enable more of the features of rust-analyzer, such as inlay hints and more!
   Plug 'simrat39/rust-tools.nvim'
@@ -116,7 +117,7 @@ if has('nvim')
 
   " General
   Plug 'nvim-lua/plenary.nvim'
-  Plug 'nvim-treesitter/nvim-treesitter'
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 endif
 
 call plug#end()
@@ -172,7 +173,7 @@ set nofoldenable
 
 " Show characters for expanded TABs, etc
 set list
-set listchars=tab:>-,trail:.,extends:>
+set listchars=tab:>-,trail:.,extends:>,nbsp:␣
 
 set scrolloff=1
 set display+=lastline
