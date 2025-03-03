@@ -33,16 +33,16 @@ alias ct='cargo test'
 alias cu='cargo update'
 alias fmt='cargo fmt'
 
-if command -v exa > /dev/null; then
-  # Use exa as ls
-  # Override default oh-my-zsh directories aliases with exa ones
-  # https://the.exa.website/
+if command -v eza > /dev/null; then
+  # Use eza as ls
+  # Override default oh-my-zsh directories aliases with eza ones
+  # https://github.com/eza-community/eza
   unalias ls
   unalias lsa
-  alias l='exa'
-  alias ls='exa'
-  alias ll='exa -l'
-  alias la='exa -la'
+  alias l='eza'
+  alias ls='eza'
+  alias ll='eza -l'
+  alias la='eza -la'
 elif command -v lsd > /dev/null; then
   # Use lsd as ls
   # https://github.com/lsd-rs/lsd
@@ -78,3 +78,7 @@ fi
 
 # Use bsdtar as tar
 if command -v bsdtar > /dev/null; then alias tar=bsdtar; fi
+
+# Zed
+if command -v zeditor > /dev/null; then alias zed=zeditor; fi
+
