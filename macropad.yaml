@@ -1,0 +1,79 @@
+# Normal keyboard orientation is when
+# buttons are on the left side and knobs are on the right.
+# However, you may want to use the keyboard in another orientation.
+# To avoid remapping button positions in your head, just set it here.
+# Possible values are:
+#   (horizontal)
+#   - 'normal': buttons on the left, knobs on the right
+#   - 'upsidedown': buttons on the right, knobs on the left
+#   (vertical)
+#   - 'clockwise': buttons on the top, knobs on the bottom
+#   - 'counterclockwise': buttons on the bottom, knobs on the top
+orientation: normal
+
+# Different keyboard models have different numbers of buttons and knobs.
+# Set it here for proper handling.
+# Count rows and columns with the keyboard in normal orientation (knobs on the right)
+rows: 1
+columns: 3
+knobs: 1
+
+# Layers are sets of alternative key mappings.
+# The current layer is changed using a button on the side of the keyboard
+# and displayed with LEDs on top (only for the moment of changing).
+# All keyboards I saw had three layers, but I suppose other variants exist.
+layers:
+  - buttons:
+      # Array of buttons.
+      # In horizontal orientations it's `rows` rows `columns` buttons each.
+      # In vertical: `columns` rows `rows` buttons each.
+      # Each entry is either a sequence of 'chords' or a mouse event.
+      # A chord is a combination of one key with optional modifiers,
+      # like 'b', 'ctrl-alt-a' or 'win-rctrl-backspace'.
+      # It can also be just modifiers without a key: 'ctrl-alt'.
+      # You may combine up to 5 chords into a sequence using commas: 'ctrl-v,ctrl-c'.
+      # Arbitrary scan codes (decimal) may be given like this: '<101>'.
+      - ["ctrl-w", "cmd-1", "cmd-3"]
+      # - ["e", "f", "g", "h"]
+      # - ["<100>", "j", "k", "l"]
+    knobs:
+      # Knobs are listed from left to right if horizontal.
+      # Knobs are listed from top to bottom if vertical.
+      # Knobs can be rotated counter-clockwise (ccw) or clockwise (cw)
+      # and pressed down.
+      - ccw: "wheelup"
+        cw: "wheeldown"
+        press: "click"
+      # - ccw: "shift-wheelup"
+      #   press: "shift-click"
+      #   cw: "shift-wheeldown"
+
+  # - buttons:
+  #     # Mouse events are clicks ('click/lclick', 'rclick', 'mclick') or
+  #     # wheel events ('wheelup', 'wheeldown') with one optional modifier,
+  #     # only 'ctrl', 'shift' and 'alt' are supported ('ctrl-wheeldown').
+  #     # Clicks may combine several buttons, like this: 'click+rclick'.
+  #     - ["click", "lclick", "rclick", "mclick"]
+  #     - ["click+rclick", "wheeldown", "shift-wheelup", "ctrl-wheelup"]
+  #     - ["alt-wheelup", "ctrl-click", "wheelup", "wheelup"]
+  #   knobs:
+  #     - ccw: "left"
+  #       press: "enter"
+  #       cw: "right"
+  #     - ccw: "ctrl-left"
+  #       press: "ctrl-enter"
+  #       cw: "ctrl-right"
+
+  # - buttons:
+  #     # Multimedia commands are supported but
+  #     # cannot be mixed with normal keys and modifiers.
+  #     - ["play", "prev", "next", "mute"]
+  #     - ["2", "3", "4", "5"]
+  #     - ["6", "7", "8", "9"]
+  #   knobs:
+  #     - ccw: "volumedown"
+  #       press: "mute"
+  #       cw: "volumeup"
+  #     - ccw: "d"
+  #       press: "e"
+  #       cw: "f"
