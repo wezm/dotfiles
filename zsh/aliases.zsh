@@ -80,5 +80,10 @@ fi
 if command -v bsdtar > /dev/null; then alias tar=bsdtar; fi
 
 # Zed
-if command -v zeditor > /dev/null; then alias zed=zeditor; fi
+if command -v zeditor > /dev/null; then
+  alias zed=zeditor
+elif command -v /usr/bin/z > /dev/null; then
+  # Chimera
+  alias zed=/usr/bin/z
+fi
 
