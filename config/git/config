@@ -34,6 +34,9 @@
 [diff]
 	color-words =
 	compactionHeuristic = true
+	algorithm = histogram
+	colorMoved = plain
+	renames = true
 [gui]
 	fontdiff = -family Consolas -size 11 -weight normal -slant roman -underline 0 -overstrike 0
 [tig]
@@ -86,3 +89,9 @@
 	format = ssh
 [gpg "ssh"]
 	allowedSignersFile = /home/wmoore/.config/git/allowed_signers
+[tag]
+	sort = -version:refname
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
