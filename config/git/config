@@ -26,6 +26,7 @@
 	whitespace = trailing-space,space-before-tab
 	quotepath = false
 	autocrlf = input
+	attributesfile = /home/wmoore/.config/git/attributes
 [mergetool]
 	keepBackup = false
 [push]
@@ -89,6 +90,9 @@
 	format = ssh
 [gpg "ssh"]
 	allowedSignersFile = /home/wmoore/.config/git/allowed_signers
+[merge "mergiraf"]
+	name = mergiraf
+	driver = mergiraf merge --git %O %A %B -s %S -x %X -y %Y -p %P -l %L
 [tag]
 	sort = -version:refname
 [column]
