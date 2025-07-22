@@ -55,3 +55,5 @@
 *.mli merge=mergiraf
 *.hs merge=mergiraf
 
+*.png diff=exif
+*.jpg diff=exif
