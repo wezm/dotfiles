@@ -603,7 +603,9 @@ awful.rules.rules = {
           "veromix",
           "uxplay",
           "org.gnome.Nautilus",
+          "gnome-disks",
           "vlc",
+          "io.github.celluloid_player.Celluloid",
           "xtightvncviewer"},
 
         name = {
