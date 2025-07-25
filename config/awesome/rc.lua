@@ -412,12 +412,12 @@ globalkeys = gears.table.join(
               {description = "mute default output", group = "media"}),
 
     awful.key({}, "XF86AudioLowerVolume", function()
-                  awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%", false)
+                  awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ -2%", false)
               end,
               {description = "volume down", group = "media"}),
 
     awful.key({}, "XF86AudioRaiseVolume", function()
-                  awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%", false)
+                  awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +2%", false)
               end,
               {description = "volume up", group = "media"}),
 
