@@ -645,7 +645,7 @@ awful.rules.rules = {
       properties = { titlebars_enabled = true } },
 
     -- Start these clients full-screen
-    { rule = { class = "Bcompare" },
+    { rule = { instance = "bcompare" },
       properties = { maximized_vertical = true, maximized_horizontal = true } },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
