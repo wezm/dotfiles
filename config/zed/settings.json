@@ -13,24 +13,25 @@
       "show_edit_predictions": false
     }
   },
-  "assistant": {
+  "agent": {
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-7-sonnet-latest"
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-latest"
     },
-    "version": "2"
   },
   "theme": "One Dark",
-  "ui_font_family": "Cantarell",
+  "ui_font_family": "Open Sans",
   "scroll_sensitivity": 1.4,
-  "buffer_font_size": 13,
+  "buffer_font_size": 14.0,
   "buffer_font_family": "PragmataPro Mono Liga",
   "buffer_font_features": {
     // Enable ligatures (doesn't work on Linux yet: https://github.com/zed-industries/zed/issues/12176)
     "calt": true
   },
+  // "tab_size": 8,
   "buffer_line_height": "standard",
-  "autosave": "on_focus_change",
+  // "autosave": { "after_delay": { "milliseconds": 1500 } },
+  "autosave": "on_window_change",
   "format_on_save": "off",
   "preferred_line_length": 100,
   "inlay_hints": { "enabled": true },
@@ -47,7 +48,7 @@
   "features": {
     // edit predictions are nice, but rely on constant remote inference.
     // I'd rather this happen locally, like Rust Rover.
-    "edit_prediction_provider": "none"
+    // "edit_prediction_provider": "none"
   },
   // "assistant": { "version": "2", "enabled": false },
   "lsp": {
