@@ -13,3 +13,19 @@ function say() {
 function fourcc() {
   echo "$1" | awk '{ printf("0x%X", $0) }' | dtool h2s
 }
+
+function bookmark() {
+  if [[ $# -lt 2 ]]; then 
+    echo "Usage: bookmark url title [tags]"
+    return
+  fi
+
+  local url
+  local title
+  url="$1"
+  title="$2"
+  shift 2
+  local -a tags=("$@")
+
+  jaq -cn --arg url "$url" --arg title "$title" --arg time "$(date -Iseconds)" --args '{ href: $url, tags: $ARGS.positional, time: $time, title: $title }' ${tags[*]} >> ~/Documents/Notes/Readlynx/bookmarks.md
+}
