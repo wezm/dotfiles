@@ -31,7 +31,7 @@
   // "tab_size": 8,
   "buffer_line_height": "standard",
   // "autosave": { "after_delay": { "milliseconds": 1500 } },
-  "autosave": "on_window_change",
+  "autosave": "on_focus_change",
   "format_on_save": "off",
   "preferred_line_length": 100,
   "inlay_hints": { "enabled": true },

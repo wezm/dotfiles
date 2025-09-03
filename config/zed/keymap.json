@@ -83,7 +83,7 @@
       // "cmd-1": "workspace::ToggleLeftDock",
       // "cmd-6": "diagnostics::Deploy"
     }
-  }
+  },
   // {
   //   "context": "Pane",
   //   "bindings": {
@@ -98,4 +98,30 @@
   //     "shift-f6": "project_panel::Rename"
   //   }
   // }
+  {
+    "context": "vim_mode == normal && !menu",
+    "bindings": {
+      "shift-y": ["workspace::SendKeystrokes", "y $"] // Use neovim's yank behavior: yank to end of line.
+    }
+  },
+  // {
+  //   "context": "vim_mode == insert",
+  //   "bindings": {
+  //     "j k": "vim::NormalBefore" // In insert mode, make jk escape to normal mode.
+  //   }
+  // },
+  // {
+  //   "context": "EmptyPane || SharedScreen",
+  //   "bindings": {
+  //     // Put key bindings here (in addition to the context above) if you want them to
+  //     // work when no editor exists.
+  //     // "space f": "file_finder::Toggle"
+  //   }
+  // }
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "shift-s": ["vim::PushAddSurrounds", {}]
+    }
+  }
 ]
