@@ -8,6 +8,10 @@
 // from the command palette or from `Zed` application menu. ->
 {
   // "ui_font_size": 14,
+  "telemetry": {
+    "diagnostics": true,
+    "metrics": true
+  },
   "languages": {
     "Markdown": {
       "show_edit_predictions": false
@@ -20,9 +24,9 @@
     },
   },
   "theme": "One Dark",
-  "ui_font_family": "Open Sans",
+  "ui_font_family": "Adwaita Sans",
   "scroll_sensitivity": 1.4,
-  "buffer_font_size": 14.0,
+  "buffer_font_size": 13,
   "buffer_font_family": "PragmataPro Mono Liga",
   "buffer_font_features": {
     // Enable ligatures (doesn't work on Linux yet: https://github.com/zed-industries/zed/issues/12176)
