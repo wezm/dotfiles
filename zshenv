@@ -1,4 +1,5 @@
-system=`uname -s`
+system=$(uname -s)
+host=$(hostname)
 
 # De-duplicate PATH (thanks Ben)
 typeset -U PATH
@@ -19,17 +20,21 @@ if [[ -d "$HOME/Library/Python/2.7/bin" ]]; then
   export PATH="$HOME/Library/Python/2.7/bin:$PATH"
 fi
 
-if [[ -d "$HOME/.cargo/bin" ]]; then
+if [[ -d "$HOME/.local/bin" ]]; then
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+
+# this is after .local so that toolchains installed from musl.rs don't take precedence
+if [[ "$host" = "chimera-yoga" ]]; then
+  export CARGO_HOME="$HOME/.cargo-chimera"
+  export PATH="$CARGO_HOME/bin:$PATH"
+elif [[ -d "$HOME/.cargo/bin" ]]; then
   export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
 # Nim
 if [[ -d "$HOME/.nimble/bin" ]]; then
   export PATH="$HOME/.nimble/bin:$PATH"
-fi
-
-if [[ -d "$HOME/.local/bin" ]]; then
-  export PATH="$HOME/.local/bin:$PATH"
 fi
 
 # Use helix; nvim; vim as editor in that order
