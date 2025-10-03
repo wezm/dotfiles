@@ -149,3 +149,8 @@ export JANET_PATH=$HOME/.local/jpm_tree/lib
 
 source "$HOME/.zshenv_private"
 if [ -e /home/wmoore/.nix-profile/etc/profile.d/nix.sh ]; then . /home/wmoore/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# Scala
+if [[ -d "$HOME/.local/share/coursier/bin" ]]; then
+  export PATH="$HOME/.local/share/coursier/bin:$PATH"
+fi
