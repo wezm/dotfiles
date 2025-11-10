@@ -21,6 +21,7 @@ Pinnacle.setup(function()
     end
 
     local terminal = "alacritty"
+    local bar = "waybar"
 
     --------------------
     -- Mousebinds     --
@@ -350,5 +351,6 @@ Pinnacle.setup(function()
     })
 
     -- Spawning should happen after you add tags, as Pinnacle currently doesn't render windows without tags.
+    Process.spawn_once(bar)
     Process.spawn_once(terminal)
 end)
