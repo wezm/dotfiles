@@ -138,6 +138,8 @@ cmp.setup.cmdline(':', {
   })
 })
 
+--[[
+
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- local nvim_lsp = require'lspconfig'
@@ -209,3 +211,4 @@ require('rust-tools').setup(opts)
 -- require('lspconfig')['rust_analyzer'].setup {
 --   capabilities = capabilities
 -- }
+--]]

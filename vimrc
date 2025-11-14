@@ -43,6 +43,7 @@ Plug 'junegunn/fzf.vim'
 " Plug 'lotabout/skim.vim' " Depends on skim plugin, which is installed with the skim package on Arch
 Plug 'junegunn/vim-easy-align'
 Plug 'kassio/neoterm'
+Plug 'koto-lang/koto.vim'
 " Plug 'kchmck/vim-coffee-script'
 Plug 'lambdatoast/elm.vim'
 Plug 'leafgarland/typescript-vim'
@@ -53,6 +54,7 @@ Plug 'mxw/vim-jsx'
 Plug 'nickel-lang/vim-nickel'
 Plug 'NoahTheDuke/vim-just'
 Plug 'nono/vim-handlebars'
+Plug 'oils-for-unix/oils.vim'
 Plug 'osyo-manga/vim-over'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
@@ -90,13 +92,13 @@ Plug 'wezm/vim-mercury'
 Plug '~/Work/fathom.vim'
 
 if has('nvim')
-  Plug 'neovim/nvim-lspconfig'
+  " Plug 'neovim/nvim-lspconfig'
 
   Plug 'reasonml-editor/vim-reason-plus'
   Plug 'L3MON4D3/LuaSnip'
 
   " Completion framework
-  Plug 'hrsh7th/cmp-nvim-lsp'
+  " Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-buffer'
   Plug 'hrsh7th/cmp-path'
   Plug 'hrsh7th/cmp-cmdline'
@@ -104,14 +106,14 @@ if has('nvim')
   Plug 'saadparwaiz1/cmp_luasnip'
 
   " To enable more of the features of rust-analyzer, such as inlay hints and more!
-  Plug 'simrat39/rust-tools.nvim'
+  " Plug 'simrat39/rust-tools.nvim'
   Plug 'lewis6991/gitsigns.nvim'
   Plug 'RRethy/nvim-base16'
-  Plug 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
+  " Plug 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
 
   " Debugger
-  Plug 'mfussenegger/nvim-dap'
-  Plug 'rcarriga/nvim-dap-ui'
+  " Plug 'mfussenegger/nvim-dap'
+  " Plug 'rcarriga/nvim-dap-ui'
 
   " Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 
@@ -165,6 +167,7 @@ set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.o,.git,tmp,node_modules,*.pyc
 
 " Windows
 set winheight=24
+set title
 
 " Folding
 set foldmethod=syntax
