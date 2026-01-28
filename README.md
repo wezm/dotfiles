@@ -4,11 +4,13 @@ My repo for configuration files, managed by [dot].
 
 ## Installation
 
-1. Install `git` and `rust`. If on a non-GNU system (E.g. BSD), install `gmake`.
-3. Clone files: `git clone --recursive git@github.com:wezm/dotfiles.git`
-2. Install `dot`, either by building from source or downloading a binary.
+1. Install `git` and `rust`.
+2. Clone files: `git clone git@github.com:wezm/dotfiles.git ~/.dotfiles`
+3. `cd ~/.dotfiles`
+4. `git submodule update --init`
+5. Install `dot`, either by building from source or downloading a binary.
    (`cargo install --git https://github.com/ubnt-intrepid/dot.git`)
-5. Link files: `/home/wmoore/.cargo/bin/dot link`
+6. Link files: `/home/wmoore/.cargo/bin/dot link`
 7. Open [Neovim] and install plugins: `:PlugInstall`
 
 ### Transcript
