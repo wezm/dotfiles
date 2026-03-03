@@ -18,6 +18,9 @@ matches:
   - trigger: ;shrug
     replace: "¯\\_(ツ)_/¯"
 
+  - trigger: ;reg
+    replace: "Regards,\nWes"
+
   # Symbols
   - trigger: ;cmd
     replace: ⌘
@@ -81,6 +84,7 @@ matches:
   ## Links and URLs
 
   # Rewrite Twitter links to Nitter links
+  # Uses awk so we don't have to spawn a shell and deal with that.
   - trigger: ;nit
     replace: "{{link}}"
     vars:
