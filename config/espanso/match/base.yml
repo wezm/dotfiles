@@ -106,8 +106,8 @@ matches:
         params:
           cmd: "awk 'BEGIN { link = ENVIRON[\"ESPANSO_CLIPBOARD\"]; sub(/medium\\.com/, \"scribe.rip\", link); print link }'"
 
-  - trigger: ;tw
-    replace: "https://twitter.com/"
+  - trigger: ;cas
+    replace: "casuarina.org"
   - trigger: ;www
     replace: "https://www.wezm.net/"
   - trigger: ;ddd
