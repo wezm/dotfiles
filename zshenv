@@ -159,3 +159,19 @@ if [ -e /home/wmoore/.nix-profile/etc/profile.d/nix.sh ]; then . /home/wmoore/.n
 if [[ -d "$HOME/.local/share/coursier/bin" ]]; then
   export PATH="$HOME/.local/share/coursier/bin:$PATH"
 fi
+
+# On COSMIC expose gcr ssh agent (this is done in .xprofile on X11)
+if [[ $XDG_CURRENT_DESKTOP = "COSMIC" ]]; then
+  # export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
+  # FIXME: start-cosmic will automatically do this if
+  # "/run/user/$(id -u)/keyring" is present when it's run
+  if [ -S "/run/user/$(id -u)/gcr/ssh" ]; then
+      export SSH_AUTH_SOCK="/run/user/$(id -u)/gcr/ssh"
+  elif [ -S "/run/user/$(id -u)/keyring/ssh" ]; then
+      export SSH_AUTH_SOCK="/run/user/$(id -u)/keyring/ssh"
+  fi
+  export XCURSOR_THEME="Cosmic"
+  export XCURSOR_SIZE="24"
+fi
+
+
