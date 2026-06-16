@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 hostname=$(uname -n)
 if [ "$hostname" = "arch-torrent" ]; then
   hostname="torrent"
@@ -47,6 +49,7 @@ restic backup \
   --exclude ~/.ghc \
   --exclude ~/.gnome \
   --exclude ~/.gphoto \
+  --exclude ~/.gradle \
   --exclude ~/.idea \
   --exclude ~/.idris \
   --exclude ~/.java \
@@ -59,6 +62,7 @@ restic backup \
   --exclude ~/.npm \
   --exclude ~/.nuget \
   --exclude ~/.nv \
+  --exclude ~/.ollama \
   --exclude ~/.omnisharp \
   --exclude ~/.oracle_jre_usage \
   --exclude ~/.parallel \
@@ -84,23 +88,31 @@ restic backup \
   --exclude ~/.dotfiles/yarn \
   --exclude ~/.dotfiles/rbenv \
   --exclude ~/.dotfiles/config/\*/Cache \
-  --exclude ~/.dotfiles/config/nvim/plugged \
   --exclude ~/.dotfiles/config/Atom \
-  --exclude ~/.dotfiles/config/Code \
-  --exclude ~/.dotfiles/config/Mailspring \
-  --exclude ~/.dotfiles/config/Insomnia \
-  --exclude ~/.dotfiles/config/Mattermost \
   --exclude ~/.dotfiles/config/chromium \
+  --exclude ~/.dotfiles/config/Code \
+  --exclude ~/.dotfiles/config/discord \
+  --exclude ~/.dotfiles/config/ente \
+  --exclude ~/.dotfiles/config/frum \
+  --exclude ~/.dotfiles/config/GIMP \
   --exclude ~/.dotfiles/config/google-chrome \
+  --exclude ~/.dotfiles/config/Insomnia \
   --exclude ~/.dotfiles/config/libreoffice \
+  --exclude ~/.dotfiles/config/Mailspring \
+  --exclude ~/.dotfiles/config/Mattermost \
   --exclude ~/.dotfiles/config/mimeapps.list \
   --exclude ~/.dotfiles/config/neofetch \
+  --exclude ~/.dotfiles/config/nvim/plugged \
+  --exclude ~/.dotfiles/config/obsidian \
   --exclude ~/.dotfiles/config/pulse \
-  --exclude ~/.dotfiles/config/discord \
-  --exclude ~/.dotfiles/config/GIMP \
-  --exclude ~/.dotfiles/config/Slack \
+  --exclude ~/.dotfiles/config/Signal \
   --exclude ~/.dotfiles/config/skypeforlinux \
+  --exclude ~/.dotfiles/config/Slack \
   --exclude ~/.dotfiles/config/Uniflash \
+  --exclude ~/.dotfiles/config/vivaldi \
   --exclude ~/.dotfiles/config/yarn \
-  --exclude ~/.local/share \
+  --exclude ~/.local \
+  --exclude ~/Projects/casuarina/glibcports/packages \
+  --exclude ~/Projects/cports/packages \
+  --exclude ~/Projects/cports/sources \
   ~
