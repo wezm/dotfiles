@@ -98,3 +98,5 @@
 	sort = -version:refname
 [branch]
 	sort = -committerdate
+[pull]
+	ff = only
