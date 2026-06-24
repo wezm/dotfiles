@@ -58,8 +58,8 @@ alias zswap='sudo grep -R . /sys/kernel/debug/zswap'
 
 alias ip='ip --color'
 
-# Use zenith as top
-if command -v zenith > /dev/null; then alias top="zenith -d0 -n0 --disable-history"; fi
+# Use btop as top
+if command -v btop > /dev/null; then alias top=btop; fi
 
 # Use bat as cat
 if command -v bat > /dev/null; then
@@ -86,4 +86,3 @@ elif command -v /usr/bin/z > /dev/null; then
   # Chimera
   alias zed=/usr/bin/z
 fi
-
