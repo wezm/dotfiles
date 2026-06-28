@@ -16,6 +16,7 @@ zshrc = "~/.zshrc"
 zshenv = "~/.zshenv"
 "gpg-agent.conf" = "~/.gnupg/gpg-agent.conf"
 quiltrc = "~/.quiltrc"
+aws = "~/.aws/config"
 
 # Link in parts from private submodule
 "private/ssh" = "~/.ssh"

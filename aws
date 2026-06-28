@@ -1,0 +1,8 @@
+[default]
+region=ap-southeast-2
+
+[profile pleroma]
+region=ap-southeast-2
+
+[profile yeslogic]
+mfa_serial = arn:aws:iam::023217657610:mfa/wes
