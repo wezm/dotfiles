@@ -31,7 +31,7 @@ alias cc='cargo check'
 alias cr='cargo run'
 alias ct='cargo test'
 alias cu='cargo update'
-alias fmt='cargo fmt'
+alias cf='cargo fmt'
 
 if command -v eza > /dev/null; then
   # Use eza as ls
