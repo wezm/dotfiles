@@ -1,6 +1,13 @@
 #
 # This shell prompt config file was created by promptline.vim
 #
+function __promptline_host {
+  local only_if_ssh="1"
+
+  if [ $only_if_ssh -eq 0 -o -n "${SSH_CLIENT}" ]; then
+    if [[ -n ${ZSH_VERSION-} ]]; then print %m; elif [[ -n ${FISH_VERSION-} ]]; then hostname -s; else printf "%s" \\h; fi
+  fi
+}
 
 function __promptline_last_exit_code {
 
@@ -10,6 +17,12 @@ function __promptline_last_exit_code {
 }
 function __promptline_ps1 {
   local slice_prefix slice_empty_prefix slice_joiner slice_suffix is_prompt_empty=1
+
+  # section "a" header
+  slice_prefix="${a_bg}${sep}${a_fg}${a_bg}${space}" slice_suffix="$space${a_sep_fg}" slice_joiner="${a_fg}${a_bg}${alt_sep}${space}" slice_empty_prefix="${a_fg}${a_bg}${space}"
+  [ $is_prompt_empty -eq 1 ] && slice_prefix="$slice_empty_prefix"
+  # section "a" slices
+  __promptline_wrapper "$(__promptline_host)" "$slice_prefix" "$slice_suffix" && { slice_prefix="$slice_joiner"; is_prompt_empty=0; }
 
   # section "b" header
   slice_prefix="${b_bg}${sep}${b_fg}${b_bg}${space}" slice_suffix="$space${b_sep_fg}" slice_joiner="${b_fg}${b_bg}${alt_sep}${space}" slice_empty_prefix="${b_fg}${b_bg}${space}"
@@ -86,6 +99,12 @@ function __promptline_cwd {
 function __promptline_left_prompt {
   local slice_prefix slice_empty_prefix slice_joiner slice_suffix is_prompt_empty=1
 
+  # section "a" header
+  slice_prefix="${a_bg}${sep}${a_fg}${a_bg}${space}" slice_suffix="$space${a_sep_fg}" slice_joiner="${a_fg}${a_bg}${alt_sep}${space}" slice_empty_prefix="${a_fg}${a_bg}${space}"
+  [ $is_prompt_empty -eq 1 ] && slice_prefix="$slice_empty_prefix"
+  # section "a" slices
+  __promptline_wrapper "$(__promptline_host)" "$slice_prefix" "$slice_suffix" && { slice_prefix="$slice_joiner"; is_prompt_empty=0; }
+
   # section "b" header
   slice_prefix="${b_bg}${sep}${b_fg}${b_bg}${space}" slice_suffix="$space${b_sep_fg}" slice_joiner="${b_fg}${b_bg}${alt_sep}${space}" slice_empty_prefix="${b_fg}${b_bg}${space}"
   [ $is_prompt_empty -eq 1 ] && slice_prefix="$slice_empty_prefix"
@@ -159,6 +178,9 @@ function __promptline {
   local alt_rsep=""
   local reset="${wrap}0${end_wrap}"
   local reset_bg="${wrap}49${end_wrap}"
+  local a_fg="${wrap}38;5;220${end_wrap}"
+  local a_bg="${wrap}48;5;166${end_wrap}"
+  local a_sep_fg="${wrap}38;5;166${end_wrap}"
   local b_fg="${wrap}38;5;231${end_wrap}"
   local b_bg="${wrap}48;5;31${end_wrap}"
   local b_sep_fg="${wrap}38;5;31${end_wrap}"

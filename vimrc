@@ -434,7 +434,9 @@ let g:indent_guides_guide_size = 1
 "let g:indent_guides_enable_on_vim_startup = 1
 
 " Shell prompt generator config
+" Update with: :PromptlineSnapshot! ~/.oh-my-zsh/custom/prompt.sh
 let g:promptline_preset = {
+      \'a' : [ promptline#slices#host({ 'only_if_ssh': 1 }) ],
       \'b' : [ '%T' ],
       \'c' : [ promptline#slices#cwd() ],
       \'y' : [ promptline#slices#vcs_branch() ],
